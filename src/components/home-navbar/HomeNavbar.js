@@ -188,7 +188,7 @@ const Button = styled.button`
   }
 `
 
-const HamburgerBtn = styled.button`
+const HamburgerBtn = styled(motion.button)`
   display: none;
   @media only screen and (max-width: 1117px) {
     display: inline-block;
