@@ -26,9 +26,8 @@ justify-content: center;
 const ImagesWrapper = styled.div`
 height: 100%;
 position: relative;
-/* background-color: green; */
 width: 50%;
-overflow: hidden;
+/* overflow: hidden; */
 display: flex;
 justify-content: center;
 align-items: center;
@@ -107,9 +106,9 @@ z-index: 6;
    @media (max-width:800px){
     width:90%;
     height: 100%;
-    gap: 1rem;
+    gap: 0.5rem;
     padding-left: 0;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
    
   h1 {
@@ -118,7 +117,7 @@ z-index: 6;
     text-align: left;
     line-height: 1.4;
     text-shadow: 1px 1px 1px #fff;
-    font-size: 3rem;
+    font-size: 3.5rem;
     user-select: none;
     @media ( (min-width : 600px) and (min-height: 900px)) {
      line-height: 1.6;
@@ -151,7 +150,7 @@ z-index: 6;
     line-height: 1.7;
     font-weight: 400;
     text-shadow: 1px 1px 1px #b0b0b0;
-    font-size: 1.7em;
+    font-size: 1.5em;
     text-transform: capitalize;
     user-select: none;
     color: #b0b0b0;
@@ -203,7 +202,7 @@ const Header = () => {
       </TitleWrapper>
       <ImagesWrapper>
     <I1
-   initial={{ left:'-100%',opacity:0 }}
+   initial={{ left:'-150%',opacity:0 }}
    animate={{ opacity: 1, scale: 1,left:'13%',}}
     transition={{duration:1.7}}
     src={image1} alt='hero-image'/>

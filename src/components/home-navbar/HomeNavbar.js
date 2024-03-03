@@ -82,7 +82,7 @@ const Logo = styled(motion.a)`
   }
 `
 
-const Nav = styled.nav`
+const Nav = styled(motion.nav)`
   width: 70%;
   font-family: Hauora, monospace;
   font-weight: 520 !important;
