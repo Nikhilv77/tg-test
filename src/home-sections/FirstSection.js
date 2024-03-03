@@ -202,13 +202,14 @@ const Header = () => {
       </TitleWrapper>
       <ImagesWrapper>
     <I1
-initial={{ opacity:0,top:'-80%'}}
-whileInView={{opacity: 1,top:'2%'}}
+initial={{ top:'-80%'}}
+whileInView={{top:'2%'}}
 transition={{duration:1.5,type:'ease'}}
+
     src={image1} alt='hero-image'/>
     <I2
-initial={{ opacity:0,right:'-20%'}}
-whileInView={{opacity: 1,right:'11%'}}
+initial={{ right:'-20%'}}
+whileInView={{right:'11%'}}
 transition={{duration:1.5,type:'ease'}}
        exit={{right:'-100%'}}
     src={image2} alt='hero-image'/>
