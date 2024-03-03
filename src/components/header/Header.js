@@ -203,14 +203,14 @@ const Header = () => {
       </TitleWrapper>
       <ImagesWrapper>
     <I1
-   initial={{ left:'13%',opacity:0 }}
-   animate={{ opacity: 1, scale: 1,}}
-    transition={{duration:2,delay:0.7}}
+   initial={{ left:'-100%',opacity:0 }}
+   animate={{ opacity: 1, scale: 1,left:'13%',}}
+    transition={{duration:1.7}}
     src={image1} alt='hero-image'/>
     <I2
-       initial={{ right:'13%',opacity:0 }}
-       animate={{ opacity: 1, scale: 1,}}
-       transition={{duration:2.5,delay:1}}
+       initial={{ right:'-100%',opacity:0 }}
+       animate={{ opacity: 1, scale: 1,right:'13%'}}
+       transition={{duration:1.5}}
        exit={{right:'-100%'}}
     src={image2} alt='hero-image'/>
     </ImagesWrapper>
