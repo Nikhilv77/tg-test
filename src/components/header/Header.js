@@ -20,13 +20,18 @@ const I1 = styled(motion.img)`
   width: 24rem;
   object-fit: contain;
   z-index: 4;
+  top: 0;
+  right: 15%;
   @media (max-width:750px) {
     height: 23rem;
     width: 11rem;
+    right: 35%;
   }
 `
 const I2 = styled(motion.img)`
   position: absolute;
+  top: 5%;
+  right: 2%;
   height: 34rem;
   width: 23rem;
   object-fit: contain;
@@ -34,6 +39,7 @@ const I2 = styled(motion.img)`
   @media (max-width:750px) {
     height: 20rem;
     width: 12rem;
+    right: 15%;
   }
 `
 const I3 = styled(motion.img)`
@@ -52,23 +58,7 @@ const I4 = styled(motion.img)`
   bottom: 10%;
   z-index: 1;
 `
-const ImageContainer = styled.div`
-  height: 100%;
-  width: 50%;
-  z-index: 3;
-  position: absolute;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (max-width:750px) {
-    height: 60%;
-    width: 100%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-`
+
 const Title = styled(motion.div)`
   overflow: hidden;
   position: absolute;
@@ -144,13 +134,13 @@ const Title = styled(motion.div)`
 const Header = () => {
   return (
     <HeaderSection>
-      <ImageContainer>
+  
         <I1
           initial={{
-         left:'-150%',scale:0.3
+        scale:0.3
           }}
           animate={{
-            opacity: 1,left:'15%',scale:1
+            opacity: 1,scale:1
           }}
           transition={{
             delay: 1,
@@ -160,10 +150,10 @@ const Header = () => {
         />
         <I2
           initial={{
-         right:'-40%',scale:0.3
+        scale:0.3
           }}
           animate={{
-            opacity: 1,right:'15%',scale:1
+            opacity: 1,scale:1
           }}
           transition={{
             delay: 1,
@@ -171,7 +161,7 @@ const Header = () => {
           }}
           src={image2}
         />
-      </ImageContainer>
+
       <I3
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
