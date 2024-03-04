@@ -11,11 +11,9 @@ const HeaderSection = styled.section`
   background: rgba(24, 24, 24, 0.5);
   overflow: hidden;
   min-height: calc(100vh - 4.5rem);
+  min-height: calc(100svh - 4.5rem);
   overflow-y: scroll;
   width: 100vw;
- @media (max-width:750px) {
-  min-height: calc(100svh - 4.5rem);
- }
 `
 const I1 = styled(motion.img)`
   position: absolute;
