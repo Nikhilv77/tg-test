@@ -13,7 +13,7 @@ const HeaderSection = styled.section`
   min-height: 91vh;
   overflow-y: scroll;
   width: 100vw;
-`
+` 
 const I1 = styled(motion.img)`
   position: absolute;
   height: 42rem;
@@ -62,7 +62,7 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   @media (max-width:750px) {
-    height: 50.5%;
+    height: 46.5%;
     width: 100%;
     top: 0;
     left: 50%;
@@ -84,11 +84,11 @@ const Title = styled(motion.div)`
   color: ${(props) => props.theme.text};
   @media (max-width:750px) {
     justify-content: flex-start;
-    height: 50%;
+    height: 55%;
     width: 100%;
     /* background-color: green; */
     bottom: 0;
-    left: 50%;
+    left: 49%;
     transform: translateX(-50%);
     gap: 1rem;
   }
