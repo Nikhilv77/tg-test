@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div>
       <HomeNavbar />
-     {/* <Header/> */}
+     <Header/>
       <FirstSection />
       <SecondSection />
       <ThirdSection />
