@@ -62,7 +62,7 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   @media (max-width:750px) {
-    height: 60%;
+    height: 55.5vh;
     width: 100%;
     top: 0;
     left: 50%;
@@ -85,7 +85,7 @@ const Title = styled(motion.div)`
   color: ${(props) => props.theme.text};
   @media (max-width:750px) {
     justify-content: flex-start;
-    height: 40%;
+    height: 40vh;
     width: 100%;
     bottom: 0;
     left: 50%;
