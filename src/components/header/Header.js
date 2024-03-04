@@ -10,7 +10,7 @@ import image4 from '../../assets/new-images/homepage-images/section-1-3.png'
 const Section = styled.section`
 display: flex;
 align-items: center;
-background-color: rgba(24,24,24,0.4);
+background-color: green;
 justify-content: center;
   position: relative;
   overflow: hidden;
