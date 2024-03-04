@@ -6,7 +6,6 @@ import image2 from '../../assets/new-images/homepage-images/section-1-2.png'
 import image3 from '../../assets/new-images/homepage-images/section-1-4.png'
 import image4 from '../../assets/new-images/homepage-images/section-1-3.png'
 
-
 const Section = styled.section`
 display: flex;
 align-items: center;
@@ -36,6 +35,8 @@ align-items: center;
   }
 @media (max-width:800px){
     width:100%;
+    height: 60%;
+
   }
 `
 const I1 = styled(motion.img)`
@@ -49,7 +50,8 @@ z-index: 5;
    height: 65%;
     }
     @media (max-width: 800px) {
-      height: 97%;
+      height: 92%;
+
     }
 `
 const I2 = styled(motion.img)`
@@ -64,7 +66,8 @@ z-index: 4;
 height: 55%;
     }
     @media (max-width: 800px) {
-      height: 90%;
+      height: 86%;
+
     }
 `
 const I3 = styled(motion.img)`
@@ -105,8 +108,9 @@ z-index: 6;
 
    @media (max-width:800px){
     width:90%;
-    height: 100%;
+    height: 50%;
     gap: 0.5rem;
+
     padding-left: 0;
     justify-content: flex-start;
   }
