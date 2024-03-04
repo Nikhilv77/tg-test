@@ -37,7 +37,7 @@ align-items: center;
   }
 @media (max-width:800px){
     width:100%;
-    height: 60%;
+    height: 54%;
   }
 `
 const I1 = styled(motion.img)`
@@ -107,7 +107,7 @@ z-index: 6;
 
    @media (max-width:800px){
     width:90%;
-    height: 40%;
+    height: 46%;
     gap: 0.5rem;
     padding-left: 0;
     justify-content: flex-start;
