@@ -10,7 +10,7 @@ const HeaderSection = styled.section`
   position: relative;
   background: rgba(24, 24, 24, 0.5);
   overflow: hidden;
-  min-height: calc(100vh - 4.5rem);
+  min-height: 100vh;
   width: 100vw;
 `
 
