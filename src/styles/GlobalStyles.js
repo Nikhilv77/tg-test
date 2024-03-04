@@ -13,11 +13,11 @@ button,a{
   -webkit-tap-highlight-color: transparent;
 }
 body{
+  background-color: rgba(24,24,24,0.5);
   overflow-x: hidden;
 }
 section {
   border: 1px solid transparent;
-  
 }
 a{
   color: inherit;

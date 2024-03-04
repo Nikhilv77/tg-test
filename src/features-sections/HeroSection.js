@@ -1,216 +1,326 @@
-import React from 'react'
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
-import image1 from '../assets/new-images/featurespage-images/hero-image.png'
+import gsap from "gsap";
+import React from "react";
+import styled from "styled-components";
+import i1 from '../assets/images/featurespage-images/hero-1.png'
+import i2 from '../assets/images/featurespage-images/hero-2.png'
+import i3 from '../assets/images/featurespage-images//hero-3.png'
+import i4 from '../assets/images/featurespage-images/hero-4.png'
 
-import image3 from '../assets/new-images/homepage-images/section-1-4.png'
-import image4 from '../assets/new-images/homepage-images/section-1-3.png'
-
+import Marquee from "react-fast-marquee";
 const Section = styled.section`
-  position: relative;
-  background-color: #181818;
-  overflow: hidden;
-  height: 100vh;
   width: 100vw;
-`
-
-const Wrapper = styled.div`
-  margin-top: 11vh;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
   position: relative;
+  z-index: 1;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const Blur1 = styled.div`
+height: 18rem;
+width: 14rem;
+position: absolute;
+left: -5%;
+top: 20%;
+border-radius: 70%;
+background-color: grey;
+filter: blur(72px);
+z-index: -999;
+opacity: 0.5;
+@media screen and (max-width: 1120px) {
+    height: 9rem;
+    width: 7rem;
+  }
+  @media screen and (max-height:600px){
+    height:6rem;
+    width: 4rem;
+  }
 `
-const I1 = styled.img`
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.9));
-  height: 66vh;
-  width: 47vw;
-  position: absolute;
-  /* background-color: green; */
-  left: 50%;
-  top: 60%;
-  transform: translate(-50%,-50%);
-  z-index: 3;
-  @media ((min-width : 601px) and (min-height: 900px)) {
-    height: 62vh !important;
-    width: 43vh !important;
-    }
-  @media (max-width:1200px){
-    height: 66vh;
-    
+const Blur2 = styled.div`
+height: 26rem;
+width: 18rem;
+position: absolute;
+right: -5%;
+bottom: 0;
+border-radius: 60%;
+background-color: grey;
+filter: blur(72px);
+z-index: -999;
+opacity: 0.5;
+@media screen and (max-width: 1120px) {
+    height: 13rem;
+    width: 9rem;
   }
-  @media (max-width:1000px){
-    height: 65vh;
-    width: 45vw;
+  @media screen and (max-height:600px){
+    height:8rem;
+    width: 5rem;
   }
-  @media (max-width:800px){
-    height: 63vh;
-    
-  }
-  @media (max-width:750px){
-    height: 60vh;
-    width: 47vw;
-  }
-  @media (max-width: 600px) {
-      top: 45%;
-      left: 50%;
-transform: translate(-50%,-50%);
-      width: 19rem;
-      height: 50vh;
-    }
- 
 `
-
-const I3 = styled.img`
-  height: 90vh;
-
-  width: 50vw;
+const Blur3 = styled.div`
+height: 13rem;
+width: 9rem;
+position: absolute;
+left: -5%;
+top: 0;
+border-radius: 60%;
+background-color: grey;
+filter: blur(72px);
+z-index: -999;
+opacity: 0.5;
+@media screen and (max-width: 1120px) {
+    height: 6rem;
+    width: 4rem;
+  }
+  @media screen and (max-height:600px){
+    height:3rem;
+    width: 3rem;
+  }
+`
+const V1 = styled.img`
   position: absolute;
-  right: 0;
   top: 0;
+  left:-20%; /* initial position */
+  width: 60%;
+  height: 60vh;
+  user-select: none;
+  object-fit: contain;
+  object-position: bottom;
   z-index: 1;
-`
-const I4 = styled.img`
-  height: 98vh;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+`;
 
-  width: 30vw;
-  position: absolute;
-  left: 0;
-  bottom: 10%;
-  z-index: 1;
-`
 
-const Title = styled(motion.div)`
+const V2 = styled.img`
+user-select: none;
   position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  overflow: hidden;
-  height: 30%;
-  padding: 1rem;
-  width: 95%;
-  z-index: 5;
+  right: -20%;
+  top: -2%;
+  width: 60%;
+
+  height: 50vh;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+  z-index: 2;
+`;
+const V3 = styled.img`
+  position: absolute;
+  left:-15%;
+  bottom: 5%;
+ user-select: none;
+  width: 64%;
+  height: 34vh;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+  transform: rotate(8deg);
+  z-index: 2;
+`;
+const V4 = styled.img`
+  position: absolute;
+  right: -20%;
+  user-select: none;
+  bottom: -7%;
+  width: 56%;
+  height: 36vh;
+  object-fit: contain;
+  transform: rotate(-17deg);
+  object-position: bottom;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+  z-index: 2;
+`;
+
+const TextContainer = styled.div`
+text-align: center;
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+ justify-content: center;
+  position: absolute;
   gap: 1rem;
-  @media ((min-width: 601px) and (min-height: 900px)) {
-     width: 40% !important;
-    right: -2% !important;
-    top: 9% !important;
 
+  #svgContainer{
+    display: flex;
+justify-content: center;
+align-items: center;
+padding: 1.3rem;
+border-radius: 50%;
+border: 2px solid #fff;
+background-color: transparent;
+transition: all 0.6s ease-in-out;
+cursor: pointer;
+&:hover{
+  background: linear-gradient(to right, rgba(0, 126, 242, 1), rgb(11, 93, 165));
+}
   }
-  @media(max-width:1000px){
-    right: 1%;
+`;
+
+
+const Title = styled.h1`
+  font-size: calc(2.6em + 1vw); /* Adjust the font size based on viewport width */
+  z-index: 5;
+  text-transform: capitalize;
+  /* text-shadow: 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 2px 2px 0px #333,
+                 3px 3px 0px #333,
+                 3px 3px 0px #333,
+                 4px 4px 0px #333,
+                 4px 4px 0px #333,
+                5px 5px 0px #333; */
+  color: #fff;
+  font-family: Hauora, monospace !important;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+
+  @media screen and (max-width: 1120px) {
+   /* Adjust font size for smaller screens */
+   font-size: calc(2.3em + 1vw);
   }
-  @media(max-width:750px){
-    right: -1%;
+  @media screen and (max-width: 625px) {
+    font-size: calc(1.7em + 1vw); /* Adjust font size for even smaller screens */
   }
-  @media (max-width: 600px) {
-    justify-content: space-between;
-
-    top: 43%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-
-    height: 84%;
+`;
+const Text = styled.p`
+/* text-align: justify; */
+font-family: Hauora, monospace !important;
+font-size: calc(1em + 1vw);
+line-height: 1.8;
+  z-index: 5;
+  text-transform: capitalize;
+  text-transform: 0 0 4px #fff;
+ 
+  color: 	#A8A8A8;
+  font-family: 'Times Roman';
+  /* text-shadow: 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 2px 2px 0px #333,
+                 2px 2px 0px #333,
+                 2px 2px 0px #333,
+                 1px 1px 0px #333,
+                2px 2px 0px #333; */
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+              
+  @media screen and (max-width: 1120px) {
+    font-size: calc(0.8em + 1vw);
   }
-
-  h1 {
-    font-family: Hauora, monospace;
-    text-align: center;
-    line-height: 1.3;
-    z-index: 10;
-    text-shadow: 1px 1px 1px #fff;
-    font-size: 3.4rem;
-    user-select: none;
-    @media ((min-width: 601px) and (min-height: 900px)) {
-      line-height: 1.6;
-      font-size: 2.8rem !important;
-      align-self: flex-end;
-    }
-    @media (max-width: 1200px) {
-      font-size: 2.5em;
-    }
-
-    @media (max-width: 1000px) {
-      font-size: 2.4em;
-    }
-    @media (max-width: 800px) {
-      font-size: 2.3em;
-    }
-    @media (max-width: 600px) {
-      font-size: 2em;
-      align-self: center;
-      text-align: center;
-    }
-    @media (max-width: 500px) {
-      font-size: 1.8em;
-    }
-    @media (max-width: 400px) {
-      font-size: 1.6em;
-    }
+  @media screen and (max-width: 625px) {
+    font-size: calc(0.7em + 1vw);
   }
-  h2 {
-    font-family: Hauora, monospace;
-    text-align: center;
-    line-height: 1.4;
-    font-weight: 400;
-    text-shadow: 1px 1px 1px #b0b0b0;
-    font-size: 1.7rem;
-    text-transform: capitalize;
-    user-select: none;
-    color: #b0b0b0;
-    z-index: 10;
-    width: 100%;
-    align-self: flex-start;
+`;
 
-    @media ((min-width: 601px) and (min-height: 900px)) {
-      line-height: 1.8;
-      font-size: 1.6rem !important;
-      align-self: flex-end;
-    }
-
-    @media (max-width: 1200px) {
-      font-size: 1.6em;
-    }
-
-    @media (max-width: 1000px) {
-      font-size: 1.4em;
-    }
-    @media (max-width: 800px) {
-      font-size: 1.2em;
-    }
-    @media (max-width: 600px) {
-      font-size: 1em;
-      text-align: center;
-    }
-    @media (max-width: 500px) {
-      font-size: 1em;
-    }
-    @media (max-width: 400px) {
-      font-size: 1em;
-    }
+const Button = styled.button`
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  height: 5em;
+  margin-bottom: auto;
+  width: 5em;
+  font-size: calc(0.6em + 1vw);
+  border:none;
+  background-color: white;
+  color: #333;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px 10px rgba(0,115,207,0.3);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease; 
+  &:hover {
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 20px 10px rgba(0,115,207,0.6);
   }
-`
+  @media screen and (max-width: 1120px) {
+    font-size: calc(0.8em + 1vw);
+  }
+  @media screen and (max-width: 625px) {
+    font-size: calc(0.5em + 1vw);
+  }
+`;
 
-const ThirdSection = () => {
-  return (
-    <Section>
-      <Wrapper>
-        <Title>
-          <h1>Features that set you apart</h1>
-          <h2>
-          Embark on a journey of discovery, as Tags Social connects you with like-minded individuals at new locations. 
-          </h2>
-        </Title>
-       <I1 src={image1} alt='hero-image'/>
-        <I3 src={image3} alt="background-blur" />
-        <I4 src={image4} alt="background-blur" />
-      </Wrapper>
-    </Section>
-  )
+
+const MarqueeH1 = styled.h1`
+ text-shadow: 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 1px 1px 0px #333,
+                 2px 2px 0px #333,
+                 2px 2px 0px #333,
+                 3px 3px 0px #333,
+                 3px 3px 0px #333,
+                4px 4px 0px #333 !important;
+font-family: Hauora, monospace;
+color: #fff;
+font-size: 3.5rem;
+background-color: #383838;
+
+@media only screen and (max-width: 700px) {
+  font-size: 2.7rem;
 }
 
-export default ThirdSection
+`;
+
+
+
+const HeroSection = () => {
+  const smoothScroll = () => {
+    window.scrollBy({
+      top: window.innerHeight * 2,
+      behavior: "smooth"
+    });
+  };
+
+  return (
+    <>
+      <div
+  style={{ backgroundColor: '#181818', padding: '10px', border:'none' }}
+     >
+    <Marquee speed={200} direction="right" style={{transform: "rotate(-8deg)"}} >
+  <MarqueeH1 whileHover={{ textShadow: "0 0 20px rgba(255, 255, 255, 0.8)" }}>
+    Enjoy Awesome Features. Get To Know Amazing People.
+  </MarqueeH1>
+</Marquee>
+       </div>
+    <Section>
+      <Blur1/>
+      <Blur2/>
+      <Blur3/>
+      <TextContainer>
+      <Title>Features that set you apart</Title>
+      <Text> 
+There are thrilling features waiting for you to explore.
+</Text>
+<div
+id="svgContainer"
+onClick={smoothScroll}
+>
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="white" viewBox="0 0 92 92" id="down-arrow"><path d="M73.8 57.9l-25 24.9C48 83.6 47 84 46 84s-2-.4-2.8-1.2l-25-24.9c-1.6-1.6-1.6-4.1 0-5.7 1.6-1.6 4.1-1.6 5.7 0L42 70.4V12c0-2.2 1.8-4 4-4s4 1.8 4 4v58.4l18.2-18.1c1.6-1.6 4.1-1.6 5.7 0 1.5 1.5 1.5 4-.1 5.6z"></path></svg></div>
+      </TextContainer>
+      <V1 src={i1}/>
+      <V2 src={i2}/>
+      <V3 src={i4}/>
+      <V4 src={i3}/>
+    </Section>
+   
+    <div
+  style={{ backgroundColor: '#181818', padding: '10px', border:'none' }}
+     >
+    <Marquee speed={200} direction="right" style={{ zIndex:'999', transform: "rotate(8deg)" }}>
+  <MarqueeH1 whileHover={{ textShadow: "0 0 20px rgba(255, 255, 255, 0.8)" }}>
+    Enjoy Awesome Features. Get To Know Amazing People.
+  </MarqueeH1>
+</Marquee>
+       </div>
+       </>
+  );
+};
+
+export default HeroSection;

@@ -1,217 +1,342 @@
+import gsap from 'gsap'
 import React from 'react'
+import { useLayoutEffect } from 'react'
+import { useRef } from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
-import image1 from '../assets/new-images/homepage-images/section-5-1.png'
-
-import image3 from '../assets/new-images/homepage-images/section-1-4.png'
-import image4 from '../assets/new-images/homepage-images/section-1-3.png'
-
+import Image1 from '../assets/images/homepage-images/frame26.png'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import Marquee from 'react-fast-marquee'
 const Section = styled.section`
-  position: relative;
-  background-color: rgba(24,24,24,0.5);
-  overflow: hidden;
-  height: 100vh;
   width: 100vw;
-`
-
-const Wrapper = styled.div`
-  margin-top: 11vh;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
   position: relative;
+  z-index: 1;
+  background-color: #181818;
   overflow: hidden;
+`
+const Blur1 = styled.div`
+  height: 18rem;
+  width: 14rem;
+  position: absolute;
+  left: -5%;
+  top: 10%;
+  border-radius: 70%;
+  background-color: grey;
+  filter: blur(72px);
+  z-index: -999;
+  opacity: 0.5;
+  @media screen and (max-width: 1120px) {
+    height: 9rem;
+    width: 7rem;
+  }
+  @media screen and (max-height: 600px) {
+    height: 6rem;
+    width: 4rem;
+  }
+`
+const Blur2 = styled.div`
+  height: 26rem;
+  width: 18rem;
+  position: absolute;
+  right: -5%;
+  top: 0;
+  border-radius: 60%;
+  background-color: grey;
+  filter: blur(72px);
+  z-index: -999;
+  opacity: 0.5;
+  @media screen and (max-width: 1120px) {
+    height: 13rem;
+    width: 9rem;
+  }
+  @media screen and (max-height: 600px) {
+    height: 8rem;
+    width: 5rem;
+  }
+`
+const Blur3 = styled.div`
+  height: 13rem;
+  width: 9rem;
+  position: absolute;
+  left: -5%;
+  bottom: 0;
+  border-radius: 60%;
+  background-color: grey;
+  filter: blur(72px);
+  z-index: -999;
+  opacity: 0.5;
+  @media screen and (max-width: 1120px) {
+    height: 6rem;
+    width: 4rem;
+  }
+  @media screen and (max-height: 600px) {
+    height: 3rem;
+    width: 3rem;
+  }
 `
 const I1 = styled.img`
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.9));
-  height: 86vh;
-
-  width: 42vw;
   position: absolute;
-  /* background-color: green; */
-  left: 7%;
-  top: 0;
-  z-index: 3;
-  @media ((min-width : 601px) and (min-height: 900px)) {
-    height: 62vh !important;
-    width: 43vh !important;
-    }
-  @media (max-width:1200px){
-    height: 74vh;
-    
-  }
-  @media (max-width:1000px){
-    height: 73vh;
-    width: 45vw;
-  }
-  @media (max-width:800px){
-    height: 72vh;
-    
-  }
-  @media (max-width:750px){
-    height: 71vh;
-    width: 47vw;
-  }
-  @media (max-width: 600px) {
-      top: 32%;
-      left: 50%;
-transform: translate(-50%,-50%);
-      width: 19rem;
-      height: 50vh;
-    }
- 
-`
+  bottom: -120%;
+  left: 2%;
+  width: 77%;
+  height: 77vh;
+  object-fit: contain;
 
-const I3 = styled.img`
-  height: 90vh;
-
-  width: 50vw;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1;
-`
-const I4 = styled.img`
-  height: 98vh;
-
-  width: 30vw;
-  position: absolute;
-  left: 0;
-  bottom: 10%;
-  z-index: 1;
-`
-
-const Title = styled(motion.div)`
-  position: absolute;
-  top: 10%;
-  right: 4%;
-  overflow: hidden;
-  height: 100%;
-  padding: 1rem;
-  width: 45%;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
   z-index: 5;
+  user-select: none;
+`
+
+const TextContainer = styled.div`
+  width: 40%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  gap: 2rem;
-  @media ((min-width: 601px) and (min-height: 900px)) {
-     width: 40% !important;
-    right: -2% !important;
-    top: 9% !important;
+  justify-content: space-around;
+  position: absolute;
+  gap: 1rem;
+  top: 10%;
+  right: 7%;
 
-  }
-  @media(max-width:1000px){
-    right: 1%;
-  }
-  @media(max-width:750px){
-    right: -1%;
-  }
-  @media (max-width: 600px) {
-    justify-content: space-between;
-
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-
-    height: 84%;
-  }
-
-  h1 {
-    font-family: Hauora, monospace;
-  align-self: flex-start;
-    text-align: left;
-    line-height: 1.4;
-    z-index: 10;
-    text-shadow: 1px 1px 1px #fff;
-    font-size: 3.4rem;
-    user-select: none;
-    @media ((min-width: 601px) and (min-height: 900px)) {
-      line-height: 1.6;
-      font-size: 2.8rem !important;
-      align-self: flex-end;
-    }
-    @media (max-width: 1200px) {
-      font-size: 2.5em;
-    }
-
-    @media (max-width: 1000px) {
-      font-size: 2.4em;
-    }
-    @media (max-width: 800px) {
-      font-size: 2.3em;
-    }
-    @media (max-width: 600px) {
-      font-size: 2em;
-      align-self: center;
-      text-align: center;
-    }
-    @media (max-width: 500px) {
-      font-size: 1.8em;
-    }
-    @media (max-width: 400px) {
-      font-size: 1.6em;
-    }
-  }
-  h2 {
-    font-family: Hauora, monospace;
-    text-align: left;
-    line-height: 1.7;
-    font-weight: 400;
-    text-shadow: 1px 1px 1px #b0b0b0;
-    font-size: 1.7rem;
-    text-transform: capitalize;
-    user-select: none;
-    color: #b0b0b0;
-    z-index: 10;
-    width: 100%;
-    align-self: flex-start;
-
-    @media ((min-width: 601px) and (min-height: 900px)) {
-      line-height: 1.8;
-      font-size: 1.6rem !important;
-      align-self: flex-end;
-    }
-
-    @media (max-width: 1200px) {
-      font-size: 1.6em;
-    }
-
-    @media (max-width: 1000px) {
-      font-size: 1.4em;
-    }
-    @media (max-width: 800px) {
-      font-size: 1.2em;
-    }
-    @media (max-width: 600px) {
-      font-size: 1em;
-      text-align: center;
-    }
-    @media (max-width: 500px) {
-      font-size: 1em;
-    }
-    @media (max-width: 400px) {
-      font-size: 1em;
-    }
+  & > *:nth-child(1) {
+    margin-right: 1rem;
   }
 `
 
-const ThirdSection = () => {
+const Title = styled.h1`
+  font-size: calc(
+    3.1em + 1vw
+  ); /* Adjust the font size based on viewport width */
+  z-index: 5;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
+    1px 1px 0px #333, 2px 2px 0px #333, 3px 3px 0px #333, 3px 3px 0px #333,
+    4px 4px 0px #333, 4px 4px 0px #333, 5px 5px 0px #333;
+  color: #fff;
+  font-family: Hauora, monospace !important;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.1));
+
+  @media screen and (max-width: 1120px) {
+    /* Adjust font size for smaller screens */
+    font-size: calc(2.4em + 1vw);
+  }
+  @media screen and (max-width: 625px) {
+    font-size: calc(
+      1.8em + 1vw
+    ); /* Adjust font size for even smaller screens */
+  }
+`
+const Text = styled.p`
+  /* text-align: justify; */
+  font-family: Hauora, monospace !important;
+  font-size: calc(1.1em + 1vw);
+  line-height: 1.8;
+  z-index: 5;
+  text-transform: capitalize;
+  text-transform: 0 0 4px #fff;
+
+  color: #b0b0b0;
+  font-family: Hauora, monospace !important;
+  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
+    1px 1px 0px #333, 1px 1px 0px #333, 2px 2px 0px #333, 2px 2px 0px #333,
+    2px 2px 0px #333, 1px 1px 0px #333, 2px 2px 0px #333;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+
+  @media screen and (max-width: 1120px) {
+    font-size: calc(1em + 1vw);
+  }
+  @media screen and (max-width: 625px) {
+    font-size: calc(0.9em + 1vw);
+  }
+`
+
+const Button = styled.button`
+  opacity: 0 !important;
+  user-select: none !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  z-index: 100;
+  height: 5em;
+  margin-bottom: auto;
+  width: 5em;
+  font-size: calc(0.6em + 1vw);
+  border: none;
+  background-color: white;
+  color: #333;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px 10px rgba(0, 115, 207, 0.3);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 20px 10px rgba(0, 115, 207, 0.6);
+  }
+  @media screen and (max-width: 1120px) {
+    font-size: calc(0.8em + 1vw);
+  }
+  @media screen and (max-width: 625px) {
+    font-size: calc(0.5em + 1vw);
+  }
+`
+
+const MarqueeH1 = styled.h1`
+  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
+    1px 1px 0px #333, 1px 1px 0px #333, 2px 2px 0px #333, 2px 2px 0px #333,
+    3px 3px 0px #333, 3px 3px 0px #333, 4px 4px 0px #333 !important;
+  font-family: Hauora, monospace;
+  color: #fff;
+  font-size: 4.3rem;
+  background-color: #383838;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 3rem;
+  }
+`
+
+const FourthSection = () => {
+  gsap.registerPlugin(ScrollTrigger)
+  const sectionRef = useRef(null)
+  const ImageRef1 = useRef(null)
+  const textRef = useRef(null)
+
+  const subElements = gsap.utils.selector(textRef)
+
+  useLayoutEffect(() => {
+    const Elem = sectionRef.current
+    const ImageElem1 = ImageRef1.current
+
+    console.log('worked')
+    // pin the section
+    gsap.to(Elem, {
+      scrollTrigger: {
+        trigger: Elem,
+        start: 'top top',
+        end: `bottom+=500 bottom`,
+        scrub: 1,
+        pin: true,
+        pinSpacing: true,
+      },
+    })
+
+    let t2 = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: Elem,
+          start: 'top top',
+          end: `bottom+=500 bottom`,
+          scrub: 1,
+        },
+      })
+      .to(ImageElem1, {
+        scale: 1,
+        bottom: '2%',
+        left: '-2%',
+        zIndex: 5,
+        scale: 1,
+        transitionDuration:0.7
+      })
+
+    subElements('h1').forEach((el) =>
+      t2.fromTo(
+        el,
+        {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top top',
+            end: `bottom bottom`,
+            scrub: 1,
+            // markers: true,
+          },
+          x: 100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+        },
+        "key3"
+      )
+    )
+    subElements('p').forEach((el) =>
+      t2.fromTo(
+        el,
+        {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top top',
+            end: `bottom bottom`,
+            scrub: 1,
+          },
+          x: -100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+        },
+        "key3"
+      )
+    )
+    subElements('button').forEach((el) =>
+      t2.fromTo(
+        el,
+        {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top top',
+            end: `bottom bottom`,
+            scrub: 1,
+          },
+          x: -100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+        },
+        'key2'
+      )
+    )
+
+    return () => {
+      if (t2) t2.kill()
+    }
+  }, [])
+
   return (
-    <Section>
-      <Wrapper>
-        <Title>
-          <h1>Why wait Download now</h1>
-          <h2>
-          TagSocial is not just an app; it's a transformative social experience. Imagine leaving your mark on the world by connecting with people and places around you.
-          </h2>
-        </Title>
-       <I1 src={image1} alt='hero-image'/>
-        <I3 src={image3} alt="background-blur" />
-        <I4 src={image4} alt="background-blur" />
-      </Wrapper>
-    </Section>
+    <>
+      <Section ref={sectionRef}>
+        <Blur1 />
+        <Blur2 />
+        <Blur3 />
+        <I1 ref={ImageRef1} src={Image1} />
+
+        <TextContainer ref={textRef}>
+          <Title> Next Level of Social Networking</Title>
+          <Text>
+            {' '}
+            Unleash your creativity, express yourself, and make meaningful
+            connections effortlessly.
+          </Text>
+          <Button>FAQs</Button>
+        </TextContainer>
+      </Section>
+      <div style={{ backgroundColor: '#181818' }}>
+        <Marquee speed={250}>
+          <MarqueeH1
+            whileHover={{
+              textShadow: '0 0 20px rgba(255, 255, 255, 0.8)',
+            }}
+          >
+            Give Yourself A Good Time. Get TagSocial Now.
+          </MarqueeH1>
+        </Marquee>
+      </div>
+    </>
   )
 }
 
-export default ThirdSection
+export default FourthSection

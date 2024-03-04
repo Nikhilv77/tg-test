@@ -10,14 +10,14 @@ const Headers = styled(motion.header)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(24, 24, 24, 0.4);
+  background: rgba(24, 24, 24, 0.5);
   /* background:linear-gradient(135deg, rgba(43, 43, 42, 0.6), rgba(93, 93, 93, 0.6), rgba(34, 34, 33, 0.6)); */
   backdrop-filter: blur(16px) !important;
   color: white;
-  position: sticky;
+  position: fixed;
   z-index: 3;
   width: 100vw;
-  height: 4.5rem;
+  height: 5.2rem;
 `
 
 const Logo = styled.a`

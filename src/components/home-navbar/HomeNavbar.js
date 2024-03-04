@@ -12,14 +12,13 @@ const Headers = styled(motion.header)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(24, 24, 24, 0.4);
-  /* background-color: grey; */
+  background: rgba(24, 24, 24, 0.5);
   /* background:linear-gradient(135deg, rgba(43, 43, 42, 0.6), rgba(93, 93, 93, 0.6), rgba(34, 34, 33, 0.6)); */
   backdrop-filter: blur(16px) !important;
   color: white;
   position: sticky;
-  z-index: 99;
   height: 4.5rem;
+  z-index: 99 !important;
   width: 100vw;
 `
 const BottomHeader = styled(motion.header)`
@@ -63,7 +62,7 @@ const BottomHeader = styled(motion.header)`
     cursor: pointer;
   }
 `
-const Logo = styled(motion.a)`
+const Logo = styled.a`
   display: flex;
   align-items: center;
   width: 2rem;
@@ -83,7 +82,7 @@ const Logo = styled(motion.a)`
   }
 `
 
-const Nav = styled(motion.nav)`
+const Nav = styled.nav`
   width: 70%;
   font-family: Hauora, monospace;
   font-weight: 520 !important;
@@ -152,6 +151,7 @@ const coolEffectAnimation = keyframes`
 
 const Button = styled.button`
   font-family: Hauora, monospace;
+
   font-weight: 600 !important;
   user-select: none;
   display: flex;
@@ -189,7 +189,7 @@ const Button = styled.button`
   }
 `
 
-const HamburgerBtn = styled(motion.button)`
+const HamburgerBtn = styled.button`
   display: none;
   @media only screen and (max-width: 1117px) {
     display: inline-block;
@@ -229,7 +229,6 @@ const HamburgerBtn = styled(motion.button)`
 `
 
 const MobileMenu = styled.nav`
-  z-index:999 !important;
   display: none;
   margin-right: 0.5rem;
   @media only Screen and (max-width: 1117px) {
@@ -247,7 +246,8 @@ const MobileMenu = styled.nav`
   right: 0;
   visibility: ${(props) => (props.clicked ? 'visible' : 'hidden')};
 
-  background: rgba(24, 24, 24, 1);
+  z-index: 999 !important;
+  background: rgba(24, 24, 24, 0.98);
   backdrop-filter: blur(7px) !important;
   border-radius: 1rem; /* Adjust the alpha value (0.7) for opacity */ /* Adds a blur effect for glass-like appearance */
   margin: 0.5rem;
@@ -294,21 +294,24 @@ const HomeNavbar = () => {
   return (
     <>
       <Headers
-      
+        initial={{
+
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+ 
+        }}
+        transition={{
+          delay: 2.5,
+          duration: 0.9,
+        }}
         ref={ref}
       >
-        <Logo
-        initial={{ opacity:0}}
-        animate={{ opacity: 1}}
-         transition={{duration:1,delay:1.5,type:'ease'}}
-        >
+        <Logo>
           <img src={logo} alt="TagSocial" />
         </Logo>
-        <Nav
-         initial={{ opacity:0}}
-         animate={{ opacity: 1}}
-          transition={{duration:1,delay:1.5,type:'ease'}}
-        >
+        <Nav>
           <div
             style={{
               display: 'flex',
@@ -327,11 +330,7 @@ const HomeNavbar = () => {
             target="_blank"
             class="no-hover"
           >
-            <Button
-             initial={{ opacity:0}}
-             animate={{ opacity: 1}}
-              transition={{duration:1,delay:1.5,type:'ease'}}
-            >
+            <Button>
               Download{' '}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -354,19 +353,11 @@ const HomeNavbar = () => {
           </a>
         </Nav>
 
-        <HamburgerBtn
-         initial={{ opacity:0}}
-         animate={{ opacity: 1}}
-          transition={{duration:1,delay:1.5,type:'ease'}}
-        clicked={+click} onClick={() => setClick(!click)}>
+        <HamburgerBtn clicked={+click} onClick={() => setClick(!click)}>
           <span></span>
         </HamburgerBtn>
 
-        <MobileMenu
-         initial={{ opacity:0}}
-         animate={{ opacity: 1}}
-          transition={{duration:1,delay:1.5,type:'ease'}}
-        clicked={+click}>
+        <MobileMenu clicked={+click}>
           <a href="/">Home</a>
           <a href="/features">Features</a>
           <a href="/faqs">FAQs</a>
@@ -376,11 +367,7 @@ const HomeNavbar = () => {
             target="_blank"
             class="no-hover"
           >
-            <Button
-             initial={{ opacity:0}}
-             animate={{ opacity: 1}}
-              transition={{duration:1,delay:1.5,type:'ease'}}
-            >
+            <Button>
               Download{' '}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -404,10 +391,17 @@ const HomeNavbar = () => {
         </MobileMenu>
       </Headers>
       <BottomHeader
-       initial={{ opacity:0}}
-       animate={{ opacity: 1}}
-        transition={{duration:1,delay:2,type:'ease'}}
         ref={bottomRef}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          delay: 2.5,
+          duration: 0.9,
+        }}
       >
         <img className="cta-image" src={ctaImage1} alt="" />
         <img className="cta-image" src={ctaImage2} alt="" />
