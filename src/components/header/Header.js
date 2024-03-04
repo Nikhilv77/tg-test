@@ -204,14 +204,14 @@ const Header = () => {
       </TitleWrapper>
       <ImagesWrapper>
     <I1
-   initial={{ left:'-150%' }}
-   animate={{ left:'13%',}}
-    transition={{duration:1.7}}
+   initial={{ opacity:0}}
+   animate={{ opacity:1}}
+    transition={{duration:1.7,type:'ease'}}
     src={image1} alt='hero-image'/>
     <I2
-       initial={{right:'-50%' }}
-       animate={{ right:'13%'}}
-       transition={{duration:1.5}}
+       initial={{opacity:0 }}
+       animate={{ opacity:1}}
+       transition={{duration:1.5,delay:1,type:'ease'}}
    
     src={image2} alt='hero-image'/>
     </ImagesWrapper>
