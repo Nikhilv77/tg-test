@@ -199,8 +199,9 @@ const Header = () => {
           opacity: 1,
         }}
         transition={{
-          delay: 1,
+          delay: 2,
           duration: 1.4,
+          
         }}
       >
         <motion.h1>
