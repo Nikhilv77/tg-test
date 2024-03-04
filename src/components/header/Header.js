@@ -193,9 +193,9 @@ const Header = () => {
   return (
     <Section>
     <TitleWrapper
-      initial={{ opacity:0}}
-      animate={{ opacity: 1}}
-       transition={{duration:1.5,delay:1,type:'ease'}}
+      // initial={{ opacity:0}}
+      // animate={{ opacity: 1}}
+      //  transition={{duration:1.5,delay:1,type:'ease'}}
     >
       <h1>Discover, Connect & Share Your World on Tags Social.
 </h1>
@@ -204,14 +204,14 @@ const Header = () => {
       </TitleWrapper>
       <ImagesWrapper>
     <I1
-  //  initial={{ left:'-150%'}}
-  //  animate={{ left:'13%'}}
-  //   transition={{duration:1.7}}
+   initial={{ left:'-150%'}}
+   animate={{ left:'13%'}}
+    transition={{duration:1.7}}
     src={image1} alt='hero-image'/>
     <I2
-      //  initial={{right:'-50%' }}
-      //  animate={{ right:'13%'}}
-      //  transition={{duration:1.7}}
+       initial={{right:'-50%' }}
+       animate={{ right:'13%'}}
+       transition={{duration:1.7}}
    
     src={image2} alt='hero-image'/>
     </ImagesWrapper>
