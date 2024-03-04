@@ -12,6 +12,7 @@ const HeaderSection = styled.section`
   overflow: hidden;
   height: calc(100vh - 4.5rem);
   width: 100vw;
+  display: grid;
 `
 
 const I1 = styled(motion.img)`
@@ -62,7 +63,7 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   @media (max-width:750px) {
-    height: 55.5vh;
+    height: 20rem;
     background-color: blue;
     width: 100%;
     top: 0;
