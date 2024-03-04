@@ -6,6 +6,7 @@ import image2 from '../../assets/new-images/homepage-images/section-1-2.png'
 import image3 from '../../assets/new-images/homepage-images/section-1-4.png'
 import image4 from '../../assets/new-images/homepage-images/section-1-3.png'
 
+
 const Section = styled.section`
 display: flex;
 align-items: center;
@@ -13,18 +14,20 @@ background-color: rgba(24,24,24,0.4);
 justify-content: center;
   position: relative;
   overflow: hidden;
-  height: calc(100vh - 4.5rem);
+  height: 89vh;
   width: 100vw;
+
   @media (max-width:800px){
     flex-direction: column-reverse;
   }
+
 `
 
 const ImagesWrapper = styled.div`
 height: 100%;
 position: relative;
 width: 50%;
-background-color: yellow;
+/* overflow: hidden; */
 display: flex;
 justify-content: center;
 align-items: center;
@@ -33,7 +36,6 @@ align-items: center;
   }
 @media (max-width:800px){
     width:100%;
-    height: 26rem;
   }
 `
 const I1 = styled(motion.img)`
@@ -47,8 +49,7 @@ z-index: 5;
    height: 65%;
     }
     @media (max-width: 800px) {
-      height: 92%;
-
+      height: 97%;
     }
 `
 const I2 = styled(motion.img)`
@@ -63,8 +64,7 @@ z-index: 4;
 height: 55%;
     }
     @media (max-width: 800px) {
-      height: 86%;
-
+      height: 90%;
     }
 `
 const I3 = styled(motion.img)`
@@ -88,7 +88,7 @@ z-index: 1;
 
 const TitleWrapper = styled(motion.div)`
 padding-left: 2rem;
-background-color: red;
+/* background-color: red; */
 position: relative;
 z-index: 6;
   overflow: hidden;
@@ -105,7 +105,7 @@ z-index: 6;
 
    @media (max-width:800px){
     width:90%;
-    height: 17rem;
+    height: 100%;
     gap: 0.5rem;
     padding-left: 0;
     justify-content: flex-start;
@@ -191,19 +191,13 @@ const Header = () => {
   return (
     <Section>
     <TitleWrapper
-   
+      initial={{ opacity:0}}
+      animate={{ opacity: 1}}
+       transition={{duration:1.5,delay:1,type:'ease'}}
     >
-      <motion.h1
-         initial={{ opacity:0}}
-         animate={{ opacity: 1}}
-          transition={{duration:1.5,delay:1,type:'ease'}}
-      >Discover, Connect & Share Your World on Tags Social.
-</motion.h1>
-<motion.h2
-   initial={{ opacity:0}}
-   animate={{ opacity: 1}}
-    transition={{duration:1.5,delay:1,type:'ease'}}
->Embark on a journey of discovery, as Tags Social connects you with like-minded individuals at new locations. </motion.h2>
+      <h1>Discover, Connect & Share Your World on Tags Social.
+</h1>
+<h2>Embark on a journey of discovery, as Tags Social connects you with like-minded individuals at new locations. </h2>
     
       </TitleWrapper>
       <ImagesWrapper>
