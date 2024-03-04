@@ -12,7 +12,7 @@ import Footer from '../home-sections/FooterSection'
 const HomePage = () => {
   return (
     <div>
-      {/* <HomeNavbar /> */}
+      <HomeNavbar />
       <HeroSection />
       <FirstSection />
       <SecondSection />

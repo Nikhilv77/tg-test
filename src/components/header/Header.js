@@ -10,7 +10,7 @@ const HeaderSection = styled.section`
   position: relative;
   background: rgba(24, 24, 24, 0.5);
   overflow: hidden;
-  min-height: 100vh;
+  height: calc(100vh - 4.5rem);
   width: 100vw;
 `
 
@@ -63,6 +63,7 @@ const ImageContainer = styled.div`
   align-items: center;
   @media (max-width:750px) {
     height: 55.5vh;
+    background-color: blue;
     width: 100%;
     top: 0;
     left: 50%;
@@ -91,6 +92,7 @@ const Title = styled(motion.div)`
     left: 50%;
     transform: translateX(-50%);
     gap: 1rem;
+    background-color: yellow;
   }
 
   h1 {
