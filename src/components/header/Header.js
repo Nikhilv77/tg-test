@@ -13,19 +13,18 @@ background-color: rgba(24,24,24,0.4);
 justify-content: center;
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  height: calc(100vh - 4.5rem);
   width: 100vw;
   @media (max-width:800px){
     flex-direction: column-reverse;
   }
-
 `
 
 const ImagesWrapper = styled.div`
 height: 100%;
 position: relative;
 width: 50%;
-/* overflow: hidden; */
+background-color: yellow;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -90,7 +89,7 @@ z-index: 1;
 
 const TitleWrapper = styled(motion.div)`
 padding-left: 2rem;
-/* background-color: red; */
+background-color: red;
 position: relative;
 z-index: 6;
   overflow: hidden;
