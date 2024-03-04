@@ -15,7 +15,6 @@ justify-content: center;
   overflow: hidden;
   height: 89vh;
   width: 100vw;
-
   @media (max-width:800px){
     flex-direction: column-reverse;
   }
@@ -110,7 +109,6 @@ z-index: 6;
     width:90%;
     height: 50%;
     gap: 0.5rem;
-
     padding-left: 0;
     justify-content: flex-start;
   }
