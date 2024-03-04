@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeNavbar from '../components/home-navbar/HomeNavbar'
-import HeroSection from '../home-sections/HeroSection'
+import Header from '../components/header/Header'
 import FirstSection from '../home-sections/FirstSection'
 import SecondSection from '../home-sections/SecondSection'
 import ThirdSection from '../home-sections/ThirdSection'
@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div>
       <HomeNavbar />
-      <HeroSection />
+     {/* <Header/> */}
       <FirstSection />
       <SecondSection />
       <ThirdSection />

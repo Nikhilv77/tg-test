@@ -13,7 +13,6 @@ const HeaderSection = styled.section`
   height: calc(100vh - 4.5rem);
   width: 100vw;
 `
-
 const I1 = styled(motion.img)`
   position: absolute;
   height: 42rem;
