@@ -10,7 +10,7 @@ const HeaderSection = styled.section`
   position: relative;
   background: rgba(24, 24, 24, 0.5);
   overflow: hidden;
-  min-height: 91vh;
+  min-height: 93vh;
   overflow-y: scroll;
   width: 100vw;
 ` 
@@ -62,7 +62,7 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   @media (max-width:750px) {
-    height: 46.5%;
+    height: 44.5%;
     width: 100%;
     top: 0;
     left: 50%;
@@ -103,7 +103,7 @@ const Title = styled(motion.div)`
     user-select: none;
     @media (max-width: 750px) {
       font-size: 2em;
-      width: 90%;
+      width: 95%;
       text-align: center;
     }
     @media (max-width: 600px) {
@@ -129,6 +129,7 @@ const Title = styled(motion.div)`
     @media (max-width: 750px) {
       font-size: 1.3em;
       text-align: center;
+      width: 98%;
     }
     @media (max-width: 600px) {
       font-size: 1.2em;
