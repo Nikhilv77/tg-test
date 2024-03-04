@@ -13,8 +13,7 @@ background-color: rgba(24,24,24,0.4);
 justify-content: center;
   position: relative;
   overflow: hidden;
-  height: 89vh;
-  margin-top: 11vh;
+  height: 100vh;
   width: 100vw;
   @media (max-width:800px){
     flex-direction: column-reverse;
