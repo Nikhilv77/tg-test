@@ -17,7 +17,7 @@ const Headers = styled(motion.header)`
   position: sticky;
   z-index: 3;
   width: 100vw;
-  height: 5.2rem;
+  height: 4.5rem;
 `
 
 const Logo = styled.a`
