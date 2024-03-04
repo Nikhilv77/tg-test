@@ -11,12 +11,12 @@ import Footer from '../home-sections/FooterSection'
 import { useEffect } from 'react'
 
 const HomePage = () => {
-  // useEffect(() => {
-  //   (async () => {
-  //     const LocomotiveScroll = (await import('locomotive-scroll')).default
-  //     const locomotiveScroll = new LocomotiveScroll()
-  //   })()
-  // }, [])
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default
+      const locomotiveScroll = new LocomotiveScroll()
+    })()
+  }, [])
   return (
     <div>
       <HomeNavbar />

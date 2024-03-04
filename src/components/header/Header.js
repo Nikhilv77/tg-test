@@ -19,7 +19,7 @@ justify-content: center;
 
   @media (max-width:800px){
     flex-direction: column-reverse;
-    height: calc(100vh - 4.5rem);
+    padding: 0;
   }
 
 `
@@ -37,6 +37,7 @@ align-items: center;
   }
 @media (max-width:800px){
     width:100%;
+    height: 60%;
   }
 `
 const I1 = styled(motion.img)`
@@ -101,12 +102,12 @@ z-index: 6;
    align-items: center;
    gap: 2rem;
    @media (max-width:1000px){
-   width: 50%;
+   width: 40%;
   }
 
    @media (max-width:800px){
     width:90%;
-    height: 100%;
+    height: 50%;
     gap: 0.5rem;
     padding-left: 0;
     justify-content: flex-start;
@@ -192,9 +193,9 @@ const Header = () => {
   return (
     <Section>
     <TitleWrapper
-      initial={{ opacity:0}}
-      animate={{ opacity: 1}}
-       transition={{duration:1.5,delay:1,type:'ease'}}
+      // initial={{ opacity:0}}
+      // animate={{ opacity: 1}}
+      //  transition={{duration:1.5,delay:1,type:'ease'}}
     >
       <h1>Discover, Connect & Share Your World on Tags Social.
 </h1>
@@ -203,15 +204,15 @@ const Header = () => {
       </TitleWrapper>
       <ImagesWrapper>
     <I1
-   initial={{ left:'-150%',opacity:0 }}
-   animate={{ opacity: 1, scale: 1,left:'13%',}}
-    transition={{duration:1.7}}
+  //  initial={{ left:'-150%',opacity:0 }}
+  //  animate={{ opacity: 1, scale: 1,left:'13%',}}
+  //   transition={{duration:1.7}}
     src={image1} alt='hero-image'/>
     <I2
-       initial={{ right:'-100%',opacity:0 }}
-       animate={{ opacity: 1, scale: 1,right:'13%'}}
-       transition={{duration:1.5}}
-       exit={{right:'-100%'}}
+      //  initial={{ right:'-100%',opacity:0 }}
+      //  animate={{ opacity: 1, scale: 1,right:'13%'}}
+      //  transition={{duration:1.5}}
+   
     src={image2} alt='hero-image'/>
     </ImagesWrapper>
     <I3
