@@ -14,6 +14,7 @@ justify-content: center;
   position: relative;
   overflow: hidden;
   height: 89vh;
+  margin-top: 11vh;
   width: 100vw;
   @media (max-width:800px){
     flex-direction: column-reverse;

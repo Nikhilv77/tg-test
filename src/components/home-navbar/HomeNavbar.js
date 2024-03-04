@@ -17,9 +17,10 @@ const Headers = styled(motion.header)`
   /* background:linear-gradient(135deg, rgba(43, 43, 42, 0.6), rgba(93, 93, 93, 0.6), rgba(34, 34, 33, 0.6)); */
   backdrop-filter: blur(16px) !important;
   color: white;
-  position: sticky;
+  position: fixed;
   z-index: 99;
   height: 11vh;
+  top: 0;
   width: 100vw;
 `
 const BottomHeader = styled(motion.header)`
