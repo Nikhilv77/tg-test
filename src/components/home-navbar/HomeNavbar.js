@@ -40,20 +40,20 @@ const BottomHeader = styled(motion.header)`
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Center horizontally */
   @media screen and (max-width: 600px) {
-    width: 25rem;
-    height: 5.3rem;
-  }
-  @media screen and (max-width: 472px) {
     width: 24rem;
     height: 5.1rem;
   }
-  @media screen and (max-width: 415px) {
+  @media screen and (max-width: 472px) {
     width: 23rem;
-    height: 4.9rem;
+    height: 5rem;
+  }
+  @media screen and (max-width: 415px) {
+    width: 22rem;
+    height: 4.7rem;
   }
   @media screen and (max-width: 400px) {
-    width: 20.8rem;
-    height: 4.9rem;
+    width: 20rem;
+    height: 4.5rem;
   }
   img {
     height: 100%;

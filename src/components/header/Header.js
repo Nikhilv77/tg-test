@@ -16,10 +16,8 @@ const HeaderSection = styled.section`
 
 const I1 = styled(motion.img)`
   position: absolute;
-
   height: 42rem;
   width: 24rem;
-  /* background-color: pink; */
   object-fit: contain;
   z-index: 4;
   @media (max-width:750px) {
@@ -29,8 +27,6 @@ const I1 = styled(motion.img)`
 `
 const I2 = styled(motion.img)`
   position: absolute;
-
-  /* background-color: green; */
   height: 34rem;
   width: 23rem;
   object-fit: contain;
@@ -79,7 +75,6 @@ const Title = styled(motion.div)`
   /* background-color: green; */
   height: 100%;
   width: 50%;
-  transition: all 1s ease;
   z-index: 5;
   display: flex;
   flex-direction: column;
