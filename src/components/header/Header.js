@@ -34,7 +34,6 @@ align-items: center;
 @media (max-width:800px){
     width:100%;
     height: 50vh;
-
   }
 `
 const I1 = styled(motion.img)`
@@ -192,13 +191,19 @@ const Header = () => {
   return (
     <Section>
     <TitleWrapper
-      initial={{ opacity:0}}
-      animate={{ opacity: 1}}
-       transition={{duration:1.5,delay:1,type:'ease'}}
+   
     >
-      <h1>Discover, Connect & Share Your World on Tags Social.
-</h1>
-<h2>Embark on a journey of discovery, as Tags Social connects you with like-minded individuals at new locations. </h2>
+      <motion.h1
+         initial={{ opacity:0}}
+         animate={{ opacity: 1}}
+          transition={{duration:1.5,delay:1,type:'ease'}}
+      >Discover, Connect & Share Your World on Tags Social.
+</motion.h1>
+<motion.h2
+   initial={{ opacity:0}}
+   animate={{ opacity: 1}}
+    transition={{duration:1.5,delay:1,type:'ease'}}
+>Embark on a journey of discovery, as Tags Social connects you with like-minded individuals at new locations. </motion.h2>
     
       </TitleWrapper>
       <ImagesWrapper>
