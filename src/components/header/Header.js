@@ -10,7 +10,7 @@ const HeaderSection = styled.section`
   position: relative;
   background: rgba(24, 24, 24, 0.5);
   overflow: hidden;
-  height: calc(100vh - 4.5rem);
+  height: calc(100vh - 4.5rem) !important;
   width: 100vw;
   display: grid;
 `
@@ -87,7 +87,7 @@ const Title = styled(motion.div)`
   color: ${(props) => props.theme.text};
   @media (max-width:750px) {
     justify-content: flex-start;
-    height: 40vh;
+    height: 17rem;
     width: 100%;
     bottom: 0;
     left: 50%;
