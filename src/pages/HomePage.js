@@ -22,9 +22,12 @@ const HomePage = () => {
       <HomeNavbar />
       <HeroSection />
       <FirstSection />
-      <SecondSection />
+      <FirstSection />
+      <FirstSection />
+      <FirstSection />
+      {/* <SecondSection />
       <ThirdSection />
-      <FourthSection />
+      <FourthSection /> */}
       <FifthSection />
       <SixthSection />
       <Footer />

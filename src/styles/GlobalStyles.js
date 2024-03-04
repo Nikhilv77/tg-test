@@ -17,6 +17,7 @@ body{
 }
 section {
   border: 1px solid transparent;
+  
 }
 a{
   color: inherit;

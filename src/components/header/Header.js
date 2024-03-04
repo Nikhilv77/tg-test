@@ -10,7 +10,7 @@ import image4 from '../../assets/new-images/homepage-images/section-1-3.png'
 const Section = styled.section`
 display: flex;
 align-items: center;
-background-color: green;
+
 justify-content: center;
   position: relative;
   overflow: hidden;
@@ -19,7 +19,6 @@ justify-content: center;
 
   @media (max-width:800px){
     flex-direction: column-reverse;
-    padding: 0;
   }
 
 `
@@ -193,9 +192,9 @@ const Header = () => {
   return (
     <Section>
     <TitleWrapper
-      // initial={{ opacity:0}}
-      // animate={{ opacity: 1}}
-      //  transition={{duration:1.5,delay:1,type:'ease'}}
+      initial={{ opacity:0}}
+      animate={{ opacity: 1}}
+       transition={{duration:1.5,delay:1,type:'ease'}}
     >
       <h1>Discover, Connect & Share Your World on Tags Social.
 </h1>
