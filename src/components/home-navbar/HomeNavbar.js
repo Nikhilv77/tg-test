@@ -19,7 +19,7 @@ const Headers = styled(motion.header)`
   color: white;
   position: sticky;
   z-index: 99;
-  height: 11vh;
+  height: 4.5rem;
   width: 100vw;
 `
 const BottomHeader = styled(motion.header)`

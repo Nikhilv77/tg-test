@@ -14,11 +14,12 @@ background-color: green;
 justify-content: center;
   position: relative;
   overflow: hidden;
-  height: 89vh;
+  height: calc(100vh - 4.5rem);
   width: 100vw;
 
   @media (max-width:800px){
     flex-direction: column-reverse;
+    height: calc(100vh - 4.5rem);
   }
 
 `
