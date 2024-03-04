@@ -54,7 +54,7 @@ const I4 = styled(motion.img)`
 `
 const ImageContainer = styled.div`
   height: 100%;
-  width: 50%;
+  width: 48%;
   z-index: 3;
   position: absolute;
   right: 0;
@@ -62,21 +62,19 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   @media (max-width:750px) {
-    height: 55.5%;
-    /* background-color: green; */
+    height: 50.5%;
     width: 100%;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    /* background-color: blue; */
   }
 `
 const Title = styled(motion.div)`
   overflow: hidden;
   position: absolute;
-  /* background-color: green; */
   height: 100%;
   width: 50%;
-
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -86,8 +84,9 @@ const Title = styled(motion.div)`
   color: ${(props) => props.theme.text};
   @media (max-width:750px) {
     justify-content: flex-start;
-    height: 40%;
+    height: 50%;
     width: 100%;
+    /* background-color: green; */
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
