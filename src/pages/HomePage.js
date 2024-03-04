@@ -19,7 +19,7 @@ const HomePage = () => {
   }, [])
   return (
     <div>
-      <HomeNavbar />
+      {/* <HomeNavbar /> */}
       <HeroSection />
       <FirstSection />
       <SecondSection />
