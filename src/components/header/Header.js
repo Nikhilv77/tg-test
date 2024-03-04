@@ -6,7 +6,7 @@ import image2 from '../../assets/new-images/homepage-images/section-1-2.png'
 import image3 from '../../assets/new-images/homepage-images/section-1-4.png'
 import image4 from '../../assets/new-images/homepage-images/section-1-3.png'
 
-const HeaderSection = styled.section`
+const HeaderSection = styled.header`
   position: relative;
   background: rgba(24, 24, 24, 0.5);
   overflow: hidden;
