@@ -10,8 +10,7 @@ const HeaderSection = styled.section`
   position: relative;
   background: rgba(24, 24, 24, 0.5);
   overflow: hidden;
-  height: calc(100vh - 4.5rem);
-  height: calc(100svh - 4.5rem);
+  min-height: 91vh;
   overflow-y: scroll;
   width: 100vw;
 `
@@ -64,6 +63,7 @@ const ImageContainer = styled.div`
   align-items: center;
   @media (max-width:750px) {
     height: 55.5%;
+    /* background-color: green; */
     width: 100%;
     top: 0;
     left: 50%;
