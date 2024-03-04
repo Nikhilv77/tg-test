@@ -107,7 +107,7 @@ z-index: 6;
 
    @media (max-width:800px){
     width:90%;
-    height: 50%;
+    height: 40%;
     gap: 0.5rem;
     padding-left: 0;
     justify-content: flex-start;
