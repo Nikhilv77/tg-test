@@ -117,7 +117,6 @@ const ImageContainer = styled.div`
 position:relative;
 height: 35rem;
 width: 38rem;
-
 filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
 
 z-index: 3;
@@ -155,6 +154,7 @@ right:0;
 left: 0;
 height: 100%;
 width: 100%;
+
 `
 
 const I6 = styled(motion.img)`
@@ -198,8 +198,8 @@ const Header = () => {
 </motion.h1>
 <ImageContainer>
     <I1
-    initial = {{left:'-150%'}}
-    whileInView = {{left:0}}
+    initial = {{scale:0.2}}
+    whileInView = {{scale:1}}
     transition={{duration:1}}
     src={image1} alt='first-image'/>
     </ImageContainer>
