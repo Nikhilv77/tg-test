@@ -97,7 +97,7 @@ const Title = styled(motion.div)`
     font-family: Hauora, monospace;
     text-align: center;
     line-height: 1.3;
-    text-shadow: 1px 1px 1px ${(props) => props.theme.body};
+
     font-size: 3.5em;
     width: 90%;
     user-select: none;
@@ -126,6 +126,11 @@ const Title = styled(motion.div)`
     color: #b0b0b0;
 
     width: 90%;
+    @media (max-width: 1024px) and (min-height:900px) {
+      font-size: 1.3em;
+      text-align: center;
+      width: 90% !important;
+    }
     @media (max-width: 750px) {
       font-size: 1.3em;
       text-align: center;
