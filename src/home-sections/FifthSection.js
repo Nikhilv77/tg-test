@@ -8,7 +8,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Marquee from 'react-fast-marquee'
 const Section = styled.section`
   width: 100vw;
-  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   z-index: 1;
   background-color: #181818;
@@ -342,7 +342,7 @@ const FifthSection = () => {
   }, [])
 
   return (
-    <>
+
       <Section ref={sectionRef}>
         <Blur1 />
         <Blur2 />
@@ -360,18 +360,7 @@ const FifthSection = () => {
         </TextContainer>
         <I1 ref={ImageRef1} src={Image1} />
       </Section>
-      <div style={{ backgroundColor: '#181818' }}>
-        <Marquee speed={250}>
-          <MarqueeH1
-            whileHover={{
-              textShadow: '0 0 20px rgba(255, 255, 255, 0.8)',
-            }}
-          >
-            Give Yourself A Good Time. Get TagSocial Now.
-          </MarqueeH1>
-        </Marquee>
-      </div>
-    </>
+   
   )
 }
 

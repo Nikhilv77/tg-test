@@ -1,392 +1,232 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import gsap from 'gsap'
 import React from 'react'
-import { useLayoutEffect } from 'react'
-import { useRef } from 'react'
 import styled from 'styled-components'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-import Image1 from '../assets/images/homepage-images/thirdsection-1.png'
-import Image2 from '../assets/images/homepage-images/thirdsection-2.png'
-import Marquee from 'react-fast-marquee'
-const Section = styled.section`
+import { motion } from 'framer-motion'
+import image1 from '../assets/new-images/homepage-images/section-3-1.png'
+import image2 from '../assets/new-images/homepage-images/section-3-2.png'
+import image3 from '../assets/new-images/homepage-images/section-1-4.png'
+import image4 from '../assets/new-images/homepage-images/section-1-3.png'
+
+const HeaderSection = styled.header`
+  position: relative;
+  background: rgba(24, 24, 24, 0.5);
+  overflow: hidden;
+  min-height: 100vh;
+  overflow-y: scroll;
   width: 100vw;
- min-height: 100vh;
-  position: relative;
-  z-index: 1;
-  background-color: #181818;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-const Blur1 = styled.div`
-  height: 18rem;
-  width: 14rem;
+` 
+const I1 = styled(motion.img)`
   position: absolute;
-  left: -5%;
-  top: 20%;
-  border-radius: 70%;
-  background-color: grey;
-  filter: blur(72px);
-  z-index: -999;
-  opacity: 0.5;
-  @media screen and (max-width: 1120px) {
-    height: 9rem;
-    width: 7rem;
-  }
-  @media screen and (max-height: 600px) {
-    height: 6rem;
-    width: 4rem;
+  height: 43rem;
+  width: 34rem;
+  object-fit: contain;
+  z-index: 4;
+  @media (max-width:750px) {
+    height: 23rem;
+    width: 15rem;
   }
 `
-const Blur2 = styled.div`
-  height: 26rem;
-  width: 18rem;
+const I2 = styled(motion.img)`
   position: absolute;
-  right: -5%;
-  bottom: 0;
-  border-radius: 60%;
-  background-color: grey;
-  filter: blur(72px);
-  z-index: -999;
-  opacity: 0.5;
-  @media screen and (max-width: 1120px) {
-    height: 13rem;
-    width: 9rem;
-  }
-  @media screen and (max-height: 600px) {
-    height: 8rem;
-    width: 5rem;
+  height: 21rem;
+  width: 35rem;
+  object-fit: contain;
+  z-index: 3;
+  @media (max-width:750px) {
+    height: 20rem;
+    width: 18rem;
   }
 `
-const Blur3 = styled.div`
-  height: 13rem;
-  width: 9rem;
+const I3 = styled(motion.img)`
+  height: 80vh;
+  width: 30vw;
   position: absolute;
-  left: -5%;
+  right: 0;
   top: 0;
-  border-radius: 60%;
-  background-color: grey;
-  filter: blur(72px);
-  z-index: -999;
-  opacity: 0.5;
-  @media screen and (max-width: 1120px) {
-    height: 6rem;
-    width: 4rem;
-  }
-  @media screen and (max-height: 600px) {
-    height: 3rem;
-    width: 3rem;
-  }
-`
-const I1 = styled.img`
-  position: absolute;
-  top: -150%; /* initial position */
-  width: 70%;
-  height: 86vh;
-  object-fit: contain;
-  object-position: bottom;
   z-index: 1;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
 `
-
-const I2 = styled.img`
+const I4 = styled(motion.img)`
+  height: 84vh;
+  width: 20vw;
   position: absolute;
-  right: -100%;
-  width: 70%;
-  height: 86vh;
-  object-fit: contain;
-  object-position: bottom;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
-  z-index: 2;
+  left: 0;
+  bottom: 10%;
+  z-index: 1;
 `
-
-const TitleContainer = styled.div`
-  width: 50%;
+const ImageContainer = styled.div`
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+  width: 48%;
+  z-index: 3;
   position: absolute;
-  top: 12%;
-  left: 4%;
-
-  @media screen and (max-width: 1120px) {
-    top: 10%;
-    left: 25%;
-    right: 25%;
-  }
-  @media screen and (max-width: 620px) {
-    top: 15%;
-  }
-`
-const TextContainer = styled.div`
-  width: 40%;
-  height: 100%;
+  right: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  position: absolute;
-  gap: 1.4rem;
-  top: 14%;
-  left: 8%;
-  /* text-align: justify; */
-
-  @media screen and (max-width: 1120px) {
-    top: 30%;
-  }
-  @media screen and (max-height: 600px) {
-    top: 20%;
-  }
-  @media screen and (max-width: 400px) {
-    top: 17%;
-    width: 50%;
+  align-items: center;
+  @media (max-width:750px) {
+    height: 49.5%;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: blue; */
   }
 `
-
-const Title = styled.h1`
-  font-size: calc(
-    3.3em + 1vw
-  ); /* Adjust the font size based on viewport width */
-  z-index: 101;
-  text-transform: capitalize;
-  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
-    1px 1px 0px #333, 2px 2px 0px #333, 3px 3px 0px #333, 3px 3px 0px #333,
-    4px 4px 0px #333, 4px 4px 0px #333, 5px 5px 0px #333;
-  color: #fff;
-  font-family: Hauora, monospace !important;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
-
-  @media screen and (max-width: 1120px) {
-    font-size: calc(2.6em + 1vw); /* Adjust font size for smaller screens */
-  }
-  @media screen and (max-width: 625px) {
-    font-size: calc(
-      2.2em + 1vw
-    ); /* Adjust font size for even smaller screens */
-  }
-`
-const Text = styled.p`
-  font-family: Hauora, monospace !important;
-  font-size: calc(1.2em + 1vw);
-  line-height: 1.8;
-  z-index: 101;
-  text-transform: capitalize;
-  text-transform: 0 0 4px #fff;
-
-  color: #b0b0b0;
-  font-family: 'Times Roman';
-  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
-    1px 1px 0px #333, 1px 1px 0px #333, 2px 2px 0px #333, 2px 2px 0px #333,
-    2px 2px 0px #333, 1px 1px 0px #333, 2px 2px 0px #333;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
-
-  @media screen and (max-width: 1120px) {
-    font-size: calc(1.2em + 1vw);
-  }
-  @media screen and (max-width: 625px) {
-    font-size: calc(1em + 1vw);
-  }
-`
-
-const Button = styled.button`
-  font-family: Hauora, monospace;
-  font-weight: 600;
-  padding: 0.8rem 2rem 0.8rem 2rem;
-  font-size: calc(0.7em + 1vw);
-  border: none;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 126, 242, 1),
-    rgba(0, 58, 108, 1)
-  );
-  color: #fff;
-  border-radius: 0.3rem;
-  position: relative;
+const Title = styled(motion.div)`
   overflow: hidden;
-  transition: color 0.3s ease;
-  align-self: flex-start;
-  z-index: 99;
-
-  &:hover {
-    cursor: pointer;
-    background-color: transparent;
-    border: 1px solid #007fff;
-    color: #fff;
-    box-shadow: 0 0 20px 10px rgba(0, 115, 207, 0.2);
-  }
-
-  @media screen and (max-width: 1120px) {
-    font-size: calc(0.9em + 1vw);
-  }
-
-  @media screen and (max-width: 625px) {
-    font-size: calc(0.7em + 1vw);
-    padding: 0.8rem 2rem 0.8rem 2rem;
-  }
-`
-
-const MarqueeH1 = styled.h1`
-  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
-    1px 1px 0px #333, 1px 1px 0px #333, 2px 2px 0px #333, 2px 2px 0px #333,
-    3px 3px 0px #333, 3px 3px 0px #333, 4px 4px 0px #333 !important;
-  font-family: Hauora, monospace;
-  color: #fff;
-  font-size: 4.3rem;
-  background-color: #383838;
-
-  @media only screen and (max-width: 700px) {
-    font-size: 3rem;
-  }
-`
-
-const SecondSection = () => {
-  console.log('logged second')
-
-  gsap.registerPlugin(ScrollTrigger)
-  const sectionRef = useRef(null)
-
-  const ImageRef1 = useRef(null)
-  const ImageRef2 = useRef(null)
-  const titleRef = useRef(null)
-  const textRef = useRef(null)
-
-  let elements = gsap.utils.selector(titleRef)
-  const subElements = gsap.utils.selector(textRef)
-
-  useLayoutEffect(() => {
-    const Elem = sectionRef.current
-    const ImageElem1 = ImageRef1.current
-    const ImageElem2 = ImageRef2.current
-
-    gsap.to(Elem, {
-      scrollTrigger: {
-        trigger: Elem,
-        start: 'top top',
-        end: `bottom+=500 bottom`,
-        scrub: 1,
-        pin: true,
-        pinSpacing: true,
-      },
-    })
-
-    let t2 = gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: Elem,
-          start: 'top top',
-          end: `bottom+=700 bottom`,
-          scrub: 1,
-        },
-      })
-      .to(ImageElem1, { top: '8%', right: '10%', scale: 1,transitionDuration:0.6 }, 'key1')
-      .to(ImageElem2, { top: '8%', right: '-5%', scale: 1,transitionDuration:0.6  }, 'key1')
-    elements('h1').forEach((el) =>
-      t2.fromTo(
-        el,
-        {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top top',
-            end: `bottom bottom`,
-            scrub: 1,
-          },
-          x: 100,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-        },
-        'key3'
-      )
-    )
-    subElements('p').forEach((el) =>
-      t2.fromTo(
-        el,
-        {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top top',
-            end: `bottom bottom`,
-            scrub: 1,
-          },
-          x: 100,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-        },
-        'key3'
-      )
-    )
-    subElements('button').forEach((el) =>
-      t2.fromTo(
-        el,
-        {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top top',
-            end: `bottom bottom`,
-            scrub: 1,
-          },
-          x: 100,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-        },
-        'key3'
-      )
-    )
-    return () => {
-      if (t2) t2.kill()
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: ${(props) => props.theme.text};
+  @media ( (max-width : 1025px) and (min-height: 900px)) {
+    justify-content: flex-start;
+    height: 40%;
+    width: 70%;
+    /* background-color: green; */
+    bottom: 0;
+    left: 49%;
+    transform: translateX(-50%);
+    gap: 1rem;
     }
-  }, [])
+  @media (max-width:750px) {
+    justify-content: flex-start;
+    height: 50%;
+    width: 90%;
+    /* background-color: green; */
+    bottom: 0;
+    left: 49%;
+    transform: translateX(-50%);
+    gap: 1rem;
+  }
 
+  h1 {
+    font-family: Hauora, monospace;
+    text-align: center;
+    line-height: 1.3;
+
+    font-size: 3.5em;
+    width: 90%;
+    user-select: none;
+    @media (max-width: 750px) {
+      font-size: 2em;
+      width: 95%;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      font-size: 1.9em;
+    }
+    @media (max-width: 500px) {
+      font-size: 1.8em;
+    }
+    @media (max-width: 400px) {
+      font-size: 1.7em;
+    }
+  }
+
+  h2 {
+    font-family: Hauora, monospace;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.7em;
+    text-transform: capitalize;
+    color: #b0b0b0;
+
+    width: 90%;
+    @media (max-width: 1024px) and (min-height:900px) {
+      font-size: 1.3em;
+      text-align: center;
+      width: 90% !important;
+    }
+    @media (max-width: 750px) {
+      font-size: 1.3em;
+      text-align: center;
+      width: 98%;
+    }
+    @media (max-width: 600px) {
+      font-size: 1.2em;
+    }
+    @media (max-width: 500px) {
+      font-size: 1.1em;
+    }
+    @media (max-width: 400px) {
+      font-size: 1em;
+    }
+  }
+`
+
+const Header = () => {
   return (
-    <>
-      <Section ref={sectionRef}>
-        <Blur1 />
-        <Blur2 />
-        <Blur3 />
-        <TitleContainer ref={titleRef}>
-          <Title>Transforming Social Connections</Title>
-        </TitleContainer>
-        <TextContainer ref={textRef}>
-          <Text>
-            Connect with like-minded individuals and begin building meaningful
-            relationships. Get started now!
-          </Text>
-          <Button>GET STARTED</Button>
-        </TextContainer>
-        <I1 ref={ImageRef1} src={Image1} />
-        <I2 ref={ImageRef2} src={Image2} />
-      </Section>
-
-      <div
-        style={{
-          backgroundColor: '#181818',
-          borderRadius: '10px',
-          padding: '10px',
+    <HeaderSection>
+      <ImageContainer>
+        <I1
+          initial={{
+         bottom:'-100%',scale:0.3
+          }}
+          whileInView={{
+            opacity: 1,bottom:'5%',scale:1
+          }}
+          transition={{
+        
+            duration: 1.4,
+          }}
+          src={image1}
+        />
+        <I2
+          initial={{
+         right:'-30%',scale:0.3
+          }}
+          whileInView={{
+            opacity: 1,right:'15%',scale:1
+          }}
+          transition={{
+        
+            duration: 1.4,
+          }}
+          src={image2}
+        />
+      </ImageContainer>
+      <I3
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image3}
+        alt="background-blur"
+      />
+      <I4
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image4}
+        alt="background-blur"
+      />
+      <Title
+        initial={{
+          opacity: 0,
+        }}
+        whileInView={{
+          opacity: 1,
+        }}
+        transition={{
+          delay: 2,
+          duration: 1.4,
+          
         }}
       >
-        <Marquee speed={250} direction="right">
-          <MarqueeH1
-            whileHover={{
-              textShadow: '0 0 20px rgba(255, 255, 255, 0.8)',
-            }}
-          >
-            Enjoy Awesome Features. Get To Know Amazing People.
-          </MarqueeH1>
-        </Marquee>
-      </div>
-    </>
+        <motion.h1>
+          Discover, Connect & Share Your World on Tags Social
+        </motion.h1>
+
+        <motion.h2>
+          Embark on a journey of discovery, as Tags Social connects you with
+          like-minded individuals at new locations
+        </motion.h2>
+      </Title>
+    </HeaderSection>
   )
 }
 
-export default SecondSection
+export default Header
