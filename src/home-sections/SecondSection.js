@@ -1,203 +1,155 @@
-import React from 'react'
+import {motion} from 'framer-motion'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 import image1 from '../assets/new-images/homepage-images/section-3-1.png'
 
-import image3 from '../assets/new-images/homepage-images/section-1-4.png'
-import image4 from '../assets/new-images/homepage-images/section-1-3.png'
-
-const HeaderSection = styled.header`
-  position: relative;
-  background: rgba(24, 24, 24, 0.5);
-  overflow: hidden;
-  min-height: 93vh;
-  overflow-y: scroll;
+const Section = styled.section`
   width: 100vw;
-` 
-const I1 = styled(motion.img)`
-  position: absolute;
-  height: 50rem;
-  width: 49rem;
-  object-fit: contain;
-  z-index: 4;
-  @media (max-width: 1025px) and (min-height:900px) {
-    height: 41rem;
-  width: 32rem;
-    }
-  @media (max-width:750px) {
-    height: 26rem;
-    width: 23rem;
-  }
-`
-
-const I3 = styled(motion.img)`
-  height: 80vh;
-  width: 30vw;
-  position: absolute;
-  right: 0;
-  top: 0;
+  min-height: 100vh;
+  position: relative;
   z-index: 1;
-`
-const I4 = styled(motion.img)`
-  height: 84vh;
-  width: 20vw;
-  position: absolute;
-  left: 0;
-  bottom: 10%;
-  z-index: 1;
-`
-const ImageContainer = styled.div`
-  height: 100%;
-  width: 53%;
-  z-index: 3;
-  position: absolute;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  @media (max-width:750px) {
-    height: 44.5%;
-    width: 100%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-  }
-`
-const Title = styled(motion.div)`
+  background-color: rgba(24,24,24,0.5);
   overflow: hidden;
+`
+const Wrapper = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+place-items: center;
+height: 100%;
+width: 100%;
+/* background-color: pink; */
+@media ( (max-width : 1025px) and (min-height: 900px)) {
+  grid-template-columns: 1fr;
+    }
+@media (max-width:800px){
+  grid-template-columns:1fr;
+}
+.image-wrapper{
+  position: relative;
+  width: 100%;
+  height: 97vh;
+  /* background-color: green; */
+  @media ( (max-width : 1025px) and (min-height: 900px)) {
+    height: 60vh;
+   width: 96%;
+    }
+  @media (max-width:800px){
+   height: 55vh;
+   width: 96%;
+}
+}
+`
+const I1 = styled(motion.img)`
+  width: 100%;
+  height: 97%;
   position: absolute;
-  height: 100%;
-  width: 50%;
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
   z-index: 5;
+  user-select: none;
+
+`
+
+const TextContainer = styled(motion.div)`
+  width: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 2rem;
-  color: ${(props) => props.theme.text};
-  @media (max-width:750px) {
-    justify-content: flex-start;
-    height: 55%;
-    width: 100%;
-    /* background-color: green; */
-    bottom: 0;
-    left: 49%;
-    transform: translateX(-50%);
-    gap: 1rem;
+  justify-content: center;
+  gap: 1rem;
+  @media ( (max-width : 1025px) and (min-height: 900px)) {
+    padding: 1rem;
+    height: 40vh;
+   justify-content: flex-start;
+   width: 60%;
+    }
+  @media (max-width:800px){
+   height: 45vh;
+   justify-content: flex-start;
+   width: 88%;
+}
+
+  /* @media (max-width:800px){
+    justify-content: space-between;
+    width: 75%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  } */
+`
+
+const Title = styled.h1`
+  font-size: calc(
+    3.1em + 1vw
+  ); /* Adjust the font size based on viewport width */
+  z-index: 5;
+  text-transform: capitalize;
+ 
+  font-family: Hauora, monospace !important;
+
+
+  @media screen and (max-width: 1120px) {
+    /* Adjust font size for smaller screens */
+    font-size: calc(2.4em + 1vw);
   }
-
-  h1 {
-    font-family: Hauora, monospace;
-    text-align: center;
-    line-height: 1.3;
-
-    font-size: 3.5em;
-    width: 90%;
-    user-select: none;
-    @media (max-width: 750px) {
-      font-size: 2em;
-      width: 95%;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      font-size: 1.9em;
-    }
-    @media (max-width: 500px) {
-      font-size: 1.8em;
-    }
-    @media (max-width: 400px) {
-      font-size: 1.7em;
-    }
+  @media screen and (max-width: 625px) {
+    font-size: calc(
+      1.8em + 1vw
+    ); /* Adjust font size for even smaller screens */
   }
+`
+const Text = styled.p`
+  /* text-align: justify; */
+  font-family: Hauora, monospace !important;
+  font-size: calc(1.1em + 1vw);
+  line-height: 1.8;
+  z-index: 5;
+  text-transform: capitalize;
+  text-transform: 0 0 4px #fff;
 
-  h2 {
-    font-family: Hauora, monospace;
-    text-align: center;
-    font-weight: 400;
-    font-size: 1.7em;
-    text-transform: capitalize;
-    color: #b0b0b0;
+  color: #b0b0b0;
+  font-family: Hauora, monospace !important;
 
-    width: 90%;
-    @media (max-width: 1024px) and (min-height:900px) {
-      font-size: 1.3em;
-      text-align: center;
-      width: 90% !important;
-    }
-    @media (max-width: 750px) {
-      font-size: 1.3em;
-      text-align: center;
-      width: 98%;
-    }
-    @media (max-width: 600px) {
-      font-size: 1.2em;
-    }
-    @media (max-width: 500px) {
-      font-size: 1.1em;
-    }
-    @media (max-width: 400px) {
-      font-size: 1em;
-    }
+  @media screen and (max-width: 1120px) {
+    font-size: calc(1.2em + 1vw);
+  }
+  @media screen and (max-width: 625px) {
+    font-size: calc(1.1em + 1vw);
   }
 `
 
-const Header = () => {
-  return (
-    <HeaderSection>
-      <ImageContainer>
-        <I1
-          initial={{
-         left:'-60%',scale:0.3
-          }}
-          whileInView={{
-            opacity: 1,left:'15%',scale:1
-          }}
-          transition={{
-            duration: 1.4,
-          }}
-          src={image1}
-        />
-       
-      </ImageContainer>
-      <I3
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
-        src={image3}
-        alt="background-blur"
-      />
-      <I4
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
-        src={image4}
-        alt="background-blur"
-      />
-      <Title
-        initial={{
-          opacity: 0,
-        }}
-        whileInView={{
-          opacity: 1,
-        }}
-        transition={{
-          delay: 2,
-          duration: 1.4,
-          
-        }}
-      >
-        <motion.h1>
-        Elevate Your Social Experience
-        </motion.h1>
 
-        <motion.h2>
-        TagSocial is not just an app; it's a transformative social experience. Imagine leaving your mark on the world by connecting with people and places around you
-        </motion.h2>
-      </Title>
-    </HeaderSection>
+
+const FourthSection = () => {
+  
+  
+
+  return (
+  
+      <Section >
+        <Wrapper>
+          <div className='image-wrapper'>
+        <I1 src={image1}
+        initial = {{left:'-90%'}}
+        whileInView={{left:0}}
+        transition={{duration:1}}
+        />
+        </div>
+        <TextContainer
+           initial = {{opacity:0}}
+           whileInView={{opacity:1}}
+           transition={{duration:1,delay:1}}
+        >
+          <Title>Elevate Your Social Experience</Title>
+          <Text>
+          It's a transformative social experience. Imagine leaving your mark on the world by connecting with people around you
+          </Text>
+        </TextContainer>
+        </Wrapper>
+      </Section>
+     
   )
 }
 
-export default Header
+export default FourthSection
