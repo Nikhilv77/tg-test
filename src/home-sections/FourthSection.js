@@ -80,29 +80,41 @@ const TextContainer = styled(motion.div)`
 `
 
 const Title = styled.h1`
-  font-size: calc(
-    3.1em + 1vw
-  ); /* Adjust the font size based on viewport width */
+  font-size: 3.4rem;/* Adjust the font size based on viewport width */
   z-index: 5;
   text-transform: capitalize;
  
   font-family: Hauora, monospace !important;
 
 
-  @media screen and (max-width: 1120px) {
-    /* Adjust font size for smaller screens */
-    font-size: calc(2.4em + 1vw);
+  @media (max-width: 1200px) {
+    font-size: 2.4em;
   }
-  @media screen and (max-width: 625px) {
-    font-size: calc(
-      1.8em + 1vw
-    ); /* Adjust font size for even smaller screens */
+
+  @media (max-width: 1000px) {
+    font-size: 2.3em;
   }
+  @media (max-width: 750px) {
+    font-size: 2.2em;
+    text-align: center;
+    
+  }
+  @media (max-width: 600px) {
+    font-size: 2em;
+
+  }
+  @media (max-width: 500px) {
+    font-size: 1.8em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.6em;
+  } /* Adjust font size for even smaller screens */
+  
 `
 const Text = styled.p`
   /* text-align: justify; */
   font-family: Hauora, monospace !important;
-  font-size: calc(1.1em + 1vw);
+  font-size: 1.6rem;
   line-height: 1.8;
   z-index: 5;
   text-transform: capitalize;
@@ -110,12 +122,33 @@ const Text = styled.p`
 
   color: #b0b0b0;
   font-family: Hauora, monospace !important;
-
-  @media screen and (max-width: 1120px) {
-    font-size: calc(1.2em + 1vw);
+  @media ( (max-width : 1024px) and (min-height: 900px)) {
+   line-height: 1.5;
+   width: 70% !important;
+   font-size: 1.6em !important;
   }
-  @media screen and (max-width: 625px) {
-    font-size: calc(1.1em + 1vw);
+
+  @media (max-width: 1200px) {
+    font-size: 1.6em;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 1.4em;
+  }
+  @media (max-width: 750px) {
+    font-size: 1.3em;
+  text-align: center;
+    
+  }
+  @media (max-width: 600px) {
+    font-size: 1.1em;
+
+  }
+  @media (max-width: 500px) {
+    font-size: 1em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1em;
   }
 `
 

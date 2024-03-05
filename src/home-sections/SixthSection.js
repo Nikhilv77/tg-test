@@ -1,22 +1,20 @@
-import gsap from 'gsap'
-import React, { useRef } from 'react'
-import { useLayoutEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Image1 from '../assets/images/homepage-images/frame22.png'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 import Image2 from '../assets/images/homepage-images/sun-frame.png'
+import {motion} from 'framer-motion'
 const Section = styled.section`
   width: 100vw;
-  min-height: 100svh;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background-color: #181818;
+  background-color: rgba(24,24,24,0.5);
   display: flex;
   justify-content: center;
   align-items: center;
 `
-const I1 = styled.img`
+const I1 = styled(motion.img)`
   position: absolute;
   user-select: none;
   top: 0;
@@ -28,20 +26,23 @@ const I1 = styled.img`
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
   z-index: 2;
 `
-const I2 = styled.img`
+const I2 = styled(motion.img)`
   height: 70vh;
   width: 80%;
   position: absolute;
-  bottom: -80%;
   user-select: none;
   left: 2%;
   object-fit: contain;
   object-position: bottom;
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
   z-index: 3;
+  @media (max-width:600px){
+    width: 50%;
+    left: 10%;
+  }
 `
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
   font-size: 4.6em;
   z-index: 5;
   text-transform: capitalize;
@@ -53,6 +54,10 @@ const Title = styled.h1`
   color: #fff;
   font-family: Hauora, monospace;
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
+    1px 1px 0px #333, 2px 2px 0px #333, 3px 3px 0px #333, 3px 3px 0px #333,
+    4px 4px 0px #333, 4px 4px 0px #333, 5px 5px 0px #333;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
 
   @media screen and (max-width: 70em) {
     font-size: 3em;
@@ -61,7 +66,7 @@ const Title = styled.h1`
     font-size: 2em;
   }
 `
-const Cta = styled.h1`
+const Cta = styled(motion.h1)`
   font-size: 3.3em;
   z-index: 6;
   text-transform: capitalize;
@@ -84,66 +89,31 @@ const Cta = styled.h1`
 `
 
 const SixthSection = () => {
-  gsap.registerPlugin(ScrollTrigger)
-  const sectionRef = useRef(null)
-  const imageRef = useRef(null)
-  const Text1Ref = useRef(null)
-  const frameRef = useRef(null)
-  const ctaRef = useRef(null)
-
-  // Reference for the second text
-
-  useLayoutEffect(() => {
-    const Elem = sectionRef.current
-    const Text1Elem = Text1Ref.current
-    const imageElem = imageRef.current
-    const frameElem = frameRef.current
-    const ctaElem = ctaRef.current
-
-    gsap.to(Elem, {
-      scrollTrigger: {
-        trigger: Elem,
-        start: '5% top',
-        end: `bottom top`,
-        scrub: 1,
-        pin: true,
-        pinSpacing: true,
-      },
-    })
-
-    let t1 = gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: Elem,
-          start: '5% top',
-          end: `bottom top`,
-          scrub: 1,
-        },
-      })
-      .to(Text1Elem, { top: '-45%', scale: 1,transitionDuration:0.3 })
-      .to(imageElem, { scale: 0.3, rotation: 15, bottom: '5%',transitionDuration:0.1 }, 'key1')
-      .to(frameElem, { bottom: '4%', scale: 1, rotation: -20,transitionDuration:0.6 }, 'key1')
-      .to(ctaElem, { top: '50%', right: '20%', scale: 1, rotation: 15,transitionDuration:0.2 })
-
-    return () => {
-      if (t1) t1.kill()
-    }
-  }, [])
+ 
+ 
 
   return (
-    <Section ref={sectionRef}>
-      <I1 ref={imageRef} src={Image1} />
+    <Section>
+      <I1
+      initial = {{scale:1}}
+      whileInView = {{scale:0.3,rotate:21}}
+      transition = {{duration:1,delay:1}}
+      src={Image1}/>
       <Title
-        ref={Text1Ref}
-        style={{ top: '50%', position: 'absolute', textAlign: 'center' }}
+       initial = {{top:"50%"}}
+       whileInView={{top:'40%',scale:0.7,rotate:20}}
+       transition={{duration:1.3,delay:1}}
+        style={{ top: '50%', position: 'absolute', textAlign: 'center',opacity:0.6 }}
       >
         TagSocial brings innovative <br /> features and functionalities <br />{' '}
         to the social media landscape
       </Title>
-      <I2 ref={frameRef} src={Image2} />
-      <Cta ref={ctaRef} style={{ top: '-50%', position: 'absolute' }}>
-        Your Gateway to Timeless Memories
-      </Cta>
+      <I2 
+      initial = {{top:"-40%",opacity:0}}
+      whileInView={{top:'20%',rotate:-21,opacity:1}}
+      transition={{duration:1,delay:1.3}}
+      src={Image2} />
+    
     </Section>
   )
 }
