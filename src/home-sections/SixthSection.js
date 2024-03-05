@@ -105,7 +105,7 @@ const SixthSection = () => {
        transition={{duration:1.3,delay:1}}
         style={{ top: '50%', position: 'absolute', textAlign: 'center',opacity:0.6 }}
       >
-        TagSocial brings innovative <br /> features and functionalities <br />{' '}
+        TagSocial brings innovative<br />features and functionalities <br />{' '}
         to the social media landscape
       </Title>
       <I2 

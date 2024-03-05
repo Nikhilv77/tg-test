@@ -1,367 +1,188 @@
-import gsap from 'gsap'
-import React from 'react'
-import { useLayoutEffect } from 'react'
-import { useRef } from 'react'
+import {motion} from 'framer-motion'
 import styled from 'styled-components'
-import Image1 from '../assets/images/homepage-images/hero-image.png'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-import Marquee from 'react-fast-marquee'
+import image1 from '../assets/new-images/homepage-images/section-6-1.png'
+
 const Section = styled.section`
   width: 100vw;
-  min-height: 100svh;
+  min-height: 100vh;
   position: relative;
   z-index: 1;
-  background-color: #181818;
+  background-color: rgba(24,24,24,0.5);
   overflow: hidden;
 `
-const Blur1 = styled.div`
-  height: 18rem;
-  width: 14rem;
-  position: absolute;
-  left: -5%;
-  top: 10%;
-  border-radius: 70%;
-  background-color: grey;
-  filter: blur(72px);
-  z-index: -999;
-  opacity: 0.5;
-  @media screen and (max-width: 1120px) {
-    height: 9rem;
-    width: 7rem;
-  }
-  @media screen and (max-height: 600px) {
-    height: 6rem;
-    width: 4rem;
-  }
+const Wrapper = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+place-items: center;
+height: 100%;
+width: 100%;
+/* background-color: pink; */
+@media ( (max-width : 1025px) and (min-height: 900px)) {
+  grid-template-columns: 1fr;
+    }
+@media (max-width:800px){
+  grid-template-columns:1fr;
+}
+.image-wrapper{
+  position: relative;
+  width: 100%;
+  height: 97vh;
+  /* background-color: green; */
+  @media ( (max-width : 1025px) and (min-height: 900px)) {
+    height: 60vh;
+   width: 96%;
+    }
+  @media (max-width:800px){
+   height: 60vh;
+   width: 96%;
+}
+}
 `
-const Blur2 = styled.div`
-  height: 26rem;
-  width: 18rem;
+const I1 = styled(motion.img)`
+  width: 100%;
+  height: 97%;
   position: absolute;
-  right: -5%;
-  top: 0;
-  border-radius: 60%;
-  background-color: grey;
-  filter: blur(72px);
-  z-index: -999;
-  opacity: 0.5;
-  @media screen and (max-width: 1120px) {
-    height: 13rem;
-    width: 9rem;
-  }
-  @media screen and (max-height: 600px) {
-    height: 8rem;
-    width: 5rem;
-  }
-`
-const Blur3 = styled.div`
-  height: 13rem;
-  width: 9rem;
-  position: absolute;
-  left: -5%;
-  bottom: 0;
-  border-radius: 60%;
-  background-color: grey;
-  filter: blur(72px);
-  z-index: -999;
-  opacity: 0.5;
-  @media screen and (max-width: 1120px) {
-    height: 6rem;
-    width: 4rem;
-  }
-  @media screen and (max-height: 600px) {
-    height: 3rem;
-    width: 3rem;
-  }
-`
-const I1 = styled.img`
-  position: absolute;
-  bottom: -100%;
-  right: -100%;
-  width: 81%;
-  height: 81vh;
   object-fit: contain;
-
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
   z-index: 5;
   user-select: none;
+
 `
 
-const TitleContainer = styled.div`
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  position: absolute;
-  top: 12%;
-  left: 4%;
-
-  @media screen and (max-width: 1120px) {
-    top: 10%;
-    left: 25%;
-    right: 25%;
-  }
-  @media screen and (max-width: 620px) {
-    top: 15%;
-  }
-  @media screen and (max-width: 390px) {
-    width: 65%;
-  }
-`
-const TextContainer = styled.div`
-  width: 40%;
+const TextContainer = styled(motion.div)`
+  width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  gap: 1.4rem;
-  top: 14%;
-  left: 8%;
-  /* text-align: justify; */
+  gap: 1rem;
+  @media ( (max-width : 1025px) and (min-height: 900px)) {
+    padding: 1rem;
+    height: 40vh;
+   justify-content: center;
+   width: 60%;
+    }
+  @media (max-width:800px){
+   height: 40vh;
+   justify-content: center;
+   width: 83%;
+}
 
-  @media screen and (max-width: 1120px) {
-    top: 30%;
-    width: 50%;
-  }
-  @media screen and (max-height: 600px) {
-    top: 20%;
-  }
-  @media screen and (max-width: 400px) {
-    top: 17%;
-    width: 50%;
-  }
+  /* @media (max-width:800px){
+    justify-content: space-between;
+    width: 75%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  } */
 `
 
 const Title = styled.h1`
-  font-size: calc(
-    3.1em + 1vw
-  ); /* Adjust the font size based on viewport width */
-  z-index: 101;
+  font-size: 3.4rem;/* Adjust the font size based on viewport width */
+  z-index: 5;
   text-transform: capitalize;
-  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
-    1px 1px 0px #333, 2px 2px 0px #333, 3px 3px 0px #333, 3px 3px 0px #333,
-    4px 4px 0px #333, 4px 4px 0px #333, 5px 5px 0px #333;
-  color: #fff;
+ 
   font-family: Hauora, monospace !important;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
 
-  @media screen and (max-width: 1120px) {
-    font-size: calc(2.4em + 1vw); /* Adjust font size for smaller screens */
+
+  @media (max-width: 1200px) {
+    font-size: 2.4em;
   }
-  @media screen and (max-width: 625px) {
-    font-size: calc(2em + 1vw); /* Adjust font size for even smaller screens */
+
+  @media (max-width: 1000px) {
+    font-size: 2.3em;
   }
+  @media (max-width: 750px) {
+    font-size: 2.2em;
+    text-align: center;
+    
+  }
+  @media (max-width: 600px) {
+    font-size: 2em;
+
+  }
+  @media (max-width: 500px) {
+    font-size: 1.8em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.6em;
+  } /* Adjust font size for even smaller screens */
+  
 `
 const Text = styled.p`
+  /* text-align: justify; */
   font-family: Hauora, monospace !important;
-  font-size: calc(1.2em + 1vw);
+  font-size: 1.6rem;
   line-height: 1.8;
-  z-index: 101;
+  z-index: 5;
   text-transform: capitalize;
   text-transform: 0 0 4px #fff;
 
   color: #b0b0b0;
-  font-family: 'Times Roman';
-  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
-    1px 1px 0px #333, 1px 1px 0px #333, 2px 2px 0px #333, 2px 2px 0px #333,
-    2px 2px 0px #333, 1px 1px 0px #333, 2px 2px 0px #333;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
-
-  @media screen and (max-width: 1120px) {
-    font-size: calc(1.2em + 1vw);
-  }
-  @media screen and (max-width: 625px) {
-    font-size: calc(1em + 1vw);
-  }
-`
-
-const Button = styled.button`
-  font-family: Hauora, monospace;
-  font-weight: 600;
-  padding: 0.8rem 2rem 0.8rem 2rem;
-  font-size: calc(0.7em + 1vw);
-  border: none;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 126, 242, 1),
-    rgba(0, 58, 108, 1)
-  );
-  color: #fff;
-  border-radius: 0.3rem;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.3s ease;
-  align-self: flex-start;
-  z-index: 99;
-
-  &:hover {
-    cursor: pointer;
-    background-color: transparent;
-    border: 1px solid #007fff;
-    color: #fff;
-    box-shadow: 0 0 20px 10px rgba(0, 115, 207, 0.2);
+  font-family: Hauora, monospace !important;
+  @media ( (max-width : 1024px) and (min-height: 900px)) {
+   line-height: 1.5;
+   width: 70% !important;
+   font-size: 1.6em !important;
   }
 
-  @media screen and (max-width: 1120px) {
-    font-size: calc(0.9em + 1vw);
+  @media (max-width: 1200px) {
+    font-size: 1.6em;
   }
 
-  @media screen and (max-width: 625px) {
-    font-size: calc(0.7em + 1vw);
-    padding: 0.8rem 2rem 0.8rem 2rem;
+  @media (max-width: 1000px) {
+    font-size: 1.4em;
+  }
+  @media (max-width: 750px) {
+    font-size: 1.3em;
+  text-align: center;
+    
+  }
+  @media (max-width: 600px) {
+    font-size: 1.1em;
+
+  }
+  @media (max-width: 500px) {
+    font-size: 1em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1em;
   }
 `
 
-const MarqueeH1 = styled.h1`
-  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
-    1px 1px 0px #333, 1px 1px 0px #333, 2px 2px 0px #333, 2px 2px 0px #333,
-    3px 3px 0px #333, 3px 3px 0px #333, 4px 4px 0px #333 !important;
-  font-family: Hauora, monospace;
-  color: #fff;
-  font-size: 4.2rem;
-  background-color: #383838;
 
-  @media only screen and (max-width: 700px) {
-    font-size: 3rem;
-  }
-`
 
-const FifthSection = () => {
-  gsap.registerPlugin(ScrollTrigger)
-  const sectionRef = useRef(null)
-  const ImageRef1 = useRef(null)
-  const titleRef = useRef(null)
-  const textRef = useRef(null)
-
-  let elements = gsap.utils.selector(titleRef)
-  const subElements = gsap.utils.selector(textRef)
-
-  useLayoutEffect(() => {
-    const Elem = sectionRef.current
-    const ImageElem1 = ImageRef1.current
-
-    console.log('worked')
-    // pin the section
-    gsap.to(Elem, {
-      scrollTrigger: {
-        trigger: Elem,
-        start: 'top top',
-        end: `bottom+=500 bottom`,
-        scrub: 1,
-        pin: true,
-        pinSpacing: true,
-      },
-    })
-
-    let t2 = gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: Elem,
-          start: 'top top',
-          end: `bottom+=500 bottom`,
-          scrub: 1,
-        },
-      })
-      .to(ImageElem1, {
-        scale: 1,
-        bottom: '15%',
-        right: '-3%',
-        zIndex: 5,
-        scale: 1,
-        transitionDuration:0.7
-      })
-
-    elements('h1').forEach((el) =>
-      t2.fromTo(
-        el,
-        {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top top',
-            end: `bottom bottom`,
-            scrub: 1,
-          },
-          x: 100,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-        },
-        'key3'
-      )
-    )
-    subElements('p').forEach((el) =>
-      t2.fromTo(
-        el,
-        {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top top',
-            end: `bottom bottom`,
-            scrub: 1,
-          },
-          x: 100,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-        },
-        'key3'
-      )
-    )
-    subElements('button').forEach((el) =>
-      t2.fromTo(
-        el,
-        {
-          scrollTrigger: {
-            trigger: el,
-            start: 'top top',
-            end: `bottom bottom`,
-            scrub: 1,
-          },
-          x: 100,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-        },
-        'key3'
-      )
-    )
-
-    return () => {
-      if (t2) t2.kill()
-    }
-  }, [])
+const FourthSection = () => {
+  
+  
 
   return (
-
-      <Section ref={sectionRef}>
-        <Blur1 />
-        <Blur2 />
-        <Blur3 />
-        {/* <V2 ref={videoRef2} src={secondSectionImage2}  /> */}
-        <TitleContainer ref={titleRef}>
-          <Title>Discover What’s New and Exciting</Title>
-        </TitleContainer>
-        <TextContainer ref={textRef}>
+  
+      <Section >
+        <Wrapper>
+        <TextContainer
+           initial = {{opacity:0}}
+           whileInView={{opacity:1}}
+           transition={{duration:1,delay:1}}
+        >
+          <Title> Discover What’s New and Exciting</Title>
           <Text>
-            Our advanced features empower you to unleash creativity effortlessly
-            and bring your vision to life.
+          Our advanced features empower you to unleash creativity effortlessly, enabling you to bring your vision to life with unparalleled ease and precision
           </Text>
-          <Button>JOIN NOW</Button>
         </TextContainer>
-        <I1 ref={ImageRef1} src={Image1} />
+        <div className='image-wrapper'>
+        <I1 src={image1}
+        initial = {{top:'-90%'}}
+        whileInView={{top:0}}
+        transition={{duration:1}}
+        />
+        </div>
+        </Wrapper>
       </Section>
-   
+     
   )
 }
 
-export default FifthSection
+export default FourthSection
