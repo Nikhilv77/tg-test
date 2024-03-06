@@ -34,7 +34,7 @@ gap: 1rem;
 h1 {
     font-family: Hauora, monospace;
      width: 20%;
-    text-align: center;
+    text-align: start;
     line-height: 1.4;
 z-index: 10;
     /* text-shadow: 1px 1px 1px #fff; */
@@ -43,7 +43,8 @@ z-index: 10;
     @media ( (max-width : 1025px) and (min-height: 900px)) {
       line-height: 1.6;
       width: 60%;
-     font-size: 2.8rem !important;
+     font-size: 2.5rem !important;
+     text-align: center !important;
     }
   
     
@@ -57,11 +58,11 @@ z-index: 10;
     @media (max-width: 750px) {
       font-size: 2.2em;
       width: 97%;
-      
+      text-align: center !important;
     }
     @media (max-width: 600px) {
       font-size: 2em;
-      text-align: center;
+ 
     }
     @media (max-width: 500px) {
       font-size: 1.8em;
@@ -72,7 +73,7 @@ z-index: 10;
   }
   h2 {
     font-family: Hauora, monospace;
-    text-align: center;
+    text-align: start;
     line-height: 1.7;
     font-weight: 400;
     /* text-shadow: 1px 1px 1px #b0b0b0; */
@@ -85,8 +86,9 @@ z-index: 10;
 
     @media ( (max-width : 1024px) and (min-height: 900px)) {
      line-height: 1.5;
-     width: 70% !important;
-     font-size: 1.6em !important;
+     width: 90% !important;
+     font-size: 1.3em !important;
+     text-align: center !important;
     }
 
     @media (max-width: 1200px) {
@@ -99,11 +101,11 @@ z-index: 10;
     @media (max-width: 750px) {
       font-size: 1.3em;
       width: 99%;
-      
+      text-align: center !important;
     }
     @media (max-width: 600px) {
       font-size: 1.1em;
-      text-align: center;
+
     }
     @media (max-width: 500px) {
       font-size: 1em;

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const Section = styled.section`
   min-height: 20vh;
+  padding-bottom: 3em;
   width: 100%;
 
   display: flex;
@@ -30,8 +31,8 @@ const FooterComponent = styled(motion.footer)`
     flex-wrap: wrap;
     margin-top: 4rem;
     padding: 0 1rem;
-    border-top: 1px solid ${(props) => props.theme.text};
-    border-bottom: 1px solid ${(props) => props.theme.text};
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
 
     @media (max-width: 48em) {
       justify-content: center;
@@ -49,7 +50,7 @@ const FooterComponent = styled(motion.footer)`
 
     @media (max-width: 48em) {
       padding: 1rem;
-      font-size: ${(props) => props.theme.fontmd};
+      font-size: 1em;
     }
   }
 `
@@ -57,7 +58,7 @@ const FooterComponent = styled(motion.footer)`
 const Bottom = styled.div`
   padding: 0.5rem 0;
 
-  font-size: ${(props) => props.theme.fontlg};
+  font-size: 1.25em;
   font-family: Hauora, monospace !important;
   font-weight: 520 !important;
   display: flex;
@@ -80,7 +81,7 @@ const Bottom = styled.div`
   }
 
   @media (max-width: 48em) {
-    font-size: ${(props) => props.theme.fontmd};
+    font-size: 1em;
   }
 `
 

@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 
 const PrivacyPage = () => {
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default
       const locomotiveScroll = new LocomotiveScroll()
     })()

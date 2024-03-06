@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import image1 from '../../assets/new-images/homepage-images/section-1-1.png'
-import image2 from '../../assets/new-images/homepage-images/section-1-2.png'
-import image3 from '../../assets/new-images/homepage-images/section-1-4.png'
-import image4 from '../../assets/new-images/homepage-images/section-1-3.png'
+import image1 from '../assets/new-images/homepage-images/section-1-1.png'
+import image2 from '../assets/new-images/homepage-images/section-1-2.png'
+import image3 from '../assets/new-images/homepage-images/section-1-4.png'
+import image4 from '../assets/new-images/homepage-images/section-1-3.png'
 
-const HeaderSection = styled.header`
+const HeaderSection = styled.section`
   position: relative;
   background: rgba(24, 24, 24, 0.5);
   overflow: hidden;
@@ -71,6 +71,7 @@ const ImageContainer = styled.div`
   }
 `
 const Title = styled(motion.div)`
+  padding-left: 3rem;
   overflow: hidden;
   position: absolute;
   height: 100%;
@@ -81,9 +82,9 @@ const Title = styled(motion.div)`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  color: ${(props) => props.theme.text};
   @media (max-width:750px) {
     justify-content: flex-start;
+   padding-left: 0;
     height: 55%;
     width: 100%;
     /* background-color: green; */
@@ -95,16 +96,21 @@ const Title = styled(motion.div)`
 
   h1 {
     font-family: Hauora, monospace;
-    text-align: center;
+    text-align: start;
     line-height: 1.3;
 
     font-size: 3.5em;
     width: 90%;
     user-select: none;
+    @media (max-width: 1024px) and (min-height:900px) {
+      font-size: 2em!important;
+      text-align: center !important;
+    
+    }
     @media (max-width: 750px) {
       font-size: 2em;
       width: 95%;
-      text-align: center;
+      text-align: center !important;
     }
     @media (max-width: 600px) {
       font-size: 1.9em;
@@ -119,7 +125,7 @@ const Title = styled(motion.div)`
 
   h2 {
     font-family: Hauora, monospace;
-    text-align: center;
+    text-align: start;
     font-weight: 400;
     font-size: 1.7em;
     text-transform: capitalize;
@@ -128,12 +134,12 @@ const Title = styled(motion.div)`
     width: 90%;
     @media (max-width: 1024px) and (min-height:900px) {
       font-size: 1.3em;
-      text-align: center;
+      text-align: center !important;
       width: 90% !important;
     }
     @media (max-width: 750px) {
       font-size: 1.3em;
-      text-align: center;
+      text-align: center !important;
       width: 98%;
     }
     @media (max-width: 600px) {
@@ -148,7 +154,7 @@ const Title = styled(motion.div)`
   }
 `
 
-const Header = () => {
+const HeroSection = () => {
   return (
     <HeaderSection>
       <ImageContainer>
@@ -219,4 +225,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default HeroSection

@@ -1,146 +1,194 @@
-import React from "react";
-import styled from "styled-components";
-import thirdSectionImg1 from '../assets/images/featurespage-images/section-1-1.png'
-import thirdSectionImg2 from '../assets/images/featurespage-images/section-1-2.png'
+import {motion} from 'framer-motion'
+import styled from 'styled-components'
+import image1 from '../assets/new-images/featurespage-images/section-1-1.png'
+
 const Section = styled.section`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   z-index: 1;
+  background-color: rgba(24,24,24,0.5);
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const V1 = styled.img`
+`
+const Wrapper = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+place-items: center;
+height: 100%;
+width: 100%;
+/* background-color: pink; */
+@media ( (max-width : 1025px) and (min-height: 900px)) {
+  grid-template-columns: 1fr;
+    }
+@media (max-width:800px){
+  grid-template-columns:1fr;
+}
+.image-wrapper{
+  position: relative;
+  width: 100%;
+  height: 97vh;
+  @media ( (max-width : 1025px) and (min-height: 900px)) {
+    height: 60vh;
+   width: 96%;
+    }
+  @media (max-width:800px){
+   height: 60vh;
+   width: 96%;
+}
+}
+`
+const I1 = styled(motion.img)`
+  width: 100%;
+  height: 97%;
   position: absolute;
-  top: 0;
-  right:-100%; 
-  width: 80%; 
-  
-  height: 79vh;
   object-fit: contain;
-  object-position: bottom;
-  z-index: 1;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
-`;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+  z-index: 5;
+  user-select: none;
 
 
-const V2 = styled.img`
+`
 
-  position: absolute;
-  left: -100%;
-  top: 0%;
-  top: 0;
-  width: 80%; 
-  height: 79vh;
-  object-fit: contain;
-  object-position: bottom;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
-  z-index: 2;
-`;
-
-
-const TextContainer = styled.div`
-  width: 50%;
+const TextContainer = styled(motion.div)`
+  width: 80%;
   height: 100%;
   display: flex;
-  padding: 2rem;
   flex-direction: column;
   align-items: center;
- justify-content:center;
-  position: absolute;
+  justify-content: center;
   gap: 1rem;
-  top: 10%;
-  left: 25%;
-  right: 25%;
-
-@media screen and (max-width:520px){
-  width: 70%;
+  @media ( (max-width : 1025px) and (min-height: 900px)) {
+    padding: 1rem;
+    height: 40vh;
+   justify-content: center;
+   width: 80%;
+    }
+  @media (max-width:800px){
+   height: 40vh;
+   justify-content: center;
+   width: 89%;
 }
-@media screen and (max-width:320px){
-  width: 80%;
-}
-`;
 
+  /* @media (max-width:800px){
+    justify-content: space-between;
+    width: 75%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  } */
+`
 
 const Title = styled.h1`
-  font-size: calc(3em + 1vw); 
+  font-size: 3.4rem;/* Adjust the font size based on viewport width */
   z-index: 5;
-  font-family: Hauora, monospace !important;
   text-transform: capitalize;
-  text-shadow: 1px 1px 0px #333,
-                 1px 1px 0px #333,
-                 1px 1px 0px #333,
-                 1px 1px 0px #333,
-                 2px 2px 0px #333,
-                 3px 3px 0px #333,
-                 3px 3px 0px #333,
-                 4px 4px 0px #333,
-                 4px 4px 0px #333,
-                5px 5px 0px #333;
-  color: #fff;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.1));
+ 
+  font-family: Hauora, monospace !important;
 
-  @media screen and (max-width: 1120px) {
-   font-size: calc(2.3em + 1vw);
+  @media ( (max-width : 1024px) and (min-height: 900px)) {
+    text-align: center !important;
+   font-size: 2rem !important;
   }
-  @media screen and (max-width: 625px) {
-    font-size: calc(1.7em + 1vw); 
+  @media (max-width: 1200px) {
+    font-size: 2.4em;
   }
-`;
+
+  @media (max-width: 1000px) {
+    font-size: 2.3em;
+  }
+  @media (max-width: 750px) {
+    font-size: 2.1em;
+    text-align: center !important;
+    
+  }
+  @media (max-width: 600px) {
+    font-size: 2em;
+
+  }
+  @media (max-width: 500px) {
+    font-size: 1.8em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.6em;
+  } /* Adjust font size for even smaller screens */
+  
+`
 const Text = styled.p`
-font-family: Hauora, monospace !important;
-font-size: calc(1em + 1vw);
-line-height: 1.8;
+  /* text-align: justify; */
+  font-family: Hauora, monospace !important;
+  font-size: 1.6rem;
+  line-height: 1.8;
   z-index: 5;
   text-transform: capitalize;
   text-transform: 0 0 4px #fff;
- 
-  color: 	#A8A8A8;
-  font-family: 'Times Roman';
-  text-shadow: 1px 1px 0px #333,
-                 1px 1px 0px #333,
-                 1px 1px 0px #333,
-                 1px 1px 0px #333,
-                 1px 1px 0px #333,
-                 2px 2px 0px #333,
-                 2px 2px 0px #333,
-                 2px 2px 0px #333,
-                 1px 1px 0px #333,
-                2px 2px 0px #333;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
-              
-  @media screen and (max-width: 1120px) {
-    font-size: calc(0.8em + 1vw);
+
+  color: #b0b0b0;
+  font-family: Hauora, monospace !important;
+  @media ( (max-width : 1024px) and (min-height: 900px)) {
+    text-align: center !important;
+   line-height: 1.5;
+   width: 100% !important;
+   font-size: 1.2em !important;
   }
-  @media screen and (max-width: 625px) {
-    font-size: calc(0.7em + 1vw);
+
+  @media (max-width: 1200px) {
+    font-size: 1.6em;
   }
-`;
 
-
-
-
-
-
-const ThirdSection = () => {
-  
-  return (
+  @media (max-width: 1000px) {
+    font-size: 1.4em;
+  }
+  @media (max-width: 750px) {
+    font-size: 1.3em;
+    text-align: center !important;
     
-    <Section >
-      <TextContainer>
-      <Title>Do more with with Location based feed
-</Title>
-      <Text> Embark on a journey of discovery, as Tags Social connects you with like-minded individuals at new locations. 
-</Text>
-      </TextContainer>
-      <V1 src={thirdSectionImg1}  />
-      <V2 src={thirdSectionImg2}   />
-      
-    </Section>
-  );
-};
+  }
+  @media (max-width: 600px) {
+    font-size: 1.1em;
 
-export default ThirdSection;
+  }
+  @media (max-width: 500px) {
+    font-size: 1em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1em;
+  }
+`
+
+
+
+const FourthSection = () => {
+  
+  
+
+  return (
+  
+      <Section >
+        <Wrapper>
+        <TextContainer
+           initial = {{opacity:0}}
+           whileInView={{opacity:1}}
+           transition={{duration:1,delay:1}}
+        >
+          <Title> Introducing
+TagScores-TagSocial’s New Currency
+</Title>
+          <Text>
+          Engage with the community and increase your influence with TagScores. Earn points based on your activity, interactions, and content quality, showcasing your social impact within the platform.
+          </Text>
+        </TextContainer>
+        <div className='image-wrapper'>
+        <I1 src={image1}
+        initial = {{bottom:'-90%',rotate:-28}}
+        whileInView={{bottom:0}}
+        transition={{duration:1}}
+        />
+        </div>
+        </Wrapper>
+      </Section>
+     
+  )
+}
+
+export default FourthSection

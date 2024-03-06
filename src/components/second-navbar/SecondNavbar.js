@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import logo from '../../assets/images/homepage-images/Logo.png'
 import { motion } from 'framer-motion'
+import ctaImage1 from '../../assets/images/homepage-images/Frame 66.png'
+import ctaImage2 from '../../assets/images/homepage-images/Frame 65.png'
 gsap.registerPlugin(ScrollTrigger)
 
 const Headers = styled(motion.header)`
@@ -14,12 +16,52 @@ const Headers = styled(motion.header)`
   /* background:linear-gradient(135deg, rgba(43, 43, 42, 0.6), rgba(93, 93, 93, 0.6), rgba(34, 34, 33, 0.6)); */
   backdrop-filter: blur(16px) !important;
   color: white;
-  position: fixed;
-  z-index: 3;
+  position: sticky;
+  height: 4.5rem;
+  z-index: 99 !important;
   width: 100vw;
-  height: 5.2rem;
 `
-
+const BottomHeader = styled(motion.header)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 1.5rem;
+  background: rgba(24, 24, 24, 0.3);
+  border: 1px solid grey;
+  padding: 0.3rem 0.4rem 0.5rem 0.4rem;
+  /* background:linear-gradient(135deg, rgba(43, 43, 42, 0.6), rgba(93, 93, 93, 0.6), rgba(34, 34, 33, 0.6)); */
+  
+  position: fixed;
+  z-index: 99;
+  height: 5.5rem;
+  width: 26.5rem;
+  bottom: 5%; /* Position the element at the bottom of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  @media screen and (max-width: 600px) {
+    width: 24rem;
+    height: 5.1rem;
+  }
+  @media screen and (max-width: 472px) {
+    width: 23rem;
+    height: 5rem;
+  }
+  @media screen and (max-width: 415px) {
+    width: 22rem;
+    height: 4.7rem;
+  }
+  @media screen and (max-width: 400px) {
+    width: 20rem;
+    height: 4.5rem;
+  }
+  img {
+    height: 100%;
+    opacity: 1;
+    width: 50%;
+    cursor: pointer;
+  }
+`
 const Logo = styled.a`
   display: flex;
   align-items: center;
@@ -28,22 +70,23 @@ const Logo = styled.a`
   cursor: pointer;
   img {
     width: 3rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
     height: 3rem;
     filter: brightness(0) invert(1) grayscale(1);
     user-select: none;
     @media screen and (max-width: 1117px) {
       width: 2.8rem;
       height: 2.8rem;
+      margin-left: 0.8rem !important;
     }
   }
 `
 
 const Nav = styled.nav`
   width: 70%;
-  font-family: Hauora, monospace !important;
+  font-family: Hauora, monospace;
+  font-weight: 520 !important;
 
-  font-weight: 300;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,10 +103,10 @@ const Nav = styled.nav`
   }
 
   a {
-    font-weight: 520 !important;
-
     line-height: 1.5;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    font-family: Hauora, monospace;
+    font-weight: 520 !important;
     color: white;
     &::after {
       content: '';
@@ -107,7 +150,7 @@ const coolEffectAnimation = keyframes`
 `
 
 const Button = styled.button`
-  font-family: Hauora, monospace !important;
+  font-family: Hauora, monospace;
 
   font-weight: 600 !important;
   user-select: none;
@@ -155,7 +198,7 @@ const HamburgerBtn = styled.button`
   margin-right: 1.5rem;
   background-color: transparent;
   color: white;
-  width: 1.7rem;
+  width: 2rem;
   height: 6px;
   border: none;
   margin-top: 0rem;
@@ -192,8 +235,8 @@ const MobileMenu = styled.nav`
     display: flex;
   }
   flex-direction: column;
-  font-family: Hauora, monospace !important;
-
+  font-family: Hauora, monospace;
+  font-weight: 520 !important;
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
@@ -210,10 +253,11 @@ const MobileMenu = styled.nav`
   margin: 0.5rem;
   a {
     color: white;
-    font-weight: 520 !important;
     font-size: 1.3rem;
     margin: 1.5rem;
     cursor: pointer;
+    font-family: Hauora, monospace;
+    font-weight: 520 !important;
   }
 `
 
@@ -221,9 +265,11 @@ const SecondNavbar = () => {
   const [click, setClick] = useState(false)
   //const handleClick = () => setClick(!click);
   const ref = useRef(null)
+  const bottomRef = useRef(null)
 
   useEffect(() => {
     const header = ref.current
+    const bottom = bottomRef.current
 
     // ScrollTrigger setup
     ScrollTrigger.create({
@@ -236,8 +282,10 @@ const SecondNavbar = () => {
         // Toggle visibility based on scroll direction
         if (direction === 'up') {
           gsap.to(header, { top: 0 })
+          gsap.to(bottom, { bottom: '5%' })
         } else {
           gsap.to(header, { top: '-100%' })
+          gsap.to(bottom, { bottom: '-100%' })
         }
       },
     })
@@ -245,7 +293,10 @@ const SecondNavbar = () => {
 
   return (
     <>
-      <Headers ref={ref}>
+      <Headers
+      
+        ref={ref}
+      >
         <Logo>
           <img src={logo} alt="TagSocial" />
         </Logo>
@@ -328,6 +379,13 @@ const SecondNavbar = () => {
           </a>
         </MobileMenu>
       </Headers>
+      <BottomHeader
+        ref={bottomRef}
+      
+      >
+        <img className="cta-image" src={ctaImage1} alt="" />
+        <img className="cta-image" src={ctaImage2} alt="" />
+      </BottomHeader>
     </>
   )
 }

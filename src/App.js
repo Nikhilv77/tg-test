@@ -1,6 +1,4 @@
-import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './styles/GlobalStyles'
-import { system } from './styles/Themes'
 import { AnimatePresence } from 'framer-motion'
 import './font.css'
 import FaqsPage from './pages/FaqsPage'
@@ -13,7 +11,6 @@ function App() {
   return (
     <div>
       <GlobalStyles />
-      <ThemeProvider theme={system}>
         <AnimatePresence>
           <BrowserRouter>
             <Routes>
@@ -24,7 +21,6 @@ function App() {
             </Routes>
           </BrowserRouter>
         </AnimatePresence>
-      </ThemeProvider>
     </div>
   )
 }

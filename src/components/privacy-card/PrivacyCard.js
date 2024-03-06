@@ -127,20 +127,20 @@ const PrivacyCard = () => {
 const MotionContainer = styled(motion.div)`
   background-color: #181818; /* Dark background color */
   color: #fff; /* Text color */
-  padding: 4em; /* Add padding for better spacing */
+  padding: 1em 4em 4em 4em; /* Add padding for better spacing */
   width: 90vw;
   margin: auto;
   @media screen and (max-width: 700px) {
     width: 90vw !important;
-    padding: 4em 1em 4em 1em;
+    padding: 1em 1em 4em 1em;
   }
   @media screen and (max-width: 500px) {
     width: 94vw !important;
-    padding: 4em 1em 4em 1em;
+    padding: 1em 1em 4em 1em;
   }
   @media screen and (max-width: 420px) {
     width: 99vw !important;
-    padding: 4em 1em 4em 1em;
+    padding: 1em 1em 4em 1em;
   }
 `
 

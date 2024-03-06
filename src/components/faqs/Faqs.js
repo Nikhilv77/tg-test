@@ -10,7 +10,7 @@ const PlaceholderText = `
 `
 
 const FaqWrapper = styled(motion(Container))`
-  padding-top: calc(var(--mantine-spacing-xl) * 4);
+  padding-top: calc(var(--mantine-spacing-xl) * 2.5);
   padding-bottom: calc(var(--mantine-spacing-xl) * 2);
   min-height: 650px;
   font-family: Hauora, monospace !important;

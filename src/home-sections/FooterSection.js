@@ -15,7 +15,7 @@ const Section = styled.section`
   align-items: center;
   overflow-x: hidden;
 
-  background-color: #181818;
+  background-color: rgba(24,24,24,0.5);
   color: white;
 
   position: relative;
@@ -51,8 +51,8 @@ const FooterComponent = styled(motion.footer)`
     margin: 2rem;
     margin-top: 4rem;
     padding: 0 1rem;
-    border-top: 1px solid ${(props) => props.theme.text};
-    border-bottom: 1px solid ${(props) => props.theme.text};
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
 
     @media (max-width: 48em) {
       justify-content: center;
@@ -61,7 +61,7 @@ const FooterComponent = styled(motion.footer)`
 
   li {
     padding: 2rem;
-    font-size: ${(props) => props.theme.fontlg};
+    font-size: 1.25em;
     text-transform: capitalize;
     font-family: Hauora, monospace;
     font-weight: 520 !important;
@@ -73,7 +73,7 @@ const FooterComponent = styled(motion.footer)`
 
     @media (max-width: 48em) {
       padding: 1rem;
-      font-size: ${(props) => props.theme.fontmd};
+      font-size: 1em
     }
   }
 `
@@ -81,7 +81,7 @@ const FooterComponent = styled(motion.footer)`
 const Bottom = styled.div`
   padding: 0.5rem 0;
   margin: 0 4rem;
-  font-size: ${(props) => props.theme.fontlg};
+  font-size: 1.25em;
   font-family: Hauora, monospace;
   font-weight: 520 !important;
   display: flex;
@@ -103,7 +103,7 @@ const Bottom = styled.div`
   }
 
   @media (max-width: 48em) {
-    font-size: ${(props) => props.theme.fontmd};
+    font-size: 1em;
   }
 `
 

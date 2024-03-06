@@ -1,6 +1,6 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import HomeNavbar from '../components/home-navbar/HomeNavbar'
-import Header from '../components/header/Header'
+import HeroSection from '../home-sections/HeroSection'
 import FirstSection from '../home-sections/FirstSection'
 import SecondSection from '../home-sections/SecondSection'
 import ThirdSection from '../home-sections/ThirdSection'
@@ -10,10 +10,16 @@ import SixthSection from '../home-sections/SixthSection'
 import Footer from '../home-sections/FooterSection'
 
 const HomePage = () => {
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default
+      const locomotiveScroll = new LocomotiveScroll()
+    })()
+  }, [])
   return (
     <div>
       <HomeNavbar />
-     <Header/>
+     <HeroSection/>
       <FirstSection />
       <SecondSection />
       <ThirdSection />

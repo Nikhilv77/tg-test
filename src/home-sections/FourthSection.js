@@ -85,7 +85,10 @@ const Title = styled.h1`
   text-transform: capitalize;
  
   font-family: Hauora, monospace !important;
-
+  @media ( (max-width : 1024px) and (min-height: 900px)) {
+   font-size: 2.3em !important;
+   text-align: center !important;
+  }
 
   @media (max-width: 1200px) {
     font-size: 2.4em;
@@ -96,7 +99,7 @@ const Title = styled.h1`
   }
   @media (max-width: 750px) {
     font-size: 2.2em;
-    text-align: center;
+    text-align: center !important;
     
   }
   @media (max-width: 600px) {
@@ -124,8 +127,9 @@ const Text = styled.p`
   font-family: Hauora, monospace !important;
   @media ( (max-width : 1024px) and (min-height: 900px)) {
    line-height: 1.5;
-   width: 70% !important;
-   font-size: 1.6em !important;
+   width: 90% !important;
+   font-size: 1.3em !important;
+   text-align: center !important;
   }
 
   @media (max-width: 1200px) {
@@ -137,7 +141,7 @@ const Text = styled.p`
   }
   @media (max-width: 750px) {
     font-size: 1.3em;
-  text-align: center;
+    text-align: center !important;
     
   }
   @media (max-width: 600px) {
