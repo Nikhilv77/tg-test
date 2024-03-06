@@ -169,6 +169,7 @@ const FourthSection = () => {
         <TextContainer
            initial = {{opacity:0}}
            whileInView={{opacity:1}}
+           viewport={{ once: true }}
            transition={{duration:1,delay:1}}
         >
           <Title> Introducing
@@ -182,6 +183,7 @@ TagScores-TagSocial’s New Currency
         <I1 src={image1}
         initial = {{bottom:'-90%',rotate:-28}}
         whileInView={{bottom:0}}
+        viewport={{ once: true }}
         transition={{duration:1}}
         />
         </div>

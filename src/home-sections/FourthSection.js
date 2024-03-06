@@ -170,12 +170,14 @@ const FourthSection = () => {
         <I1 src={image1}
         initial = {{bottom:'-90%'}}
         whileInView={{bottom:0}}
+        viewport={{ once: true }}
         transition={{duration:1}}
         />
         </div>
         <TextContainer
            initial = {{opacity:0}}
            whileInView={{opacity:1}}
+           viewport={{ once: true }}
            transition={{duration:1,delay:1}}
         >
           <Title> Next Level of Social Networking</Title>

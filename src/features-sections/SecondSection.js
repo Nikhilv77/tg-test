@@ -169,12 +169,14 @@ const SecondSection = () => {
         <I1 src={image1}
         initial = {{top:'-90%'}}
         whileInView={{top:0}}
-        transition={{duration:1}}
+        viewport={{ once: true }}
+        transition={{duration:1,delay:0.6}}
         />
         </div>
         <TextContainer
            initial = {{opacity:0}}
            whileInView={{opacity:1}}
+           viewport={{ once: true }}
            transition={{duration:1,delay:1}}
         >
           <Title>Feel Connected with Location-Based Feed:

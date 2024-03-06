@@ -169,12 +169,14 @@ const FourthSection = () => {
         <I1 src={image1}
         initial = {{left:'-90%'}}
         whileInView={{left:0}}
+        viewport={{ once: true }}
         transition={{duration:1}}
         />
         </div>
         <TextContainer
            initial = {{opacity:0}}
            whileInView={{opacity:1}}
+           viewport={{ once: true }}
            transition={{duration:1,delay:1}}
         >
           <Title>Elevate Your Social Experience</Title>

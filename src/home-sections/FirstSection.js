@@ -195,6 +195,7 @@ const Header = () => {
       <motion.h1
          initial = {{opacity:0}}
          whileInView = {{opacity:1}}
+         viewport={{ once: true }}
          transition={{duration:1,delay:1,type:'ease'}}
       >Transforming Social Connections
 </motion.h1>
@@ -202,12 +203,14 @@ const Header = () => {
     <I1
     initial = {{scale:0.2}}
     whileInView = {{scale:1}}
+    viewport={{ once: true }}
     transition={{duration:1}}
     src={image1} alt='first-image'/>
     </ImageContainer>
 <motion.h2
    initial = {{opacity:0}}
    whileInView = {{opacity:1}}
+   viewport={{ once: true }}
    transition={{duration:1,delay:1,type:'ease'}}
 >Experience a new dimension of social networking that goes beyond the ordinary. TagSocial brings people together through shared interests and real-world connections.</motion.h2>
   

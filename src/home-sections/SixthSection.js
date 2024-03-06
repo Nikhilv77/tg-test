@@ -97,11 +97,13 @@ const SixthSection = () => {
       <I1
       initial = {{scale:1}}
       whileInView = {{scale:0.3,rotate:21}}
+      viewport={{ once: true }}
       transition = {{duration:1,delay:1}}
       src={Image1}/>
       <Title
        initial = {{top:"50%"}}
        whileInView={{top:'40%',scale:0.7,rotate:20}}
+       viewport={{ once: true }}
        transition={{duration:1.3,delay:1}}
         style={{ top: '50%', position: 'absolute', textAlign: 'center',opacity:0.6 }}
       >
@@ -111,6 +113,7 @@ const SixthSection = () => {
       <I2 
       initial = {{top:"-40%",opacity:0}}
       whileInView={{top:'20%',rotate:-21,opacity:1}}
+      viewport={{ once: true }}
       transition={{duration:1,delay:1.3}}
       src={Image2} />
     

@@ -169,6 +169,7 @@ const FourthSection = () => {
         <TextContainer
            initial = {{opacity:0}}
            whileInView={{opacity:1}}
+           viewport={{ once: true }}
            transition={{duration:1,delay:1}}
         >
           <Title> Discover What’s New and Exciting</Title>
@@ -180,6 +181,7 @@ const FourthSection = () => {
         <I1 src={image1}
         initial = {{top:'-90%'}}
         whileInView={{top:0}}
+        viewport={{ once: true }}
         transition={{duration:1}}
         />
         </div>

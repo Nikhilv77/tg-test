@@ -159,12 +159,14 @@ const FourthSection = () => {
             src={image1}
             initial={{ top: '-90%' }}
             whileInView={{ top: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
           />
         </div>
         <TextContainer
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 1, delay: 1 }}
         >
           <Title>Transforming Social Connections</Title>
@@ -178,6 +180,6 @@ const FourthSection = () => {
       </Wrapper>
     </Section>
   )
-}
+  }
 
-export default FourthSection
+export default FourthSection;
