@@ -8,7 +8,7 @@ import image4 from '../assets/new-images/homepage-images/section-1-3.png'
 
 const HeaderSection = styled.section`
   position: relative;
-  background: rgba(24, 24, 24, 0.5);
+  background: rgba(24, 24, 24, 0.5) !important;
   overflow: hidden;
   min-height: 93vh;
   overflow-y: scroll;
@@ -36,13 +36,25 @@ const I2 = styled(motion.img)`
     width: 12rem;
   }
 `
+
 const I3 = styled(motion.img)`
+
   height: 80vh;
   width: 30vw;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1;
+  @media (max-width:1100px){
+    height: 40vh;
+width: 40vw;
+top: 5%;
+  }
+  @media (max-width :750px){
+height: 35vh;
+width: 35vw;
+top: 5%;
+  }
 `
 const I4 = styled(motion.img)`
   height: 84vh;
@@ -51,6 +63,15 @@ const I4 = styled(motion.img)`
   left: 0;
   bottom: 10%;
   z-index: 1;
+  @media (max-width:1100px){
+    height: 75vh;
+width: 25vw;
+  }
+  @media (max-width :750px){
+height: 55vh;
+width: 30vw;
+
+  }
 `
 const ImageContainer = styled.div`
   height: 100%;

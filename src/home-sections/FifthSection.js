@@ -1,14 +1,53 @@
 import {motion} from 'framer-motion'
 import styled from 'styled-components'
 import image1 from '../assets/new-images/homepage-images/section-6-1.png'
+import image3 from '../assets/new-images/homepage-images/section-1-4.png'
+import image4 from '../assets/new-images/homepage-images/section-1-3.png'
 
 const Section = styled.section`
   width: 100vw;
   min-height: 100vh;
   position: relative;
   z-index: 1;
-  background-color: rgba(24,24,24,0.5);
+  background-color: rgba(24,24,24,0.5) !important;
   overflow: hidden;
+`
+
+const I3 = styled(motion.img)`
+
+  height: 70vh;
+  width: 25vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  @media (max-width:1100px){
+    height: 40vh;
+width: 40vw;
+top: 5%;
+  }
+  @media (max-width :750px){
+height: 35vh;
+width: 35vw;
+top: 5%;
+  }
+`
+const I4 = styled(motion.img)`
+  height: 74vh;
+  width: 20vw;
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+  z-index: 1;
+  @media (max-width:1100px){
+    height: 75vh;
+width: 25vw;
+  }
+  @media (max-width :750px){
+height: 55vh;
+width: 30vw;
+
+  }
 `
 const Wrapper = styled.div`
 display: grid;
@@ -165,6 +204,20 @@ const FourthSection = () => {
   return (
   
       <Section >
+        <I3
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image3}
+        alt="background-blur"
+      />
+      <I4
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image4}
+        alt="background-blur"
+      />
         <Wrapper>
         <TextContainer
            initial = {{opacity:0}}

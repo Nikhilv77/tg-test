@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Image1 from '../assets/images/homepage-images/frame22.png'
 import Image2 from '../assets/images/homepage-images/sun-frame.png'
+import image3 from '../assets/new-images/homepage-images/section-1-4.png'
+import image4 from '../assets/new-images/homepage-images/section-1-3.png'
 import {motion} from 'framer-motion'
 const Section = styled.section`
   width: 100vw;
@@ -9,10 +11,46 @@ const Section = styled.section`
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background-color: rgba(24,24,24,0.5);
+  background-color: rgba(24,24,24,0.5) !important;
   display: flex;
   justify-content: center;
   align-items: center;
+`
+const I3 = styled(motion.img)`
+
+  height: 80vh;
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  @media (max-width:1100px){
+    height: 40vh;
+width: 40vw;
+top: 5%;
+  }
+  @media (max-width :750px){
+height: 35vh;
+width: 35vw;
+top: 5%;
+  }
+`
+const I4 = styled(motion.img)`
+  height: 84vh;
+  width: 20vw;
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  z-index: 1;
+  @media (max-width:1100px){
+    height: 75vh;
+width: 25vw;
+  }
+  @media (max-width :750px){
+height: 55vh;
+width: 30vw;
+
+  }
 `
 const I1 = styled(motion.img)`
   position: absolute;
@@ -100,6 +138,20 @@ const SixthSection = () => {
       viewport={{ once: true }}
       transition = {{duration:1,delay:1}}
       src={Image1}/>
+      <I3
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image3}
+        alt="background-blur"
+      />
+      <I4
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image4}
+        alt="background-blur"
+      />
       <Title
        initial = {{top:"50%"}}
        whileInView={{top:'40%',scale:0.7,rotate:20}}

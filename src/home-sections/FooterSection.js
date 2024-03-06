@@ -15,7 +15,7 @@ const Section = styled.section`
   align-items: center;
   overflow-x: hidden;
 
-  background-color: rgba(24,24,24,0.5);
+  background-color: rgba(24,24,24,0.5) !important;
   color: white;
 
   position: relative;
@@ -145,18 +145,10 @@ const FooterSection = () => {
         }}
       >
         <ul>
-          <li aria-hidden="true" onClick={() => handleScroll('#home')}>
-            Home
-          </li>
-          <li aria-hidden="true" onClick={() => handleScroll('.about')}>
-            Features
-          </li>
-          <li aria-hidden="true" onClick={() => handleScroll('#shop')}>
-            FAQs
-          </li>
-          <li aria-hidden="true" onClick={() => handleScroll('.new-arrival')}>
-            Privacy Policy
-          </li>
+        <a href="/"><li>Home</li></a>
+          <a href="/features"><li>Features</li></a>
+          <a href="/faqs"><li>FAQs</li></a>
+          <a href="/terms-and-conditions"><li>Privacy Policy</li></a>
         </ul>
         <Bottom>
           <span

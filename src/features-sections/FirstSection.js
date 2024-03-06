@@ -7,7 +7,7 @@ const Section = styled.section`
   min-height: 100vh;
   position: relative;
   z-index: 1;
-  background-color: rgba(24,24,24,0.5);
+  background-color: rgba(24,24,24,0.5) !important;
   overflow: hidden;
 `
 const Wrapper = styled.div`

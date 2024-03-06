@@ -90,10 +90,10 @@ const SecondFooter = () => {
     <Section>
       <FooterComponent>
         <ul>
-          <li>Home</li>
-          <li>Features</li>
-          <li>FAQs</li>
-          <li>Privacy Policy</li>
+          <a href="/"><li>Home</li></a>
+          <a href="/features"><li>Features</li></a>
+          <a href="/faqs"><li>FAQs</li></a>
+          <a href="/terms-and-conditions"><li>Privacy Policy</li></a>
         </ul>
         <Bottom>
           <span

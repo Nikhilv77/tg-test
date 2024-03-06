@@ -15,7 +15,43 @@ const Section = styled.section`
   width: 100vw;
 
 `
+const I3 = styled(motion.img)`
 
+ opacity: 0.6 !important;
+  height: 70vh;
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  top: 30%;
+  z-index: 1;
+  @media (max-width:1100px){
+    height: 40vh;
+width: 30vw;
+top: 15%;
+  }
+  @media (max-width :750px){
+height: 35vh;
+width: 30vw;
+top: 15%;
+  }
+`
+const I4 = styled(motion.img)`
+  height: 84vh;
+  width: 25vw;
+  position: absolute;
+  left: 0;
+  bottom: 30%;
+  z-index: 1;
+  @media (max-width:1100px){
+    height: 75vh;
+width: 25vw;
+  }
+  @media (max-width :750px){
+height: 55vh;
+width: 23vw;
+
+  }
+`
 
 const Wrapper = styled.div`
 height: 98vh;
@@ -155,33 +191,9 @@ bottom:0;
 right:0;
 left: 0;
 height: 100%;
-width: 100%;
+width: 95%;
 
 `
-
-const I6 = styled(motion.img)`
-height: 80vh;
-opacity: 0.7;
-width: 23vw;
-position: absolute;
-right:0;
-top: 0;
-z-index: 1;
-
-`
-
-const I7 = styled(motion.img)`
-height: 80vh;
-opacity: 0.7;
-width: 27vw;
-position: absolute;
-left: 0;
-bottom: 10%;
-z-index: 1;
-`
-
-
-
 
 
 const Header = () => {
@@ -216,8 +228,20 @@ const Header = () => {
   
    
     </Wrapper>
-    <I6 src={image6} alt='background-blur'/>
-    <I7 src={image7} alt='background-blur'/>
+    <I3
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image6}
+        alt="background-blur"
+      />
+      <I4
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image7}
+        alt="background-blur"
+      />
     </Section>
   )
 }

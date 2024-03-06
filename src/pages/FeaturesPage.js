@@ -10,7 +10,7 @@ import Footer from '../home-sections/FooterSection'
 
 const FeaturesPage = () => {
   return (
-    <div style={{ backgroundColor: '#181818' }}>
+    <div>
       <SecondNavbar />
       <HeroSection />
       <FirstSection />

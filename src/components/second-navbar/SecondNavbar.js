@@ -311,7 +311,7 @@ const SecondNavbar = () => {
           >
             <a href="/">Home</a>
             <a href="/features">Features</a>
-            <a href="/faqs">Faqs</a>
+            <a href="/faqs">FAQs</a>
             <a href="/terms-and-conditions">Privacy Policy</a>
           </div>
           <a

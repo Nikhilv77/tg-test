@@ -5,13 +5,25 @@ import { motion } from 'framer-motion'
 const PrivacyCard = () => {
   return (
     <MotionContainer>
-      <MotionTitle>Privacy Policy</MotionTitle>
-      <MotionTitle>
+      <MotionTitle
+      initial={{ y: -50 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'spring', stiffness: 120 }}
+      >Privacy Policy</MotionTitle>
+      <MotionTitle
+      initial={{ y: -50 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'spring', stiffness: 120 }}
+      >
         This Privacy Policy will help you better understand how we collect, use,
         and share your personal information.
       </MotionTitle>
 
-      <MotionContent>
+      <MotionContent
+      initial={{ y: -50 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'spring', stiffness: 120 }}
+      >
         <MotionSubTitle>Terms of use</MotionSubTitle>
         <MotionParagraph>
           Tags is a social networking platform for users to connect,
@@ -127,20 +139,20 @@ const PrivacyCard = () => {
 const MotionContainer = styled(motion.div)`
   background-color: #181818; /* Dark background color */
   color: #fff; /* Text color */
-  padding: 1em 4em 4em 4em; /* Add padding for better spacing */
-  width: 90vw;
+  padding: 0.7em 4em 4em 4em; /* Add padding for better spacing */
+  width: 75vw;
   margin: auto;
   @media screen and (max-width: 700px) {
     width: 90vw !important;
-    padding: 1em 1em 4em 1em;
+    padding: 0.1em 1em 4em 1em;
   }
   @media screen and (max-width: 500px) {
     width: 94vw !important;
-    padding: 1em 1em 4em 1em;
+    padding: 0.1em 1em 4em 1em;
   }
   @media screen and (max-width: 420px) {
     width: 99vw !important;
-    padding: 1em 1em 4em 1em;
+    padding: 0.1em 1em 4em 1em;
   }
 `
 

@@ -67,18 +67,19 @@ const Logo = styled.a`
   align-items: center;
   width: 2rem;
   height: auto;
+ padding-left: 1.7rem;
+
   cursor: pointer;
+  @media  (max-width: 1117px) {
+      width: 2.8rem;
+      height: 2.8rem;
+      margin-left:1rem !important;
+    }
   img {
     width: 3rem;
-    margin-left: 1rem;
     height: 3rem;
     filter: brightness(0) invert(1) grayscale(1);
     user-select: none;
-    @media screen and (max-width: 1117px) {
-      width: 2.8rem;
-      height: 2.8rem;
-      margin-left: 0.8rem !important;
-    }
   }
 `
 
@@ -149,6 +150,8 @@ const coolEffectAnimation = keyframes`
   }
 `
 
+
+
 const Button = styled.button`
   font-family: Hauora, monospace;
 
@@ -172,20 +175,12 @@ const Button = styled.button`
   font-weight: 400;
   cursor: pointer;
   transition: height 0.2s, transform 0.2s;
-  &:hover {
-    animation: ${coolEffectAnimation} 3s infinite; /* Apply the animation */
-  }
+ 
 
   @media only screen and (max-width: 1117px) {
     font-size: 1.2rem;
     margin-right: 0;
-    &:hover {
-      transform: none;
-    }
-    &:focus {
-      transform: none;
-    }
-    animation: none; /* Disable animation on smaller screens */
+  
   }
 `
 
@@ -322,7 +317,7 @@ const HomeNavbar = () => {
           >
             <a href="/">Home</a>
             <a href="/features">Features</a>
-            <a href="/faqs">Faqs</a>
+            <a href="/faqs">FAQs</a>
             <a href="/terms-and-conditions">Privacy Policy</a>
           </div>
           <a
