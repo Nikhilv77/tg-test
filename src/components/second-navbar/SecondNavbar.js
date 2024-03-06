@@ -67,18 +67,19 @@ const Logo = styled.a`
   align-items: center;
   width: 2rem;
   height: auto;
+ padding-left: 1.7rem;
+
   cursor: pointer;
+  @media  (max-width: 1117px) {
+      width: 2.8rem;
+      height: 2.8rem;
+      margin-left:1rem !important;
+    }
   img {
     width: 3rem;
-    margin-left: 1rem;
     height: 3rem;
     filter: brightness(0) invert(1) grayscale(1);
     user-select: none;
-    @media screen and (max-width: 1117px) {
-      width: 2.8rem;
-      height: 2.8rem;
-      margin-left: 0.8rem !important;
-    }
   }
 `
 
