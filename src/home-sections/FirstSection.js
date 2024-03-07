@@ -193,13 +193,14 @@ right:0;
 left: 0;
 height: 100%;
 width: 95%;
-
+@media (max-width :750px){
+width: 100% !important;
+  }
 `
 
 
 const Header = () => {
   
-
   return (
     <Section>
     <Wrapper

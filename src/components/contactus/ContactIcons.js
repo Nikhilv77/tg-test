@@ -34,6 +34,7 @@ const Wrapper = styled.div`
 const Icon = styled(Box)`
   margin-right: var(--mantine-spacing-md);
   background-color: transparent;
+  
 `
 
 const Title = styled(Text)`

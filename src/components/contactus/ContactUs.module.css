@@ -53,6 +53,7 @@
 .social {
   color: var(--mantine-color-white);
 
+ 
   @mixin hover {
     color: var(--mantine-color-blue-1);
   }

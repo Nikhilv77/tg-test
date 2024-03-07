@@ -26,15 +26,15 @@ const ContactUs = () => {
           <Group mt="xl">
             <i
               className="ri-instagram-line"
-              style={{ fontSize: '2rem', color: '#fff' }}
+              style={{ fontSize: '2rem', color: '#fff',cursor:'pointer' }}
             ></i>
             <i
               className="ri-facebook-circle-fill"
-              style={{ fontSize: '2rem', color: '#fff' }}
+              style={{ fontSize: '2rem', color: '#fff',cursor:'pointer' }}
             ></i>
             <i
               className="ri-discord-fill"
-              style={{ fontSize: '2rem', color: '#fff' }}
+              style={{ fontSize: '2rem', color: '#fff',cursor:'pointer' }}
             ></i>
           </Group>
         </div>

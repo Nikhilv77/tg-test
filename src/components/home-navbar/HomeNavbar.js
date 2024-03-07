@@ -73,7 +73,7 @@ const Logo = styled.a`
   @media  (max-width: 1117px) {
       width: 2.8rem;
       height: 2.8rem;
-      margin-left:1rem !important;
+      padding-left:1rem !important;
     }
   img {
     width: 3rem;
@@ -133,20 +133,6 @@ const Nav = styled.nav`
         margin-right: 1rem;
       }
     } */
-  }
-`
-const coolEffectAnimation = keyframes`
-  0% {
-
-    filter: hue-rotate(0deg);
-  }
-  50% {
-   
-    filter: hue-rotate(30deg);
-  }
-  100% {
-
-    filter: hue-rotate(0deg);
   }
 `
 
