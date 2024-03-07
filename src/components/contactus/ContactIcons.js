@@ -25,6 +25,7 @@ const icons = {
 
 // Styled components
 const Wrapper = styled.div`
+  z-index: 9 !important;
   display: flex;
   align-items: center;
   color: var(--mantine-color-white);

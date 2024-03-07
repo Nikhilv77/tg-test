@@ -96,6 +96,7 @@ const TextContainer = styled(motion.div)`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  z-index: 9;
   @media ( (max-width : 1025px) and (min-height: 900px)) {
     padding: 1rem;
     height: 40vh;

@@ -14,7 +14,7 @@ const FaqWrapper = styled(motion(Container))`
   padding-bottom: calc(var(--mantine-spacing-xl) * 2);
   min-height: 650px;
   font-family: Hauora, monospace !important;
-  
+  z-index: 5;
 `
 
 const FaqTitle = styled(motion(Title))`

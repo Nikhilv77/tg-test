@@ -91,6 +91,7 @@ const Title = styled(motion.h1)`
   text-transform: 0 0 4px #fff;
   color: #fff;
   font-family: Hauora, monospace;
+  z-index: 9;
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
   text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
     1px 1px 0px #333, 2px 2px 0px #333, 3px 3px 0px #333, 3px 3px 0px #333,

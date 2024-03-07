@@ -59,6 +59,7 @@ display: flex;
 justify-content:center;
 align-items: center;
 gap: 1rem;
+z-index: 9;
 @media (max-width:750px) {
   flex-direction: column;
 }
@@ -156,7 +157,6 @@ position:relative;
 height: 35rem;
 width: 38rem;
 filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-
 z-index: 3;
 
     @media (max-width: 1200px) {

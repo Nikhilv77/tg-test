@@ -12,8 +12,8 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-
-  background-color: #181818;
+  z-index: 9 !important;
+  background-color: transparent;
   color: white;
 `
 
@@ -24,6 +24,7 @@ const FooterComponent = styled(motion.footer)`
     width: 90vw;
   }
   ul {
+    z-index: 9;
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -40,6 +41,7 @@ const FooterComponent = styled(motion.footer)`
   }
 
   li {
+   
     padding: 2rem;
     font-size: 1.2rem;
     font-weight: 520 !important;
