@@ -8,6 +8,7 @@ import FourthSection from '../home-sections/FourthSection'
 import FifthSection from '../home-sections/FifthSection'
 import SixthSection from '../home-sections/SixthSection'
 import Footer from '../home-sections/FooterSection'
+import { MantineProvider, createTheme } from '@mantine/core'
 
 const HomePage = () => {
   useEffect(() => {
@@ -16,8 +17,10 @@ const HomePage = () => {
       const locomotiveScroll = new LocomotiveScroll()
     })()
   }, [])
+  const theme = createTheme({})
   return (
     <div>
+           <MantineProvider theme={theme}>
       <HomeNavbar />
      <HeroSection/>
       <FirstSection />
@@ -27,6 +30,7 @@ const HomePage = () => {
       <FifthSection />
       <SixthSection />
       <Footer />
+      </MantineProvider>
     </div>
   )
 }

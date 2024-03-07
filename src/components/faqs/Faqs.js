@@ -10,6 +10,7 @@ const PlaceholderText = `
 `
 
 const FaqWrapper = styled(motion(Container))`
+
   padding-top: calc(var(--mantine-spacing-xl) * 1.9);
   padding-bottom: calc(var(--mantine-spacing-xl) * 2);
   min-height: 650px;
