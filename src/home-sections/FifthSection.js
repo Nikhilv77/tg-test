@@ -68,11 +68,11 @@ width: 100%;
   height: 97vh;
   /* background-color: green; */
   @media ( (max-width : 1025px) and (min-height: 900px)) {
-    height: 60vh;
+    height: 55vh;
    width: 96%;
     }
   @media (max-width:800px){
-   height: 60vh;
+   height: 55vh;
    width: 96%;
 }
 }
@@ -99,12 +99,12 @@ const TextContainer = styled(motion.div)`
   z-index: 9;
   @media ( (max-width : 1025px) and (min-height: 900px)) {
     padding: 1rem;
-    height: 40vh;
+    height: 45vh;
    justify-content: center;
    width: 60%;
     }
   @media (max-width:800px){
-   height: 40vh;
+   height: 45vh;
    justify-content: center;
    width: 83%;
 }
@@ -195,6 +195,40 @@ const Text = styled.p`
     font-size: 1em;
   }
 `
+const Button = styled.button`
+  font-family: Hauora, monospace;
+  font-weight: 600 !important;
+  user-select: none;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 126, 242, 1),
+    rgba(0, 58, 108, 1)
+  );
+  padding: 0.7rem 0.9rem 0.7rem 0.9rem;
+  border-radius: 0.2rem; /* Set border-radius to a high value */
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  transition: height 0.2s, transform 0.2s;
+  &:hover{
+    background: #007EF2;
+  
+  }
+  @media ( (max-width : 1025px) and (min-height: 900px)) {
+    align-self: center;
+    font-size: 1.2rem;
+    }
+  @media (max-width:800px){
+   align-self: center;
+   font-size: 1.1rem;
+}
+`
 
 
 
@@ -230,6 +264,7 @@ const FourthSection = () => {
           <Text>
           Our advanced features empower you to unleash creativity effortlessly, enabling you to bring your vision to life with unparalleled ease and precision
           </Text>
+          <Button>FAQs</Button>
         </TextContainer>
         <div className='image-wrapper'>
         <I1 src={image1}

@@ -173,9 +173,7 @@ const Button = styled.button`
   font-weight: 400;
   cursor: pointer;
   transition: height 0.2s, transform 0.2s;
-  &:hover {
-    animation: ${coolEffectAnimation} 3s infinite; /* Apply the animation */
-  }
+ 
 
   @media only screen and (max-width: 1117px) {
     font-size: 1.2rem;
