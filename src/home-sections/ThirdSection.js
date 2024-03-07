@@ -217,8 +217,8 @@ const Header = () => {
 </motion.h1>
 <ImageContainer>
     <I1
-    initial = {{top:'-109%'}}
-    whileInView = {{top:0}}
+    initial = {{top:'-109%',opacity:0}}
+    whileInView = {{top:0,opacity:1}}
     viewport={{ once: true }}
     transition={{duration:1.7,delay:1}}
     src={image1} alt='first-image'/>
