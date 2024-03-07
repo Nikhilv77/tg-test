@@ -13,7 +13,6 @@ const Section = styled.section`
   overflow: hidden;
   min-height: 100vh;
   width: 100vw;
-
 `
 const I3 = styled(motion.img)`
  opacity: 0.7 !important;
@@ -218,8 +217,8 @@ const Header = () => {
 </motion.h1>
 <ImageContainer>
     <I1
-    initial = {{top:'-100%',rotate:-20}}
-    whileInView = {{top:0,rotate:0}}
+    initial = {{top:'-109%'}}
+    whileInView = {{top:0}}
     viewport={{ once: true }}
     transition={{duration:1.7,delay:1}}
     src={image1} alt='first-image'/>
