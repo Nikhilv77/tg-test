@@ -122,7 +122,7 @@ const Title = styled.h1`
   font-size: 3.4rem;/* Adjust the font size based on viewport width */
   z-index: 5;
   text-transform: capitalize;
- 
+  color: #fff;
   font-family: Hauora, monospace !important;
 
   @media ( (max-width : 1024px) and (min-height: 900px)) {

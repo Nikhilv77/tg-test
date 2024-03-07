@@ -68,6 +68,7 @@ gap: 1rem;
     }
 h1 {
     font-family: Hauora, monospace;
+    color: #fff;
      width: 23%;
     text-align: start;
     line-height: 1.4;

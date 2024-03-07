@@ -92,6 +92,7 @@ const ImageContainer = styled.div`
   }
 `
 const Title = styled(motion.div)`
+  
   padding-left: 3rem;
   overflow: hidden;
   position: absolute;
@@ -119,7 +120,7 @@ const Title = styled(motion.div)`
     font-family: Hauora, monospace;
     text-align: start;
     line-height: 1.3;
-
+    color: #fff;
     font-size: 3.5em;
     width: 90%;
     user-select: none;
