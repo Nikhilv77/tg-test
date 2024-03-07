@@ -17,12 +17,25 @@ place-items: center;
 height: 100%;
 width: 100%;
 /* background-color: pink; */
-@media ( (max-width : 1025px) and (min-height: 900px)) {
+@media (max-width: 1025px) and (min-height: 900px) {
   grid-template-columns: 1fr;
+    > *:first-child {
+      order: 2; /* Reversing the order for mobile devices */
     }
-@media (max-width:800px){
-  grid-template-columns:1fr;
-}
+    > *:last-child {
+      order: 1; /* Reversing the order for mobile devices */
+    }
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    > *:first-child {
+      order: 2; /* Reversing the order for mobile devices */
+    }
+    > *:last-child {
+      order: 1; /* Reversing the order for mobile devices */
+    }
+  }
 .image-wrapper{
   position: relative;
   width: 100%;
