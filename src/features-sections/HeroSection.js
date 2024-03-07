@@ -27,31 +27,20 @@ width: 100%;
   position: relative;
   width: 100%;
   height: 65vh;
-  /* background-color: green; */
+
   @media ( (max-width : 1025px) and (min-height: 900px)) {
     height: 60vh;
    width: 96%;
     }
   @media (max-width:800px){
-   height: 60vh;
+   height: 50vh;
    width: 96%;
 }
 }
 `
-const I1 = styled(motion.img)`
-  width: 100%;
-  height: 64vh;
-  position: absolute;
-  object-fit: contain;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-  z-index: 5;
-  user-select: none;
-
-`
 
 const TextContainer = styled(motion.div)`
   width: 90%;
-  /* background-color: yellow; */
   height: 28vh;
   display: flex;
   flex-direction: column;
@@ -61,13 +50,11 @@ const TextContainer = styled(motion.div)`
   gap: 1rem;
   @media ( (max-width : 1025px) and (min-height: 900px)) {
     padding: 1rem;
-    height: 40vh;
-
+    height: 30vh;
    width: 60%;
     }
   @media (max-width:800px){
-   height: 40vh;
-
+   height: 30vh;
    width: 83%;
 }
 
@@ -80,15 +67,28 @@ const TextContainer = styled(motion.div)`
     transform: translate(-50%,-50%);
   } */
 `
+const I1 = styled(motion.img)`
 
+  width: 100%;
+  height: 64vh;
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+  z-index: 5;
+  user-select: none;
+  @media (max-width:800px){
+  height: 100%;
+}
+`
 const Title = styled.h1`
+
   font-size: 3.4rem;/* Adjust the font size based on viewport width */
   z-index: 5;
   text-transform: capitalize;
   color: #fff;
   font-family: Hauora, monospace !important;
   @media ( (max-width : 1024px) and (min-height: 900px)) {
-   font-size: 2.5rem !important;
+   font-size: 2.1rem !important;
     text-align: center !important;
   }
 
@@ -130,7 +130,7 @@ const Text = styled.p`
   @media ( (max-width : 1024px) and (min-height: 900px)) {
    line-height: 1.6;
    width: 80% !important;
-   font-size: 1.3em !important;
+   font-size: 1.2em !important;
    text-align: center !important;
   }
 
