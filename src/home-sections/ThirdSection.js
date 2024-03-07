@@ -10,7 +10,7 @@ import image7 from '../assets/new-images/homepage-images/section-1-3.png'
 const Section = styled.section`
   position: relative;
   background-color: #181818;
-  /* overflow: hidden; */
+  overflow: hidden;
   min-height: 100vh;
   width: 100vw;
 
