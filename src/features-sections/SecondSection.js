@@ -180,8 +180,8 @@ const SecondSection = () => {
         <Wrapper>
           <div className='image-wrapper'>
         <I1 src={image1}
-        initial = {{top:'-90%'}}
-        whileInView={{top:0}}
+        initial = {{bottom:'-90%'}}
+        whileInView={{bottom:0}}
         viewport={{ once: true }}
         transition={{duration:1.7,delay:0.8}}
         />
