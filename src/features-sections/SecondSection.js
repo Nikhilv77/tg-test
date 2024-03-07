@@ -88,7 +88,7 @@ const Title = styled.h1`
 
   @media ( (max-width : 1024px) and (min-height: 900px)) {
     text-align: center !important;
-   font-size: 2.5em !important;
+   font-size: 2.3em !important;
   }
   @media (max-width: 1200px) {
     font-size: 2.4em;
@@ -128,7 +128,7 @@ const Text = styled.p`
   @media ( (max-width : 1024px) and (min-height: 900px)) {
    line-height: 1.5;
    width: 90% !important;
-   font-size: 1.3em !important;
+   font-size: 1.1em !important;
    text-align: center !important;
   }
 
@@ -170,7 +170,7 @@ const SecondSection = () => {
         initial = {{top:'-90%'}}
         whileInView={{top:0}}
         viewport={{ once: true }}
-        transition={{duration:1,delay:0.6}}
+        transition={{duration:1.7,delay:0.8}}
         />
         </div>
         <TextContainer

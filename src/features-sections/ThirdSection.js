@@ -88,7 +88,7 @@ const Title = styled.h1`
 
   @media ( (max-width : 1024px) and (min-height: 900px)) {
     text-align: center !important;
-   font-size: 2rem !important;
+   font-size: 1.9rem !important;
   }
   @media (max-width: 1200px) {
     font-size: 2.4em;
@@ -129,7 +129,7 @@ const Text = styled.p`
     text-align: center !important;
    line-height: 1.5;
    width: 100% !important;
-   font-size: 1.2em !important;
+   font-size: 1.1em !important;
   }
 
   @media (max-width: 1200px) {

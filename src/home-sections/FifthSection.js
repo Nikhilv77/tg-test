@@ -236,7 +236,7 @@ const FourthSection = () => {
         initial = {{top:'-90%'}}
         whileInView={{top:0}}
         viewport={{ once: true }}
-        transition={{duration:1}}
+        transition={{duration:1.7,delay:1}}
         />
         </div>
         </Wrapper>

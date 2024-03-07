@@ -10,7 +10,7 @@ import image7 from '../assets/new-images/homepage-images/section-1-3.png'
 const Section = styled.section`
   position: relative;
   background-color: #181818;
-  overflow: hidden;
+  /* overflow: hidden; */
   min-height: 100vh;
   width: 100vw;
 
@@ -218,10 +218,10 @@ const Header = () => {
 </motion.h1>
 <ImageContainer>
     <I1
-    initial = {{top:'-110%'}}
-    whileInView = {{top:0}}
+    initial = {{top:'-100%',rotate:-20}}
+    whileInView = {{top:0,rotate:0}}
     viewport={{ once: true }}
-    transition={{duration:1}}
+    transition={{duration:1.7,delay:1}}
     src={image1} alt='first-image'/>
     </ImageContainer>
 <motion.h2
