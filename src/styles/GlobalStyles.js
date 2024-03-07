@@ -17,7 +17,7 @@ button,a{
   -webkit-tap-highlight-color: transparent;
 }
 body{
-  background-color: rgba(24,24,24,0.5);
+  background-color: #181818;
   overflow-x: hidden;
 }
 section {

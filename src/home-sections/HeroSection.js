@@ -8,7 +8,7 @@ import image4 from '../assets/new-images/homepage-images/section-1-3.png'
 
 const HeaderSection = styled.section`
   position: relative;
-  background: rgba(24, 24, 24, 0.5) !important;
+  background-color: #181818;
   overflow: hidden;
   min-height: 93vh;
   overflow-y: scroll;

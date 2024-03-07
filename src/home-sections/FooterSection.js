@@ -15,7 +15,7 @@ const Section = styled.section`
   align-items: center;
   overflow-x: hidden;
 
-  background-color: rgba(24,24,24,0.5) !important;
+  background-color: #181818;
   color: white;
 
   position: relative;

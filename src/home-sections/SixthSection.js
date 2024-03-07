@@ -11,7 +11,7 @@ const Section = styled.section`
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background-color: rgba(24,24,24,0.5) !important;
+  background-color: #181818;
   display: flex;
   justify-content: center;
   align-items: center;
