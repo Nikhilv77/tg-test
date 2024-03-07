@@ -173,7 +173,7 @@ const FourthSection = () => {
             initial={{ bottom: '-90%' }}
             whileInView={{ bottom: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.7,delay:0.9 }}
+            transition={{ duration: 1}}
           />
         </div>
         <TextContainer
