@@ -57,7 +57,7 @@ width: 100%;
 display: flex;
 justify-content:center;
 align-items: center;
-gap: 1rem;
+gap: 2rem;
 z-index: 9;
 @media (max-width:750px) {
   flex-direction: column;

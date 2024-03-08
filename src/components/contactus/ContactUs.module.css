@@ -63,11 +63,12 @@
   background-color: var(--mantine-color-white);
   border-color: var(--mantine-color-gray-4);
   color: var(--mantine-color-black);
-
+  font-weight: 500;
   &::placeholder {
     color: var(--mantine-color-gray-5);
     font-family: 'Open Sans', sans-serif !important;
     font-size: 1.1rem;
+
     @media (max-width: 720px) {
       font-size: 1rem;
     }

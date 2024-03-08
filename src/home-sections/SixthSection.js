@@ -1,23 +1,33 @@
-import React from 'react'
-import styled from 'styled-components'
-import Image1 from '../assets/images/homepage-images/frame22.png'
-import Image2 from '../assets/images/homepage-images/sun-frame.png'
+import React, { useRef, useState } from 'react';
+import styled from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {motion} from 'framer-motion'
+import { Autoplay } from 'swiper/modules';
+import image1 from '../assets/images/homepage-images/frame22.png'
 import image3 from '../assets/new-images/homepage-images/section-1-4.png'
 import image4 from '../assets/new-images/homepage-images/section-1-3.png'
-import {motion} from 'framer-motion'
+
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/autoplay'
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import '../styles/Swiper.css'
+
+import { EffectCoverflow } from 'swiper/modules';
+
 const Section = styled.section`
-  width: 100vw;
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  background-color: #181818;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+min-height: 100vh;
+width: 100vw;
+position: relative;
+overflow: hidden;
+display: grid;
+grid-template-columns: 1fr;
+place-items: center;
 `
 const I3 = styled(motion.img)`
-
+opacity: 0.6 !important;
   height: 80vh;
   width: 30vw;
   position: absolute;
@@ -36,6 +46,7 @@ top: 5%;
   }
 `
 const I4 = styled(motion.img)`
+opacity: 0.6 !important;
   height: 84vh;
   width: 20vw;
   position: absolute;
@@ -52,94 +63,116 @@ width: 30vw;
 
   }
 `
-const I1 = styled(motion.img)`
-  position: absolute;
-  user-select: none;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: bottom;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-  z-index: 2;
-`
-const I2 = styled(motion.img)`
-  height: 70vh;
-  width: 80%;
-  position: absolute;
-  user-select: none;
-  left: 2%;
-  object-fit: contain;
-  object-position: bottom;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-  z-index: 3;
-  @media (max-width:600px){
-    width: 50%;
-    left: 10%;
-  }
+
+
+const TextContainer = styled(motion.div)`
+
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 9;
+  @media ( (max-width : 1025px) and (min-height: 900px)) {
+    padding: 1rem;
+   justify-content: center;
+   width: 60%;
+    }
+  @media (max-width:800px){
+   justify-content: center;
+   width: 83%;
+}
+
+
 `
 
-const Title = styled(motion.h1)`
-  font-size: 4.6em;
+const Title = styled.h1`
+  font-size: 3.4rem;/* Adjust the font size based on viewport width */
   z-index: 5;
   text-transform: capitalize;
-  background-color: transparent;
-  padding: 0.3rem;
-  opacity: 0.8;
-  border-radius: 1rem;
-  text-transform: 0 0 4px #fff;
+  text-align: center !important;
   color: #fff;
-  font-family: Hauora, monospace;
-  z-index: 9;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
-    1px 1px 0px #333, 2px 2px 0px #333, 3px 3px 0px #333, 3px 3px 0px #333,
-    4px 4px 0px #333, 4px 4px 0px #333, 5px 5px 0px #333;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-
-  @media screen and (max-width: 70em) {
-    font-size: 3em;
+  font-family: Hauora, monospace !important;
+  @media ( (max-width : 1024px) and (min-height: 900px)) {
+    text-align: center !important;
+   font-size: 2.5em !important;
   }
-  @media screen and (max-width: 48em) {
-    font-size: 2em;
-  }
-`
-const Cta = styled(motion.h1)`
-  font-size: 3.3em;
-  z-index: 6;
-  text-transform: capitalize;
-  opacity: 1;
 
-  text-transform: 0 0 4px #fff;
-  color: #fff;
-  font-family: Hauora, monospace;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-  text-shadow: 1px 1px 0px #333, 1px 1px 0px #333, 1px 1px 0px #333,
-    1px 1px 0px #333, 2px 2px 0px #333, 3px 3px 0px #333, 3px 3px 0px #333,
-    4px 4px 0px #333, 4px 4px 0px #333, 5px 5px 0px #333;
-
-  @media screen and (max-width: 70em) {
-    font-size: 2.7em;
+  @media (max-width: 1200px) {
+    font-size: 2.4em;
   }
-  @media screen and (max-width: 48em) {
+
+  @media (max-width: 1000px) {
+    font-size: 2.3em;
+  }
+  @media (max-width: 750px) {
     font-size: 2.2em;
+    text-align: center !important;
+    
+  }
+  @media (max-width: 600px) {
+    font-size: 2em;
+
+  }
+  @media (max-width: 500px) {
+    font-size: 1.8em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.6em;
+  } /* Adjust font size for even smaller screens */
+  
+`
+const Text = styled.p`
+  /* text-align: justify; */
+  font-family: Hauora, monospace !important;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  z-index: 5;
+  text-transform: capitalize;
+  text-transform: 0 0 4px #fff;
+  text-align: center !important;
+
+  color: #b0b0b0;
+  font-family: Hauora, monospace !important;
+  @media ( (max-width : 1024px) and (min-height: 900px)) {
+   line-height: 1.5;
+   width: 95% !important;
+   font-size: 1.3em !important;
+   text-align: center !important;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 1.6em;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 1.4em;
+  }
+  @media (max-width: 750px) {
+    font-size: 1.3em;
+    text-align: center !important;
+    
+  }
+  @media (max-width: 600px) {
+    font-size: 1.1em;
+
+  }
+  @media (max-width: 500px) {
+    font-size: 1em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1em;
   }
 `
 
-const SixthSection = () => {
- 
- 
+export default function App() {
 
   return (
+    <>
     <Section>
-      <I1
-      initial = {{scale:1}}
-      whileInView = {{scale:0.3,rotate:21}}
-      viewport={{ once: true }}
-      transition = {{duration:1,delay:1}}
-      src={Image1}/>
-      <I3
+    <I3
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5, type: 'ease' }}
@@ -153,24 +186,66 @@ const SixthSection = () => {
         src={image4}
         alt="background-blur"
       />
-      <Title
-       initial = {{top:"50%"}}
-       whileInView={{top:'40%',scale:0.7,rotate:20}}
-       viewport={{ once: true }}
-       transition={{duration:1.3,delay:1}}
-        style={{ top: '50%', position: 'absolute', textAlign: 'center',opacity:0.6 }}
+      <TextContainer
+           initial = {{opacity:0}}
+           whileInView={{opacity:1}}
+           viewport={{ once: true }}
+           transition={{duration:1,delay:1}}
+        >
+          <Title>TagSocial is Loved by All</Title>
+          <Text>
+          Experience the unparalleled satisfaction of TagSocial users with a stellar rating of 4.7+ on Google Play, reflecting the app's seamless functionality and user-centric design.
+          </Text>
+          </TextContainer>
+          
+      <Swiper
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction:false
+        }}
+       
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+       
+        modules={[Autoplay,EffectCoverflow]}
+        className="mySwiper"
       >
-        TagSocial brings innovative<br />features and functionalities <br />{' '}
-        to the social media landscape
-      </Title>
-      <I2 
-      initial = {{top:"-40%",opacity:0}}
-      whileInView={{top:'20%',rotate:-21,opacity:1}}
-      viewport={{ once: true }}
-      transition={{duration:1,delay:1.3}}
-      src={Image2} />
-    
-    </Section>
-  )
+        <SwiperSlide>
+          <img src={image1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={image1} />
+        </SwiperSlide>
+  
+      </Swiper>
+      </Section>
+    </>
+  );
 }
-export default SixthSection

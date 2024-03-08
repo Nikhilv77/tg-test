@@ -14,14 +14,16 @@ const Wrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr ;
 place-items: center;
+gap: 1.5rem;
 height: 100%;
 width: 100%;
 /* background-color: pink; */
 @media ( (max-width : 1025px) and (min-height: 900px)) {
   grid-template-columns: 1fr;
+  gap: 0;
     }
 @media (max-width:800px){
-  grid-template-columns:1fr;
+  gap: 0;
 }
 .image-wrapper{
   position: relative;

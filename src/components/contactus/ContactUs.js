@@ -39,11 +39,9 @@ const ContactUs = () => {
           </Group>
         </div>
         <div className={classes.form}>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault()
-              console.log('hey')
-            }}
+         <form
+          action="https://formspree.io/f/xvoeokjp"
+          method="POST"
           >
             <TextInput
               label="Email"
@@ -70,7 +68,7 @@ const ContactUs = () => {
             />
 
             <Group justify="flex-end" mt="md">
-              <Button className={classes.control}>Send message</Button>
+              <Button type='submit' className={classes.control}>Send message</Button>
             </Group>
           </form>
         </div>
