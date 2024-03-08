@@ -34,47 +34,7 @@ opacity: 0.7 !important;
   position: absolute;
 
   left: 0;
- top: 2%;
-  z-index: -1;
-  @media (max-width:1100px){
-    height: 75vh;
-width: 25vw;
-  }
-  @media (max-width :750px){
-height: 55vh;
-width: 30vw;
-
-  }
-`
-
-const I5 = styled(motion.img)`
- opacity: 0.7 !important;
-  height: 40vh;
-  width: 20vw;
-  position: absolute;
-
-  right: 0;
-bottom: 10%;
-  z-index: -1;
-  @media (max-width:1100px){
-    height: 40vh;
-width: 40vw;
-
-  }
-  @media (max-width :750px){
-height: 35vh;
-width: 35vw;
-
-  }
-`
-const I6 = styled(motion.img)`
-opacity: 0.7 !important;
-  height: 44vh;
-  width: 20vw;
-  position: absolute;
-
-  left: 0;
-  bottom: 14%;
+ top: 20%;
   z-index: -1;
   @media (max-width:1100px){
     height: 75vh;
@@ -108,14 +68,7 @@ const PrivacyPage = () => {
        src={image7}
        alt="background-blur"
      />
-      <I5
-       src={image6}
-       alt="background-blur"
-     />
-     <I6
-       src={image7}
-       alt="background-blur"
-     />
+     
       
       <SecondNavbar />
       <MantineProvider theme={theme}>

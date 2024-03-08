@@ -205,7 +205,7 @@ const MobileMenu = styled.nav`
   margin: 0.5rem;
   a {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 1.5rem;
     cursor: pointer;
     font-family: Hauora, monospace;
@@ -298,7 +298,7 @@ const HomeNavbar = () => {
           <a href="/faqs">FAQs</a>
           <a href="/terms-and-conditions">Privacy Policy</a>
 
-          <div style={{paddingBottom:'1rem'}}>
+          <div style={{paddingBottom:'1.5rem'}}>
               <MantineProvider theme={theme}>
             <DownloadOptions/>
             </MantineProvider>

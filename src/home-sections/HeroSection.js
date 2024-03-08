@@ -108,7 +108,7 @@ const Title = styled(motion.div)`
     justify-content: flex-start;
    padding-left: 0;
     height: 55%;
-    width: 100%;
+    width: 97%;
     /* background-color: green; */
     bottom: 0;
     left: 49%;

@@ -16,9 +16,9 @@ font-family: var(--mantine-font-family);
     rgba(0, 126, 242, 1),
     rgba(0, 58, 108, 1)
   );
-  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  padding: 0.6rem 0.9rem 0.6rem 0.9rem;
   border-radius: 0.2rem; /* Set border-radius to a high value */
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #fff;
   font-weight: 400;
   cursor: pointer;
@@ -26,11 +26,11 @@ font-family: var(--mantine-font-family);
 
   @media ( (max-width : 1025px) and (min-height: 900px)) {
     align-self: center;
-    font-size: 1.2rem;
+    font-size: 1.29rem;
     }
   @media (max-width:800px){
    align-self: center;
-   font-size: 1.1rem;
+   font-size: 1.29rem;
 }
 `
 
