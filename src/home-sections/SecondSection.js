@@ -108,18 +108,10 @@ const TextContainer = styled(motion.div)`
    width: 88%;
 }
 
-  /* @media (max-width:800px){
-    justify-content: space-between;
-    width: 75%;
-    height: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  } */
 `
 
 const Title = styled.h1`
-  font-size: 3.4rem;/* Adjust the font size based on viewport width */
+  font-size: 3.4rem;
   z-index: 5;
   text-transform: capitalize;
   color: #fff;
@@ -208,7 +200,7 @@ const Button = styled.button`
     rgba(0, 58, 108, 1)
   );
   padding: 0.7rem 0.9rem 0.7rem 0.9rem;
-  border-radius: 0.2rem; /* Set border-radius to a high value */
+  border-radius: 0.2rem;
   font-size: 1.4rem;
   color: #fff;
   font-weight: 400;
@@ -228,7 +220,7 @@ const Button = styled.button`
 }
 `
 
-const FourthSection = () => {
+const SecondSection = () => {
   
   
 
@@ -278,7 +270,7 @@ const FourthSection = () => {
   )
 }
 
-export default FourthSection
+export default SecondSection
 
 
 

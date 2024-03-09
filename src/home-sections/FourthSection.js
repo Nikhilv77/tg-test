@@ -109,14 +109,6 @@ const TextContainer = styled(motion.div)`
    width: 83%;
 }
 
-  /* @media (max-width:800px){
-    justify-content: space-between;
-    width: 75%;
-    height: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  } */
 `
 
 const Title = styled.h1`

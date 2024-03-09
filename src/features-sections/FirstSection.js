@@ -158,7 +158,7 @@ const Text = styled.p`
 
 
 
-const FourthSection = () => {
+const FirstSection = () => {
   
   
 
@@ -193,4 +193,4 @@ TagScores-TagSocial’s New Currency
   )
 }
 
-export default FourthSection
+export default FirstSection

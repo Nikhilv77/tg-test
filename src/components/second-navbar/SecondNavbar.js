@@ -1,11 +1,11 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
-import styled, { keyframes } from 'styled-components'
-import logo from '../../assets/images/homepage-images/Logo.png'
+import styled from 'styled-components'
+import logo from '../../assets/new-images/homepage-images/Logo.png'
 import { motion } from 'framer-motion'
-import ctaImage1 from '../../assets/images/homepage-images/Frame 66.png'
-import ctaImage2 from '../../assets/images/homepage-images/Frame 65.png'
+import ctaImage1 from '../../assets/new-images/homepage-images/cta-2.png'
+import ctaImage2 from '../../assets/new-images/homepage-images/cta-1.png'
 import DownloadOptions from '../DownloadOptions/DownloadOptions'
 import { MantineProvider, createTheme } from '@mantine/core'
 
@@ -213,7 +213,7 @@ const MobileMenu = styled.nav`
   }
 `
 
-const HomeNavbar = () => {
+const SecondNavbar = () => {
   const theme = createTheme({})
   const [click, setClick] = useState(false)
   //const handleClick = () => setClick(!click);
@@ -311,4 +311,4 @@ const HomeNavbar = () => {
     </>
   )
 }
-export default HomeNavbar
+export default SecondNavbar

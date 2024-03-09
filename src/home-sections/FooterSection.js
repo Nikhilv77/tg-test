@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useEffect } from 'react'
 
-import Logo from '../assets/images/homepage-images/Logo.png'
+import Logo from '../assets/new-images/homepage-images/Logo.png'
 
 const Section = styled.section`
   min-height: 100vh;

@@ -199,7 +199,7 @@ width: 100% !important;
 `
 
 
-const Header = () => {
+const FirstSection = () => {
   
   return (
     <Section>
@@ -248,4 +248,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default FirstSection

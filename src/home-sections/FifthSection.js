@@ -109,18 +109,10 @@ const TextContainer = styled(motion.div)`
    width: 83%;
 }
 
-  /* @media (max-width:800px){
-    justify-content: space-between;
-    width: 75%;
-    height: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  } */
 `
 
 const Title = styled.h1`
-  font-size: 3.4rem;/* Adjust the font size based on viewport width */
+  font-size: 3.4rem;
   z-index: 5;
   text-transform: capitalize;
   color: #fff;
@@ -232,7 +224,7 @@ const Button = styled.button`
 
 
 
-const FourthSection = () => {
+const FifthSection = () => {
   
   
 
@@ -282,4 +274,4 @@ const FourthSection = () => {
   )
 }
 
-export default FourthSection
+export default FifthSection

@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {motion} from 'framer-motion'
 import { Autoplay } from 'swiper/modules';
-import image1 from '../assets/images/homepage-images/frame22.png'
+import image1 from '../assets/new-images/homepage-images/section-7-1.png'
 import image3 from '../assets/new-images/homepage-images/section-1-4.png'
 import image4 from '../assets/new-images/homepage-images/section-1-3.png'
 
@@ -167,7 +167,7 @@ const Text = styled.p`
   }
 `
 
-export default function App() {
+const SixthSection =()=> {
 
   return (
     <>
@@ -194,7 +194,7 @@ export default function App() {
         >
           <Title>TagSocial is Loved by All</Title>
           <Text>
-          Experience the unparalleled satisfaction of TagSocial users with a stellar rating of 4.7+ on Google Play, reflecting the app's seamless functionality and user-centric design.
+          Experience the unparalleled satisfaction of TagSocial users with a stellar rating of 5 on Google Play, reflecting the app's seamless functionality and user-centric design.
           </Text>
           </TextContainer>
           
@@ -249,3 +249,4 @@ export default function App() {
     </>
   );
 }
+export default SixthSection;

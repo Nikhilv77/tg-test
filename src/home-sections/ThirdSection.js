@@ -200,7 +200,7 @@ width: 100%;
 
 
 
-const Header = () => {
+const ThirdSection = () => {
   
 
   return (
@@ -250,4 +250,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default ThirdSection
