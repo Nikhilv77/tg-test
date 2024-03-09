@@ -92,10 +92,18 @@ const DownloadOptions = () => {
       </Menu.Target>
 
       <Menu.Dropdown style={{ backgroundColor: '#333', border: 'none', display: 'flex', flexDirection: 'column', padding: '0.5rem', marginRight: '1rem' }}>
-        <MenuItem1 leftSection={<MenuItemIcon className="ri-google-play-fill" />}>
+        <MenuItem1
+        onClick = {()=>{
+          window.open('https://play.google.com/store/apps/details?id=com.syneidisi.tagsocial')
+        }}
+        leftSection={<MenuItemIcon className="ri-google-play-fill" />}>
           Google Play
         </MenuItem1>
-        <MenuItem leftSection={<MenuItemIcon className="ri-apple-fill" />}>
+        <MenuItem
+        onClick = {()=>{
+          window.open('https://apps.apple.com/in/app/tagsocial/id6443448497')
+        }}
+        leftSection={<MenuItemIcon className="ri-apple-fill" />}>
           App Store
         </MenuItem>
       </Menu.Dropdown>

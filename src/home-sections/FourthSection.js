@@ -272,7 +272,9 @@ const FourthSection = () => {
             Unleash your creativity, express yourself, and make meaningful
             connections effortlessly.
           </Text>
-          <Button>Know more</Button>
+          <Button onClick={()=>{
+            window.location.href = '/faqs'
+          }}>Know more</Button>
         </TextContainer>
         </Wrapper>
       </Section>

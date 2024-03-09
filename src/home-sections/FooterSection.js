@@ -159,6 +159,7 @@ const FooterSection = () => {
               gap: '0.2rem',
             }}
           >
+                  <a href="https://www.facebook.com/Syneideisi" target='_blank'>
             <div title="Facebook">
               <svg
                 cursor="pointer"
@@ -180,7 +181,13 @@ const FooterSection = () => {
                 ></path>
               </svg>
             </div>
-            <div title="Instagram">
+            </a>
+            <a href="https://www.instagram.com/tags_social?igsh=Y3ptNXRkYWw2Nnhj"
+            target='_blank'
+            >
+            <div
+            
+            title="Instagram">
               <svg
                 title="Instagram"
                 cursor="pointer"
@@ -202,6 +209,7 @@ const FooterSection = () => {
                 ></path>
               </svg>
             </div>
+            </a>
           </span>
           <span
             style={{

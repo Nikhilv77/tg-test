@@ -11,8 +11,9 @@ import ContactIconsList from './ContactIcons' // Assuming this component remains
 import classes from './ContactUs.module.css'
 
 const ContactUs = () => {
+
   return (
-    <div className={classes.wrapper}>
+    <div id='contact-us' className={classes.wrapper}>
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
         <div>
           <Title className={classes.title}>Contact us</Title>
@@ -24,18 +25,27 @@ const ContactUs = () => {
           <ContactIconsList />
 
           <Group mt="xl">
+            <a href="https://www.instagram.com/tags_social?igsh=Y3ptNXRkYWw2Nnhj"
+            target='_blank'
+            >
             <i
               className="ri-instagram-line"
               style={{ fontSize: '2rem', color: '#fff',cursor:'pointer' }}
             ></i>
+            </a>
+            <a href="https://www.facebook.com/Syneideisi" target='_blank'>
             <i
               className="ri-facebook-circle-fill"
               style={{ fontSize: '2rem', color: '#fff',cursor:'pointer' }}
             ></i>
+            </a>
+            <a href='https://discord.com/invite/BcTKx2Tz' target='_blank'>
             <i
+          
               className="ri-discord-fill"
               style={{ fontSize: '2rem', color: '#fff',cursor:'pointer' }}
             ></i>
+            </a>
           </Group>
         </div>
         <div className={classes.form}>

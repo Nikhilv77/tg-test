@@ -261,7 +261,9 @@ const HomeNavbar = () => {
         }}
         ref={ref}
       >
-        <Logo>
+        <Logo
+        href='/'
+        >
           <img src={logo} alt="TagSocial" />
         </Logo>
         <Nav>
@@ -307,6 +309,7 @@ const HomeNavbar = () => {
         </MobileMenu>
       </Headers>
       <BottomHeader
+
         ref={bottomRef}
         initial={{
           opacity: 0,
@@ -319,8 +322,14 @@ const HomeNavbar = () => {
           duration: 0.9,
         }}
       >
-        <img className="cta-image" src={ctaImage1} alt="" />
-        <img className="cta-image" src={ctaImage2} alt="" />
+        
+        <img onClick={()=>{
+          window.open('https://apps.apple.com/in/app/tagsocial/id6443448497')
+        }} className="cta-image" src={ctaImage1} alt="" />
+        
+        <img onClick={()=>{
+          window.open('https://play.google.com/store/apps/details?id=com.syneidisi.tagsocial')
+        }} className="cta-image" src={ctaImage2} alt="" />
       </BottomHeader>
     </>
   )

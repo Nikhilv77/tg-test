@@ -106,6 +106,7 @@ const SecondFooter = () => {
               gap: '0.2rem',
             }}
           >
+              <a href="https://www.facebook.com/Syneideisi" target='_blank'>
             <div title="Facebook">
               <svg
                 cursor="pointer"
@@ -127,6 +128,10 @@ const SecondFooter = () => {
                 ></path>
               </svg>
             </div>
+            </a>
+            <a href="https://www.instagram.com/tags_social?igsh=Y3ptNXRkYWw2Nnhj"
+            target='_blank'
+            > 
             <div title="Instagram">
               <svg
                 title="Instagram"
@@ -149,6 +154,7 @@ const SecondFooter = () => {
                 ></path>
               </svg>
             </div>
+            </a>
           </span>
 
           <span>TagSocial&copy; 2021. All Rights Reserved.</span>

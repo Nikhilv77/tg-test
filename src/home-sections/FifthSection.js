@@ -264,7 +264,9 @@ const FourthSection = () => {
           <Text>
           Our advanced features empower you to unleash creativity effortlessly, enabling you to bring your vision to life with unparalleled ease and precision
           </Text>
-          <Button>FAQs</Button>
+          <Button onClick={()=>{
+            window.location.href = '/terms-and-conditions'
+          }}>Privacy Policy</Button>
         </TextContainer>
         <div className='image-wrapper'>
         <I1 src={image1}

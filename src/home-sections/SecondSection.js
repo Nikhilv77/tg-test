@@ -268,7 +268,9 @@ const FourthSection = () => {
           <Text>
           TagSocial is a transformative social experience. Imagine leaving your mark on the world by connecting with people and places around you
           </Text>
-          <Button>Features</Button>
+        <Button onClick={()=>{
+          window.location.href = '/features'
+        }}>Features</Button>
         </TextContainer>
         </Wrapper>
       </Section>
