@@ -237,13 +237,6 @@ const SixthSection =()=> {
         <SwiperSlide>
           <img src={image1} />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={image1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={image1} />
-        </SwiperSlide>
-  
       </Swiper>
       </Section>
     </>

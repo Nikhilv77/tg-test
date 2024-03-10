@@ -1,9 +1,26 @@
 
 .swiper {
-  width: 100%;
+  width: 60%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
+@media screen and (max-width:1290px){
+  .swiper{
+    width: 80%;
+  }
+}
+@media screen and (max-width:1048px){
+  .swiper{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width:900px){
+  .swiper{
+    width: 100%;
+  }
+}
+
 
 .swiper-slide {
   background-position: center;

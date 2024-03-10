@@ -29,7 +29,7 @@ a{
 }
 ::-webkit-scrollbar {
     width: 12px;
-  }
+  } 
   
   ::-webkit-scrollbar-track {
     background-color: #181818;
