@@ -247,7 +247,7 @@ const SecondSection = () => {
         initial = {{left:'-90%'}}
         whileInView={{left:0}}
         viewport={{ once: true }}
-        transition={{duration:1.2,delay:1}}
+        transition={{duration:1,delay:1}}
         />
         </div>
         <TextContainer

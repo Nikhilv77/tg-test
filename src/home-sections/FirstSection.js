@@ -215,7 +215,7 @@ const FirstSection = () => {
 </motion.h1>
 <ImageContainer>
     <I1
-    initial = {{scale:0.2}}
+    initial = {{scale:0.3}}
     whileInView = {{scale:1}}
     viewport={{ once: true }}
     transition={{duration:1}}
