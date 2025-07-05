@@ -15,7 +15,7 @@ button,a{
   -webkit-tap-highlight-color: transparent;
 }
 body{
-  background-color: #181818;
+  background-color: #000000;
   overflow-x: hidden;
 }
 section {

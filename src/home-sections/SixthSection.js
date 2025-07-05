@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {motion} from 'framer-motion'
 import { Autoplay } from 'swiper/modules';
-import image1 from '../assets/new-images/homepage-images/section-7-1.png'
+import image1 from '../assets/new-images/homepage-images/section-7-1.png';
+import image2 from '../assets/new-images/homepage-images/section-7-3.png';
+import image5 from '../assets/new-images/homepage-images/section-7-2.png';
+import image6 from '../assets/new-images/homepage-images/section-7-5.png';
+import image7 from '../assets/new-images/homepage-images/section-7-4.png';
 import image3 from '../assets/new-images/homepage-images/section-1-4.png'
 import image4 from '../assets/new-images/homepage-images/section-1-3.png'
 
@@ -194,7 +198,9 @@ const SixthSection =()=> {
         >
           <Title>TagSocial is Loved by All</Title>
           <Text>
-          Experience the unparalleled satisfaction of TagSocial users with a stellar rating of 5 on Google Play, reflecting the app's seamless functionality and user-centric design.
+        
+Dive into TagSocial! 🌟 It's got a stellar 5-star rating on Google Play! This app is your phone's bestie, making everything smooth and fun. With its user-friendly design, it's a total game-changer! 🚀
+
           </Text>
           </TextContainer>
           
@@ -223,19 +229,16 @@ const SixthSection =()=> {
           <img src={image1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image1} />
+          <img src={image2} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image1} />
+          <img src={image5} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image1} />
+          <img src={image6} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={image1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={image1} />
+          <img src={image7} />
         </SwiperSlide>
       </Swiper>
       </Section>

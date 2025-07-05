@@ -1,8 +1,8 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
-import styled from 'styled-components'
-import logo from '../../assets/new-images/homepage-images/Logo.png'
+import styled, { keyframes } from 'styled-components'
+import logo from '../../assets/new-images/homepage-images/dumpit-logo.png'
 import { motion } from 'framer-motion'
 import ctaImage1 from '../../assets/new-images/homepage-images/cta-2.png'
 import ctaImage2 from '../../assets/new-images/homepage-images/cta-1.png'
@@ -15,7 +15,7 @@ const Headers = styled(motion.header)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(24, 24, 24, 0.5);
+  background: rgba(0,0,0,0);
   /* background:linear-gradient(135deg, rgba(43, 43, 42, 0.6), rgba(93, 93, 93, 0.6), rgba(34, 34, 33, 0.6)); */
   backdrop-filter: blur(16px) !important;
   color: white;
@@ -23,6 +23,7 @@ const Headers = styled(motion.header)`
   height: 4.5rem;
   z-index: 99 !important;
   width: 100vw;
+  /* background-color: yellow; */
 `
 const BottomHeader = styled(motion.header)`
   display: flex;
@@ -81,7 +82,6 @@ const Logo = styled.a`
   img {
     width: 3rem;
     height: 3rem;
-    filter: brightness(0) invert(1) grayscale(1);
     user-select: none;
   }
 `
@@ -95,6 +95,33 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   transition: all 0.3s;
+  /* background-color: green; */
+  @media only Screen and (max-width: 1117px) {
+    display: none;
+  }
+  .no-hover {
+    text-decoration: none; /* Optional: Remove underline on hover */
+  }
+
+  .no-hover:hover::after {
+    width: 0; /* Set width to 0 on hover to disable the hover effect */
+  }
+
+ 
+  
+`
+
+const LinkNav = styled.div`
+  /* width: 70%; */
+  font-family: Hauora, monospace;
+  font-weight: 520 !important;
+ margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  transition: all 0.3s;
+  /* background-color: green; */
   @media only Screen and (max-width: 1117px) {
     display: none;
   }
@@ -128,18 +155,8 @@ const Nav = styled.nav`
         rgb(25, 74, 236) 91.1%
       );
     }
-    /* &:not(:last-child) {
-      margin-right: 2rem;
-    } */
-    /* @media only Screen and (max-width: 48em) {
-      &:not(:last-child) {
-        margin-right: 1rem;
-      }
-    } */
   }
-`
-
-
+  `
 
 const HamburgerBtn = styled.button`
   display: none;
@@ -213,7 +230,7 @@ const MobileMenu = styled.nav`
   }
 `
 
-const SecondNavbar = () => {
+const HomeNavbar = () => {
   const theme = createTheme({})
   const [click, setClick] = useState(false)
   //const handleClick = () => setClick(!click);
@@ -247,13 +264,13 @@ const SecondNavbar = () => {
   return (
     <>
       <Headers
-       
+      
         ref={ref}
       >
-         <Logo
+        <Logo
         href='/'
         >
-          <img src={logo} alt="TagSocial" />
+          <img src={logo} alt="dumpit" />
         </Logo>
         <Nav>
           <div
@@ -264,12 +281,14 @@ const SecondNavbar = () => {
               width: '60%',
             }}
           >
+            <LinkNav>
             <a href="/">Home</a>
-            <a href="/features">Features</a>
+            {/* <a href="/features">Features</a> */}
             <a href="/faqs">FAQs</a>
             <a href="/terms-and-conditions">Privacy Policy</a>
+            </LinkNav>
           </div>
-        
+         
                <MantineProvider theme={theme}>
   <div style={{marginRight:'2rem'}}>
             <DownloadOptions/>
@@ -285,7 +304,7 @@ const SecondNavbar = () => {
 
         <MobileMenu clicked={+click}>
           <a href="/">Home</a>
-          <a href="/features">Features</a>
+          {/* <a href="/features">Features</a> */}
           <a href="/faqs">FAQs</a>
           <a href="/terms-and-conditions">Privacy Policy</a>
 
@@ -298,8 +317,11 @@ const SecondNavbar = () => {
         </MobileMenu>
       </Headers>
       <BottomHeader
+
         ref={bottomRef}
+      
       >
+        
         <img onClick={()=>{
           window.open('https://apps.apple.com/in/app/tagsocial/id6443448497')
         }} className="cta-image" src={ctaImage1} alt="" />
@@ -311,4 +333,4 @@ const SecondNavbar = () => {
     </>
   )
 }
-export default SecondNavbar
+export default HomeNavbar

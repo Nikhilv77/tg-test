@@ -20,12 +20,19 @@
     width: 100%;
   }
 }
+@media screen and (max-width:550px){
+ 
+.swiper-slide {
+  width: 300px !important;
+  height: 230px !important;
+}
+}
 
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 300px;
+  width: 470px;
   height: 300px;
 }
 
@@ -34,16 +41,16 @@
   border-radius: .4rem;
   width: 100%;
   height: 100%;
-  border: 2px solid transparent; /* Adding a transparent border */
+  /* object-fit: contain; */
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5)); /* Adding transition for border-color and box-shadow */
 }
 
-.swiper-slide img:hover {
+/* .swiper-slide img:hover {
   border-color:  rgba(0, 126, 242, 1);
   box-shadow: 0 0 10px linear-gradient(
     135deg,
     rgba(0, 126, 242, 1),
     rgba(0, 58, 108, 1)
   );
-}
+} */

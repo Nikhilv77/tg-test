@@ -4,9 +4,7 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 const PlaceholderText = `
-  It can’t help but hear a pin drop from over half a mile away, so it lives deep in the mountains where there aren’t many people or Pokémon.
-  It was born from sludge on the ocean floor. In a sterile environment, the germs within its body can’t multiply, and it dies.
-  It has no eyeballs, so it can’t see. It checks its surroundings via the ultrasonic waves it emits from its mouth.
+ Answer will be added soon. Dumpit is under construction.
 `
 
 const FaqWrapper = styled(motion(Container))`
@@ -34,7 +32,7 @@ const FaqTitle = styled(motion(Title))`
 const FaqAccordionItem = styled(motion(Accordion.Item))`
   color: #fff;
   font-size: 1.1rem;
-  background-color: #393939;
+  background: rgba(0, 126, 242, 1);
   border-radius: 8px;
   margin-bottom: 20px;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -76,6 +74,17 @@ const Faqs = () => {
       </FaqTitle>
 
       <Accordion variant="separated">
+      <FaqAccordionItem
+          value="revert"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <FaqAccordionControl>
+            What is Revert?
+          </FaqAccordionControl>
+          <FaqAccordionPanel>{PlaceholderText}</FaqAccordionPanel>
+        </FaqAccordionItem>
         <FaqAccordionItem
           value="reset-password"
           initial={{ opacity: 0 }}
@@ -107,7 +116,7 @@ const Faqs = () => {
           transition={{ delay: 0.8 }}
         >
           <FaqAccordionControl>
-            How can I subscribe to the monthly newsletter?
+            How does Dumpit respect my privacy?
           </FaqAccordionControl>
           <FaqAccordionPanel>{PlaceholderText}</FaqAccordionPanel>
         </FaqAccordionItem>
@@ -119,7 +128,7 @@ const Faqs = () => {
           transition={{ delay: 1.1 }}
         >
           <FaqAccordionControl>
-            Do you store credit card information securely?
+            How Dumpit is different from other social networking platforms?
           </FaqAccordionControl>
           <FaqAccordionPanel>{PlaceholderText}</FaqAccordionPanel>
         </FaqAccordionItem>
@@ -131,7 +140,7 @@ const Faqs = () => {
           transition={{ delay: 1.4 }}
         >
           <FaqAccordionControl>
-            What payment systems do you work with?
+            How can I delete my Account?
           </FaqAccordionControl>
           <FaqAccordionPanel>{PlaceholderText}</FaqAccordionPanel>
         </FaqAccordionItem>

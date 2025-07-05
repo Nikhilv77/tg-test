@@ -70,7 +70,7 @@ const DownloadOptions = () => {
   return (
     <Menu shadow="lg" width={170}>
       <Menu.Target>
-        <Button>Download
+        <Button>Install
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="20"

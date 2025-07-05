@@ -1,253 +1,161 @@
-
-import React from 'react'
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
-import image1 from '../assets/new-images/homepage-images/section-4-1.png'
-import image6 from '../assets/new-images/homepage-images/section-1-4.png'
-import image7 from '../assets/new-images/homepage-images/section-1-3.png'
-
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import image from '../assets/new-images/homepage-images/image-three-section.png'
 
 const Section = styled.section`
-  position: relative;
-  background-color: #181818;
-  overflow: hidden;
-  min-height: 100vh;
   width: 100vw;
-`
-const I3 = styled(motion.img)`
- opacity: 0.7 !important;
-  height: 60vh;
-  width: 20vw;
-  position: absolute;
-  right: 0;
-  top: 20%;
+  min-height: 100vh;
+  position: relative;
   z-index: 1;
-  @media (max-width:1100px){
-    height: 40vh;
-width: 40vw;
-top: 25%;
-  }
-  @media (max-width :750px){
-height: 35vh;
-width: 35vw;
-top: 25%;
-  }
-`
-const I4 = styled(motion.img)`
-opacity: 0.7 !important;
-  height: 84vh;
-  width: 20vw;
-  position: absolute;
-  left: 0;
-  bottom: 10%;
-  z-index: 1;
-  @media (max-width:1100px){
-    height: 75vh;
-width: 25vw;
-  }
-  @media (max-width :750px){
-height: 55vh;
-width: 30vw;
+  background-color: #000000;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
 
+  @media (max-width: 800px) {
+    min-height: 80vh;
+    padding: 2rem 1rem;
   }
-`
+`;
+
 const Wrapper = styled.div`
-height: 98vh;
-width: 100%;
-display: flex;
-justify-content:center;
-align-items: center;
-gap: 2rem;
-z-index: 9;
-@media (max-width:750px) {
-  flex-direction: column;
-}
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
 
-@media ( (max-width : 1025px) and (min-height: 900px)) {
-  flex-direction: column;
-    }
-h1 {
-    font-family: Hauora, monospace;
-    color: #fff;
-     width: 23%;
-    text-align: start;
-    line-height: 1.4;
-z-index: 10;
-    /* text-shadow: 1px 1px 1px #fff; */
-    font-size: 3.4rem;
-    user-select: none;
-    @media ( (max-width : 1025px) and (min-height: 900px)) {
-      line-height: 1.6;
-      width: 60%;
-     font-size: 2.5rem !important;
-     text-align: center !important;
-    }
-  
-    
-    @media (max-width: 1200px) {
-      font-size: 2.4em;
-    }
-
-    @media (max-width: 1000px) {
-      font-size: 2.3em;
-    }
-    @media (max-width: 750px) {
-      font-size: 2.2em;
-      width: 97%;
-      text-align: center !important;
-    }
-    @media (max-width: 600px) {
-      font-size: 2em;
- 
-    }
-    @media (max-width: 500px) {
-      font-size: 1.8em;
-    }
-    @media (max-width: 400px) {
-      font-size: 1.6em;
-    }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    text-align: center; /* Center-align content on mobile */
   }
-  h2 {
-    font-family: Hauora, monospace;
-    text-align: start;
-    line-height: 1.7;
-    font-weight: 400;
-    /* text-shadow: 1px 1px 1px #b0b0b0; */
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    margin-top: 1rem;
+    order: -1; /* Move image to the top on mobile */
+  }
+`;
+
+const Image = styled(motion.img)`
+  width: 80%;
+  height: auto;
+  max-height: 80vh;
+  border-radius: 1.5rem;
+  object-fit: contain;
+  /* filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5)); */
+  user-select: none;
+
+  @media (max-width: 800px) {
+    width: 90%;
+  }
+`;
+
+const TextContainer = styled(motion.div)`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+  gap: 1rem;
+  color: #fff;
+  font-family: Hauora, monospace !important;
+  text-align: left; /* Left-align text on desktop */
+
+  @media (max-width: 800px) {
+    width: 100%;
+    text-align: center; /* Center-align text on mobile */
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+`;
+
+const SmallText = styled.h2`
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
+
+  @media (max-width: 800px) {
     font-size: 1.6rem;
-    text-transform: capitalize;
-    user-select: none;
-    color: #b0b0b0;
-   z-index: 10;
-    width: 25%;
 
-    @media ( (max-width : 1024px) and (min-height: 900px)) {
-     line-height: 1.5;
-     width: 90% !important;
-     font-size: 1.3em !important;
-     text-align: center !important;
-    }
-
-    @media (max-width: 1200px) {
-      font-size: 1.6em;
-    }
-
-    @media (max-width: 1000px) {
-      font-size: 1.4em;
-    }
-    @media (max-width: 750px) {
-      font-size: 1.3em;
-      width: 99%;
-      text-align: center !important;
-      
-    }
-    @media (max-width: 600px) {
-      font-size: 1.1em;
-    }
-    @media (max-width: 500px) {
-      font-size: 1em;
-    }
-    @media (max-width: 400px) {
-      font-size: 1em;
-    }
   }
-`
-const ImageContainer = styled.div`
-position:relative;
-height: 35rem;
-width: 38rem;
-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-z-index: 3;
+`;
 
-    @media (max-width: 1200px) {
-      height: 31rem;
-     width: 33rem;
-    }
+const LargeText = styled.h1`
+  font-size: 3.3rem;
+  font-weight: 700;
+  color: rgba(0, 121, 253, 1);
 
-    @media (max-width: 1000px) {
-      height: 31rem;
-     width: 32rem;
-    }
-    @media (max-width: 750px) {
-      height: 26rem;
-     width: 24rem;
-    }
-    @media (max-width: 600px) {
-      font-size: 2em;
-      text-align: center;
-    }
-    @media (max-width: 500px) {
-      font-size: 1.8em;
-    }
-    @media (max-width: 400px) {
-      font-size: 1.6em;
-    }
-   
-`
-const I1 = styled(motion.img)`
-position: absolute;
-top: 0;
-bottom:0;
-right:0;
-left: 0;
-height: 100%;
-width: 100%;
+  @media (max-width: 1200px) {
+    font-size: 2.7rem;
+  }
 
-`
+  @media (max-width: 800px) {
+    font-size: 2.4rem;
+  }
+`;
 
+const MediumText = styled.ul`
+  font-size: 1.8rem;
+  list-style: disc;
+  margin-top: 1rem;
+  padding-left: 1.6rem;
+  font-weight: 600;
 
+  @media (max-width: 800px) {
+    list-style-type: none; /* Hides bullet points on smaller screens */
+  }
 
-
-
-
+  li {
+    margin-bottom: 0.5rem;
+  }
+`;
 
 const ThirdSection = () => {
-  
-
   return (
     <Section>
-    <Wrapper
-    >
-      
-      <motion.h1
-         initial = {{opacity:0}}
-         whileInView = {{opacity:1}}
-         viewport={{ once: true }}
-         transition={{duration:1,delay:1,type:'ease'}}
-      >Transforming Social Connections
-</motion.h1>
-<ImageContainer>
-    <I1
-    initial = {{top:'-109%',opacity:0}}
-    whileInView = {{top:0,opacity:1}}
-    viewport={{ once: true }}
-    transition={{duration:1.7,delay:1}}
-    src={image1} alt='first-image'/>
-    </ImageContainer>
-<motion.h2
-   initial = {{opacity:0}}
-   whileInView = {{opacity:1}}
-   viewport={{ once: true }}
-   transition={{duration:1,delay:1,type:'ease'}}
->Experience a new dimension of social networking that goes beyond the ordinary. TagSocial brings people together through shared interests and real-world connections.</motion.h2>
-  
-   
-    </Wrapper>
-    <I3
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
-        src={image6}
-        alt="background-blur"
-      />
-      <I4
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
-        src={image7}
-        alt="background-blur"
-      />
-    </Section>
-  )
-}
+      <Wrapper>
+        <TextContainer
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 1 }}
+        >
+          <SmallText>You’re not the only trendsetter! Befriend like-minded peeps</SmallText>
+          <LargeText>#Unlmited Swipes </LargeText>
+          <MediumText>
+            <li>No limit to connect
 
-export default ThirdSection
+
+</li>
+            <li>Befriend people you vibe with and enjoy global and personal feeds.</li>
+            <li>Build lasting friendships</li>
+            <li>Be part of the trendsetting community</li>
+          </MediumText>
+        </TextContainer>
+        <ImageWrapper>
+          <Image
+            // src="https://firebasestorage.googleapis.com/v0/b/gcf-sources-829766584548-us-central1/o/Screenshot%202024-10-01%20at%206.09.19%20PM%202%20(3).png?alt=media&token=fec7db1e-c804-4871-8207-5f165b161b1a "
+            src = {image}
+            initial={{ y: -300,rotateZ:30 }}
+            whileInView={{ y: 0,rotateZ:0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          />
+        </ImageWrapper>
+      </Wrapper>
+    </Section>
+  );
+};
+
+export default ThirdSection;

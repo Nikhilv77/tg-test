@@ -13,7 +13,7 @@ const Section = styled.section`
   align-items: center;
   overflow-x: hidden;
   z-index: 9 !important;
-  background-color: transparent;
+  background-color: #000000;
   color: white;
 `
 
@@ -91,12 +91,13 @@ const SecondFooter = () => {
   return (
     <Section>
       <FooterComponent>
-        <ul>
-          <a href="/"><li>Home</li></a>
-          <a href="/features"><li>Features</li></a>
-          <a href="/faqs"><li>FAQs</li></a>
-          <a href="/terms-and-conditions"><li>Privacy Policy</li></a>
-        </ul>
+      <ul>
+  <a href="/"><li>Home</li></a>
+  <a href="/faqs"><li>FAQs</li></a>
+  <a href="/terms-and-conditions"><li>Privacy Policy</li></a>
+  <a href="/child-safety-policy"><li>Child Safety Policy</li></a> {/* ✅ NEW ITEM */}
+</ul>
+
         <Bottom>
           <span
             style={{
@@ -157,7 +158,7 @@ const SecondFooter = () => {
             </a>
           </span>
 
-          <span>TagSocial&copy; 2021. All Rights Reserved.</span>
+          <span>Dumpit&copy; 2024. All Rights Reserved.</span>
         </Bottom>
       </FooterComponent>
     </Section>

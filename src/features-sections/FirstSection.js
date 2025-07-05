@@ -1,6 +1,10 @@
 import {motion} from 'framer-motion'
 import styled from 'styled-components'
-import image1 from '../assets/new-images/featurespage-images/section-1-1.png'
+import image6 from '../assets/new-images/homepage-images/section-1-4.png'
+import image1 from '../assets/new-images/featurespage-images/Group 6968.png'
+import image7 from '../assets/new-images/homepage-images/section-1-3.png'
+import Line1 from '../assets/new-images/featurespage-images/Line 1.png'
+import number1 from '../assets/new-images/featurespage-images/Group 6969.png'
 
 const Section = styled.section`
   width: 100vw;
@@ -9,62 +13,148 @@ const Section = styled.section`
   z-index: 1;
   background-color: #181818;
   overflow: hidden;
+  display: grid;
+  padding-left: 5rem;
+  place-items: center;
+
+  @media (max-width: 800px) {
+    margin-top: 2rem;
+    align-items: start;
+    padding-left: 0;
+  }
+  
+  @media((max-width:800px) and (min-height:600px)){
+  min-height: 80vh;
+  }
+  @media((max-width:800px) and (min-height:700px)){
+  min-height: 75vh;
+  }
+  @media((max-width:800px) and (min-height:900px)){
+  min-height: 60vh;
+  }
+  
+`
+const Line = styled.img`
+position: absolute;
+left: 5%;
+bottom: 0;
+height: 70%;
+z-index: 500;
+filter: brightness(200%);
+`
+const Number = styled.img`
+position: absolute;
+left: 3%;
+top: 30%;
+height: 4rem;
+width: 4rem;
+z-index: 500;
+`
+
+const I3 = styled(motion.img)`
+
+  opacity: 0.6 !important;
+  height: 70vh;
+  width: 30vw;
+  position: absolute;
+  right: 0;
+  top: 5%;
+  z-index: 1;
+  @media (max-width:1100px){
+    height: 40vh;
+width: 30vw;
+top: 15%;
+  }
+  @media (max-width :750px){
+height: 35vh;
+width: 30vw;
+top: 15%;
+  }
+`
+const I4 = styled(motion.img)`
+  height: 84vh;
+  width: 25vw;
+  position: absolute;
+  left: 0;
+  bottom: 30%;
+  z-index: 1;
+  @media (max-width:1100px){
+    height: 75vh;
+width: 25vw;
+  }
+  @media (max-width :750px){
+height: 55vh;
+width: 23vw;
+
+  }
 `
 const Wrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
-place-items: center;
+justify-items:center;
+align-items: start;
 height: 100%;
 width: 100%;
 /* background-color: pink; */
-@media ( (max-width : 1025px) and (min-height: 900px)) {
+/* @media ( (max-width : 1025px) and (min-height: 900px)) {
   grid-template-columns: 1fr;
-    }
+    } */
 @media (max-width:800px){
   grid-template-columns:1fr;
+  height: 30rem;
 }
 .image-wrapper{
   position: relative;
   width: 100%;
-  height: 97vh;
-  @media ( (max-width : 1025px) and (min-height: 900px)) {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  /* @media ( (max-width : 1025px) and (min-height: 900px)) {
     height: 60vh;
    width: 96%;
-    }
+    } */
   @media (max-width:800px){
-   height: 60vh;
+   height: 20rem;
    width: 96%;
+   place-items: center;
 }
 }
 `
 const I1 = styled(motion.img)`
-  width: 100%;
-  height: 97%;
+  width: 80%;
+  height: 80%;
+  border-radius: 1.5rem;
   position: absolute;
   object-fit: contain;
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
   z-index: 5;
   user-select: none;
-
-
+/* top: 50%; */
+/* transform: translateY(-50%,-50%); */
+@media (max-width:800px){
+   height: 85%;
+}
 `
 
 const TextContainer = styled(motion.div)`
   width: 80%;
-  height: 100%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+z-index: 2;
   gap: 1rem;
-  @media ( (max-width : 1025px) and (min-height: 900px)) {
+  /* @media ( (max-width : 1025px) and (min-height: 900px)) {
     padding: 1rem;
     height: 40vh;
    justify-content: center;
    width: 80%;
-    }
+    } */
   @media (max-width:800px){
-   height: 40vh;
+    height: 100%;
+   height: 11rem;
    justify-content: center;
    width: 89%;
 }
@@ -80,16 +170,19 @@ const TextContainer = styled(motion.div)`
 `
 
 const Title = styled.h1`
-  font-size: 3.4rem;/* Adjust the font size based on viewport width */
+  font-size: 3rem;/* Adjust the font size based on viewport width */
   z-index: 5;
   text-transform: capitalize;
   color: #fff;
   font-family: Hauora, monospace !important;
-
-  @media ( (max-width : 1024px) and (min-height: 900px)) {
+  .hero-span{
+color: rgba(0, 121, 253, 1);
+margin-bottom: 4rem;
+}
+  /* @media ( (max-width : 1024px) and (min-height: 900px)) {
     text-align: center !important;
-   font-size: 1.8rem !important;
-  }
+   font-size: 1.9rem !important;
+  } */
   @media (max-width: 1200px) {
     font-size: 2.4em;
   }
@@ -114,83 +207,65 @@ const Title = styled.h1`
   } /* Adjust font size for even smaller screens */
   
 `
-const Text = styled.p`
-  /* text-align: justify; */
-  font-family: Hauora, monospace !important;
-  font-size: 1.6rem;
-  line-height: 1.8;
-  z-index: 5;
-  text-transform: capitalize;
-  text-transform: 0 0 4px #fff;
-
-  color: #b0b0b0;
-  font-family: Hauora, monospace !important;
-  @media ( (max-width : 1024px) and (min-height: 900px)) {
-    text-align: center !important;
-   line-height: 1.5;
-   width: 100% !important;
-   font-size: 1.1em !important;
-  }
-
-  @media (max-width: 1200px) {
-    font-size: 1.6em;
-  }
-
-  @media (max-width: 1000px) {
-    font-size: 1.4em;
-  }
-  @media (max-width: 750px) {
-    font-size: 1.3em;
-    text-align: center !important;
-    
-  }
-  @media (max-width: 600px) {
-    font-size: 1.1em;
-
-  }
-  @media (max-width: 500px) {
-    font-size: 1em;
-  }
-  @media (max-width: 400px) {
-    font-size: 1em;
-  }
-`
 
 
 
-const FirstSection = () => {
+const ThirdSection = () => {
   
   
 
   return (
   
       <Section >
+        {/* <Line src={Line1} alt="line"/>
+        <Number src={number1} alt="number"/> */}
         <Wrapper>
-        <TextContainer
+        <I3
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image6}
+        alt="background-blur"
+      />
+      <I4
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5, type: 'ease' }}
+        src={image7}
+        alt="background-blur"
+      />
+       <TextContainer
            initial = {{opacity:0}}
            whileInView={{opacity:1}}
            viewport={{ once: true }}
            transition={{duration:1,delay:1}}
         >
-          <Title> Introducing
-TagScores-TagSocial’s New Currency
-</Title>
-          <Text>
-          Engage with the community and increase your influence with TagScores. Earn points based on your activity, interactions, and content quality, showcasing your social impact within the platform.
-          </Text>
+          <Title><span className='hero-span'>Unlimited swipes</span> on TagSocial mean endless friendships. Keep your squad thriving! 🚀
+          </Title>
         </TextContainer>
+      
         <div className='image-wrapper'>
-        <I1 src={image1}
-        initial = {{bottom:'-90%',rotate:-28}}
-        whileInView={{bottom:0}}
+        <I1 src = {image1}
+        initial = {{left:'80%'}}
+        whileInView={{left:"10%"}}
         viewport={{ once: true }}
-        transition={{duration:1}}
+        transition={{duration:1.5}}
         />
         </div>
+       
         </Wrapper>
       </Section>
      
   )
 }
 
-export default FirstSection
+export default ThirdSection
+
+//Ditch the creepy algorithms! 🛑 We don't track you or your data. 🔒
+
+
+
+
+
+
+

@@ -4,61 +4,38 @@ import image1 from '../assets/new-images/homepage-images/section-6-1.png'
 
 const Section = styled.section`
   width: 100vw;
-  min-height: 93vh;
+  min-height: 35vh;
   position: relative;
   z-index: 1;
   background-color: #181818;
   overflow: hidden;
-`
-const Wrapper = styled.div`
-display: grid;
-grid-template-columns: 1fr ;
-place-items: center;
-gap: 1.5rem;
-height: 100%;
-width: 100%;
-/* background-color: pink; */
-@media ( (max-width : 1025px) and (min-height: 900px)) {
-  grid-template-columns: 1fr;
-  gap: 0;
-    }
-@media (max-width:800px){
-  gap: 0;
-}
-.image-wrapper{
-  position: relative;
-  width: 100%;
-  height: 65vh;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
 
-  @media ( (max-width : 1025px) and (min-height: 900px)) {
-    height: 60vh;
-   width: 96%;
-    }
-  @media (max-width:800px){
-   height: 50vh;
-   width: 96%;
-}
-}
 `
 
 const TextContainer = styled(motion.div)`
-  width: 90%;
-  height: 28vh;
+  width: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  text-align: center;
-  gap: 1rem;
-  @media ( (max-width : 1025px) and (min-height: 900px)) {
-    padding: 1rem;
-    height: 30vh;
-   width: 60%;
-    }
-  @media (max-width:800px){
-   height: 30vh;
-   width: 83%;
-}
+  justify-content: center;
+  z-index: 2;
+
+
+  /* @media (max-width: 1200px) {
+    width: 55%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 60%;
+  } */
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 
   /* @media (max-width:800px){
     justify-content: space-between;
@@ -69,125 +46,57 @@ const TextContainer = styled(motion.div)`
     transform: translate(-50%,-50%);
   } */
 `
-const I1 = styled(motion.img)`
 
-  width: 100%;
-  height: 64vh;
-  position: absolute;
-  object-fit: contain;
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-  z-index: 5;
-  user-select: none;
-  @media (max-width:800px){
-  height: 100%;
-}
-`
 const Title = styled.h1`
-
-  font-size: 3.4rem;/* Adjust the font size based on viewport width */
+  font-size: 4.3rem;/* Adjust the font size based on viewport width */
   z-index: 5;
   text-transform: capitalize;
   color: #fff;
   font-family: Hauora, monospace !important;
-  @media ( (max-width : 1024px) and (min-height: 900px)) {
-   font-size: 2.1rem !important;
-    text-align: center !important;
-  }
+ 
 
   @media (max-width: 1200px) {
-    font-size: 2.4em;
+    font-size: 3.2em;
   }
 
   @media (max-width: 1000px) {
-    font-size: 2.3em;
+    font-size: 2.8rem;
+    text-align: center;
   }
-  @media (max-width: 750px) {
-    font-size: 2.2em;
-    text-align: center !important;
-    
+  @media (max-width: 800px) {
+    font-size: 2.6em;
+    text-align: center;
   }
   @media (max-width: 600px) {
-    font-size: 2em;
+    font-size: 2.5em;
 
   }
   @media (max-width: 500px) {
-    font-size: 1.8em;
+    font-size: 2.4rem;
   }
-  @media (max-width: 400px) {
-    font-size: 1.6em;
-  } /* Adjust font size for even smaller screens */
-  
-`
-const Text = styled.p`
-  /* text-align: justify; */
-  font-family: Hauora, monospace !important;
-  font-size: 1.6rem;
-  line-height: 1.8;
-  z-index: 5;
-  text-transform: capitalize;
-  text-transform: 0 0 4px #fff;
-
-  color: #b0b0b0;
-  font-family: Hauora, monospace !important;
-  @media ( (max-width : 1024px) and (min-height: 900px)) {
-   line-height: 1.6;
-   width: 80% !important;
-   font-size: 1.2em !important;
-   text-align: center !important;
-  }
-
-  @media (max-width: 1200px) {
-    font-size: 1.6em;
-  }
-
-  @media (max-width: 1000px) {
-    font-size: 1.4em;
-  }
-  @media (max-width: 750px) {
-    font-size: 1.3em;
-    text-align: center !important;
-    
-  }
-  @media (max-width: 600px) {
-    font-size: 1.1em;
-
-  }
-  @media (max-width: 500px) {
-    font-size: 1em;
-  }
-  @media (max-width: 400px) {
-    font-size: 1em;
+   @media (max-width: 400px) {
+    font-size: 2.3rem;
   }
 `
+
 
 
 
 const HeroSection = () => {
   
-  
-
   return (
   
       <Section >
-        <Wrapper>
+      
         <TextContainer
            initial = {{opacity:0}}
            animate={{opacity:1}}
            transition={{duration:1,delay:1}}
         >
-          <Title> Features that set you apart </Title>
-          <Text>
-          Embark on a journey of discovery, as Tags Social connects you with like-minded individuals.
-          </Text>
+          <Title>Features <br />
+that set you apart
+<br />on TagSocial</Title>
         </TextContainer>
-        <div className='image-wrapper'>
-        <I1 src={image1}
-        initial = {{top:'-150%'}}
-        animate={{top:0}}
-        transition={{duration:1.5}}
-        />
-        </div>
-        </Wrapper>
       </Section>
      
   )

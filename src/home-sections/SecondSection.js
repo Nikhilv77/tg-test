@@ -1,42 +1,61 @@
 import {motion} from 'framer-motion'
 import styled from 'styled-components'
-import image1 from '../assets/new-images/homepage-images/section-3-1.png'
-import image3 from '../assets/new-images/homepage-images/section-1-4.png'
-import image4 from '../assets/new-images/homepage-images/section-1-3.png'
+import image6 from '../assets/new-images/homepage-images/section-1-4.png'
+import image1 from '../assets/new-images/featurespage-images/section-3-1.png'
+import image7 from '../assets/new-images/homepage-images/section-1-3.png'
 
 const Section = styled.section`
   width: 100vw;
   min-height: 100vh;
   position: relative;
   z-index: 1;
-  background-color: #181818;
+  background-color: #000000;
   overflow: hidden;
+  display: grid;
+  
+  place-items: center;
+  @media (max-width: 800px) {
+    margin-top: 2rem;
+    align-items: start;
+  }
+  
+  @media((max-width:800px) and (min-height:600px)){
+  min-height: 80vh;
+  }
+  @media((max-width:800px) and (min-height:700px)){
+  min-height: 75vh;
+  }
+  @media((max-width:800px) and (min-height:900px)){
+  min-height: 60vh;
+  }
+  
 `
 const I3 = styled(motion.img)`
 
-  height: 80vh;
+ opacity: 0.6 !important;
+  height: 70vh;
   width: 30vw;
   position: absolute;
   right: 0;
-  top: 22%;
+  top: 5%;
   z-index: 1;
   @media (max-width:1100px){
     height: 40vh;
-width: 40vw;
-
+width: 30vw;
+top: 15%;
   }
   @media (max-width :750px){
 height: 35vh;
-width: 35vw;
-
+width: 30vw;
+top: 15%;
   }
 `
 const I4 = styled(motion.img)`
   height: 84vh;
-  width: 18vw;
+  width: 25vw;
   position: absolute;
   left: 0;
-  bottom: 45%;
+  bottom: 30%;
   z-index: 1;
   @media (max-width:1100px){
     height: 75vh;
@@ -44,47 +63,55 @@ width: 25vw;
   }
   @media (max-width :750px){
 height: 55vh;
-width: 30vw;
+width: 23vw;
 
   }
 `
 const Wrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
-place-items: center;
+justify-items:center;
+align-items: start;
 height: 100%;
 width: 100%;
 /* background-color: pink; */
-@media ( (max-width : 1025px) and (min-height: 900px)) {
+/* @media ( (max-width : 1025px) and (min-height: 900px)) {
   grid-template-columns: 1fr;
-    }
+    } */
 @media (max-width:800px){
   grid-template-columns:1fr;
+  height: 30rem;
 }
 .image-wrapper{
   position: relative;
   width: 100%;
-  height: 97vh;
-  /* background-color: green; */
-  @media ( (max-width : 1025px) and (min-height: 900px)) {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  /* @media ( (max-width : 1025px) and (min-height: 900px)) {
     height: 60vh;
    width: 96%;
-    }
+    } */
   @media (max-width:800px){
-   height: 55vh;
+   height: 20rem;
    width: 96%;
 }
 }
 `
 const I1 = styled(motion.img)`
-  width: 100%;
-  height: 97%;
+  width: 80%;
+  height: 60%;
+  border-radius: 1.5rem;
   position: absolute;
-  object-fit: contain;
+  object-fit: cover;
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
   z-index: 5;
   user-select: none;
-
+/* top: 50%; */
+/* transform: translateY(-50%,-50%); */
+@media (max-width:800px){
+   height: 80%;
+}
 `
 
 const TextContainer = styled(motion.div)`
@@ -94,33 +121,44 @@ const TextContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+z-index: 2;
   gap: 1rem;
-  z-index: 9;
-  @media ( (max-width : 1025px) and (min-height: 900px)) {
+  /* @media ( (max-width : 1025px) and (min-height: 900px)) {
     padding: 1rem;
     height: 40vh;
-   justify-content: flex-start;
-   width: 60%;
-    }
+   justify-content: center;
+   width: 80%;
+    } */
   @media (max-width:800px){
-   height: 45vh;
-   justify-content: flex-start;
-   width: 88%;
+   height: 11rem;
+   justify-content: center;
+   width: 89%;
+  
 }
 
+  /* @media (max-width:800px){
+    justify-content: space-between;
+    width: 75%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  } */
 `
 
 const Title = styled.h1`
-  font-size: 3.4rem;
+  font-size: 3.4rem;/* Adjust the font size based on viewport width */
   z-index: 5;
   text-transform: capitalize;
   color: #fff;
   font-family: Hauora, monospace !important;
-
-  @media ( (max-width : 1024px) and (min-height: 900px)) {
+  .hero-span{
+color: rgba(0, 121, 253, 1) !important;
+}
+  /* @media ( (max-width : 1024px) and (min-height: 900px)) {
     text-align: center !important;
-   font-size: 2.5em !important;
-  }
+   font-size: 1.9rem !important;
+  } */
   @media (max-width: 1200px) {
     font-size: 2.4em;
   }
@@ -129,7 +167,7 @@ const Title = styled.h1`
     font-size: 2.3em;
   }
   @media (max-width: 750px) {
-    font-size: 2.2em;
+    font-size: 2.1em;
     text-align: center !important;
     
   }
@@ -145,135 +183,55 @@ const Title = styled.h1`
   } /* Adjust font size for even smaller screens */
   
 `
-const Text = styled.p`
-  /* text-align: justify; */
-  font-family: Hauora, monospace !important;
-  font-size: 1.6rem;
-  line-height: 1.8;
-  z-index: 5;
-  text-transform: capitalize;
-  text-transform: 0 0 4px #fff;
 
-  color: #b0b0b0;
-  font-family: Hauora, monospace !important;
-  @media ( (max-width : 1024px) and (min-height: 900px)) {
-   line-height: 1.5;
-   width: 90% !important;
-   font-size: 1.3em !important;
-   text-align: center !important;
-  }
 
-  @media (max-width: 1200px) {
-    font-size: 1.6em;
-  }
 
-  @media (max-width: 1000px) {
-    font-size: 1.4em;
-  }
-  @media (max-width: 750px) {
-    font-size: 1.3em;
-    text-align: center !important;
-  }
-  @media (max-width: 600px) {
-    font-size: 1.1em;
-
-  }
-  @media (max-width: 500px) {
-    font-size: 1em;
-  }
-  @media (max-width: 400px) {
-    font-size: 1em;
-  }
-`
-const Button = styled.button`
-  font-family: Hauora, monospace;
-  font-weight: 600 !important;
-  user-select: none;
-  align-self: flex-start;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 126, 242, 1),
-    rgba(0, 58, 108, 1)
-  );
-  padding: 0.7rem 0.9rem 0.7rem 0.9rem;
-  border-radius: 0.2rem;
-  font-size: 1.4rem;
-  color: #fff;
-  font-weight: 400;
-  cursor: pointer;
-  transition: height 0.2s, transform 0.2s;
-  &:hover{
-    background: #007EF2;
-  
-  }
-  @media ( (max-width : 1025px) and (min-height: 900px)) {
-    align-self: center;
-    font-size: 1.2rem;
-    }
-  @media (max-width:800px){
-   align-self: center;
-   font-size: 1.1rem;
-}
-`
-
-const SecondSection = () => {
+const ThirdSection = () => {
   
   
 
   return (
   
       <Section >
-        <I3
+        <Wrapper>
+        {/* <I3
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5, type: 'ease' }}
-        src={image3}
+        src={image6}
         alt="background-blur"
       />
       <I4
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5, type: 'ease' }}
-        src={image4}
+        src={image7}
         alt="background-blur"
-      />
-        <Wrapper>
-          <div className='image-wrapper'>
-        <I1 src={image1}
-        initial = {{left:'-90%'}}
-        whileInView={{left:0}}
-        viewport={{ once: true }}
-        transition={{duration:1,delay:1}}
-        />
-        </div>
-        <TextContainer
+      /> */}
+       <TextContainer
            initial = {{opacity:0}}
            whileInView={{opacity:1}}
            viewport={{ once: true }}
            transition={{duration:1,delay:1}}
         >
-          <Title>Elevate Your Social Experience</Title>
-          <Text>
-          TagSocial is a transformative social experience. Imagine leaving your mark on the world by connecting with people and places around you
-          </Text>
-        <Button onClick={()=>{
-          window.location.href = '/features'
-        }}>Features</Button>
+          <Title>We all have them: <span className ='hero-span'>camera roll regrets.</span> 📸 Photos you love, but just aren't 'Insta-worthy. 🙈💡 
+
+          </Title>
         </TextContainer>
+      
+        <div className='image-wrapper'>
+        <I1 src = "https://firebasestorage.googleapis.com/v0/b/tagsocial-66835.appspot.com/o/website%2Fgipy2.gif?alt=media&token=f41e3824-76a9-4da2-bcc9-d95e5eef68fa"
+        initial = {{left:'-80%'}}
+        whileInView={{left:"10%"}}
+        viewport={{ once: true }}
+        transition={{duration:1.5}}
+        />
+        </div>
+       
         </Wrapper>
       </Section>
      
   )
 }
 
-export default SecondSection
-
-
-
-
-
-
+export default ThirdSection

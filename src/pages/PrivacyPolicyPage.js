@@ -169,8 +169,8 @@ const PrivacyPage = () => {
   const theme = createTheme({})
 
   return (
-    <div style={{ backgroundColor: '#181818',position:'relative',zIndex:99 }}>
-       <I3
+    <div style={{ backgroundColor: '#000000',position:'relative',zIndex:99 }}>
+       {/* <I3
        src={image6}
        alt="background-blur"
      />
@@ -201,7 +201,7 @@ const PrivacyPage = () => {
      <I10
        src={image7}
        alt="background-blur"
-     />
+     /> */}
       <SecondNavbar />
       <MantineProvider theme={theme}>
         <PrivacyCard />

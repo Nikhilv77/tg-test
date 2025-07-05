@@ -3,10 +3,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { useEffect } from 'react'
 
-import Logo from '../assets/new-images/homepage-images/Logo.png'
+import Logo from '../assets/new-images/homepage-images/dumpit-logo.png'
 
 const Section = styled.section`
-  min-height: 100vh;
+  min-height: 90vh;
   width: 100%;
 
   display: flex;
@@ -14,11 +14,14 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-
-  background-color: #181818;
+  
+  background-color: #000000;
   color: white;
 
   position: relative;
+  @media (max-width: 800px) {
+    min-height: 80vh;
+  }
 `
 
 const LogoContainer = styled.div`
@@ -31,7 +34,7 @@ const LogoContainer = styled.div`
   img {
     width: 6rem;
     height: 6rem;
-    filter: brightness(0) invert(1) grayscale(1);
+    /* filter: brightness(0) invert(1) grayscale(1); */
     user-select: none;
   }
 `
@@ -131,7 +134,7 @@ const FooterSection = () => {
           width="300"
           height="300"
           src={Logo}
-          alt="tagsocial"
+          alt="dumpit"
           // data-scroll
           // data-scroll-speed="2"
         />
@@ -144,12 +147,13 @@ const FooterSection = () => {
           duration: 1.5,
         }}
       >
-        <ul>
-        <a href="/"><li>Home</li></a>
-          <a href="/features"><li>Features</li></a>
-          <a href="/faqs"><li>FAQs</li></a>
-          <a href="/terms-and-conditions"><li>Privacy Policy</li></a>
-        </ul>
+       <ul>
+  <a href="/"><li>Home</li></a>
+  <a href="/faqs"><li>FAQs</li></a>
+  <a href="/terms-and-conditions"><li>Privacy Policy</li></a>
+  <a href="/child-safety-policy"><li>Child Safety Policy</li></a> {/* ✅ NEW ITEM */}
+</ul>
+
         <Bottom>
           <span
             style={{
@@ -222,7 +226,7 @@ const FooterSection = () => {
           </span>
 
           <span>
-            TagSocial&copy; 2021.
+            Dumpit&copy; 2024.
             <br />
             All Rights Reserved.
           </span>

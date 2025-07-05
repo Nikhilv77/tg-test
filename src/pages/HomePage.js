@@ -24,11 +24,11 @@ const HomePage = () => {
       <HomeNavbar />
      <HeroSection/>
       <FirstSection />
-      <SecondSection />
+      {/* <SecondSection /> */}
       <ThirdSection />
-      <FourthSection />
-      <FifthSection />
-      <SixthSection />
+      {/* <FourthSection /> */}
+      {/* <FifthSection /> */}
+      {/* <SixthSection /> */}
       <Footer />
       </MantineProvider>
     </div>

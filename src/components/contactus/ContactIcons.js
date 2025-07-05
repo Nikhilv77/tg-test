@@ -7,19 +7,19 @@ import { Text, Box, Stack } from '@mantine/core'
 const icons = {
   'ri-mail-fill': {
     title: 'Email',
-    description: 'contact@tagsocial.com',
+    description: 'contact@tagssocial.in',
   },
   'ri-phone-fill': {
     title: 'Phone',
-    description: '+91 9876543210',
+    description: '+91 9137875951',
   },
   'ri-building-4-fill': {
     title: 'Address',
-    description: 'Kharghar, Navi Mumbai, Maharashtra',
+    description: 'GTPS Engineers (B) Housing Society , Plot 129, Sector 5, Ulwe , Navi Mumbai,410206.',
   },
   'ri-sun-fill': {
     title: 'Working hours',
-    description: '8 a.m. – 11 p.m.',
+    description: '10 a.m. – 8 p.m.',
   },
 }
 

@@ -26,7 +26,7 @@ const PrivacyCard = () => {
       >
         <MotionSubTitle>Terms of use</MotionSubTitle>
         <MotionParagraph>
-          Tags is a social networking platform for users to connect,
+          Dumpit is a social networking platform for users to connect,
           communicate, and collaborate with other users through geofencing. This
           platform allows users to explore places, connect people, and discover
           events and businesses in the surrounding locality.
@@ -39,7 +39,7 @@ const PrivacyCard = () => {
           Tag Social. Users can report such content for immediate action.
         </MotionParagraph>
         <MotionSubTitle>
-          What type of data do we collect through Tags Social
+          What type of data do we collect through Dumpit
         </MotionSubTitle>
 
         <MotionParagraph>
@@ -75,7 +75,7 @@ const PrivacyCard = () => {
         <MotionParagraph>
           We use access to your current location to show you the media/content
           which were captured on your current location. The core functionality
-          of Tags Social depends on GPS and Fine location, so granting location
+          of Dumpit depends on GPS and Fine location, so granting location
           access is compulsory. We explicitly do not share your location with
           other users, and we don't collect your current location.
         </MotionParagraph>
@@ -92,14 +92,14 @@ const PrivacyCard = () => {
         </MotionParagraph>
         <MotionSubTitle>Ads and promotions?</MotionSubTitle>
         <MotionParagraph>
-          Tags Social shows ads and promotions based on your current location so
+          Dumpit shows ads and promotions based on your current location so
           you can avail yourself of offers and coupons from your nearby local
           stores. If any misleading or fraud is found, you can report it, and we
           will take action on it.
         </MotionParagraph>
         <MotionSubTitle>Account Privacy?</MotionSubTitle>
         <MotionParagraph>
-          Your account will be visible to all users on Tags Social. However,
+          Your account will be visible to all users on Dumpit. However,
           only the users who are friends with you will be able to see your
           posts, and only your friends can send messages to you. You can make
           friends by scanning the QR of other users manually or use Revert
@@ -107,7 +107,7 @@ const PrivacyCard = () => {
         </MotionParagraph>
         <MotionSubTitle>Post privacy?</MotionSubTitle>
         <MotionParagraph>
-          In Tags Social, you are always posting a picture publicly on the
+          In Dumpit, you are always posting a picture publicly on the
           location it was uploaded. Your uploaded picture will be visible to all
           users who come across the same location. You can increase the
           geographical range of your picture for security purposes; we provide
@@ -115,7 +115,7 @@ const PrivacyCard = () => {
         </MotionParagraph>
         <MotionSubTitle>Refund policy</MotionSubTitle>
         <MotionParagraph>
-          Tags Social is used to advertise businesses locally. Businesses can
+          Dumpit is used to advertise businesses locally. Businesses can
           request a refund for their advertisements under the following
           conditions:
           <ol>
@@ -125,10 +125,24 @@ const PrivacyCard = () => {
           </ol>
           Refund requests must be made within three days of advertising. Our
           team will assess the request and issue a refund after the assessment.
-          Tags Social keeps track of previous refund requests, and frequent and
+          Dumpit keeps track of previous refund requests, and frequent and
           unnecessary refund requests may affect future assessments.
         </MotionParagraph>
-        {/* Add more paragraphs and content as needed */}
+        <MotionSubTitle>GIF Policy</MotionSubTitle>
+        <MotionParagraph>
+        All GIFs used in Dumpit are from the internet and are not owned by us. We appreciate the creators of these GIFs and their work.
+We have used these GIFs in Dumpit in accordance with the fair use doctrine. Fair use is a legal doctrine that allows the limited use of copyrighted material without permission from the copyright holder for purposes such as criticism, comment, news reporting, teaching, scholarship, or research.
+<br />
+<br />
+We believe that our use of these GIFs is fair use because:
+<ul>
+            <li>We are using the GIFS for a non-commercial purpose, which is to educate and entertain our users.</li>
+            <li>We are using only a small portion of the original GIFs.</li>
+            <li> We are not transforming the GIFs in any way that could damage the reputation of the original creators.</li>
+            <li> We are giving credit to the original creators of the GIFs by linking back to their websites whenever possible.</li>
+            <li> If you are the copyright holder of any of the GIFs used in this project and you do not want your work to be used, please contact us and we will remove it immediately.</li>
+          </ul>
+        </MotionParagraph>
       </MotionContent>
     </MotionContainer>
   )
@@ -233,3 +247,15 @@ const MotionParagraph = styled(motion.p)`
 `
 
 export default PrivacyCard
+
+
+
+// GIF Policy
+// All GIFs used in Dumpit are from the internet and are not owned by us. We appreciate the creators of these GIFs and their work.
+// We have used these GIFs in Dumpit in accordance with the fair use doctrine. Fair use is a legal doctrine that allows the limited use of copyrighted material without permission from the copyright holder for purposes such as criticism, comment, news reporting, teaching, scholarship, or research.
+// We believe that our use of these GIFs is fair use because:
+// We are using the GIFS for a non-commercial purpose, which is to educate and entertain our users.
+// We are using only a small portion of the original GIFs.
+// We are not transforming the GIFs in any way that could damage the reputation of the original creators.
+// We are giving credit to the original creators of the GIFs by linking back to their websites whenever possible.
+// If you are the copyright holder of any of the GIFs used in this project and you do not want your work to be used, please contact us and we will remove it immediately.
