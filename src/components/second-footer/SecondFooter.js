@@ -45,7 +45,7 @@ const FooterComponent = styled(motion.footer)`
     padding: 2rem;
     font-size: 1.2rem;
     font-weight: 520 !important;
-    text-transform: capitalize;
+    text-transform: none;
     font-family: Hauora, monospace !important;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -96,6 +96,7 @@ const SecondFooter = () => {
   <a href="/faqs"><li>FAQs</li></a>
   <a href="/terms-and-conditions"><li>Privacy Policy</li></a>
   <a href="/child-safety-policy"><li>Child Safety Policy</li></a> {/* ✅ NEW ITEM */}
+  <a href="/csae-policy"><li>Child Sexual Abuse and Exploitation (CSAE)</li></a> {/* ✅ NEW ITEM */}
 </ul>
 
         <Bottom>

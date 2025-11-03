@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import FeaturesPage from './pages/FeaturesPage'
 import ChildSafetyPolicyPage from './pages/ChildSafetyPolicyPage'
+import CsaePolicyPage from './pages/CsaePolicyPage'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/faqs" element={<FaqsPage />} />
               <Route path="/terms-and-conditions" element={<PrivacyPage />} />
               <Route path="/child-safety-policy" element={<ChildSafetyPolicyPage />} />
+              <Route path="/csae-policy" element={<CsaePolicyPage />} />
             </Routes>
           </BrowserRouter>
         </AnimatePresence>

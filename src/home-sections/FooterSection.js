@@ -65,7 +65,7 @@ const FooterComponent = styled(motion.footer)`
   li {
     padding: 2rem;
     font-size: 1.25em;
-    text-transform: capitalize;
+    text-transform: none;
     font-family: Hauora, monospace;
     font-weight: 520 !important;
     cursor: pointer;
@@ -152,6 +152,7 @@ const FooterSection = () => {
   <a href="/faqs"><li>FAQs</li></a>
   <a href="/terms-and-conditions"><li>Privacy Policy</li></a>
   <a href="/child-safety-policy"><li>Child Safety Policy</li></a> {/* ✅ NEW ITEM */}
+  <a href="/csae-policy"><li>Child Sexual Abuse and Exploitation (CSAE)</li></a> {/* ✅ NEW ITEM */}
 </ul>
 
         <Bottom>
